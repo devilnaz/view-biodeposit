@@ -8,6 +8,12 @@
 
     <link rel="stylesheet" href="./libs/normalize.css" />
     <link rel="stylesheet" href="./css/main.min.css" />
+    <!-- <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script> -->
   </head>
   <body>
     <div class="wrap-header">
@@ -67,9 +73,9 @@
             </div>
             <div class="main-section__column main-section__column_banner">
               <div class="main-section__banner">
-                <div class="main-banner"><img src="./img/banner1.png" alt="img: banner" class="main-banner__img main-banner__img_desktop" />
+                <div class="main-banner">
+                  <img src="./img/banner1.png" alt="img: banner" class="main-banner__img main-banner__img_desktop" />
                   <img src="./img/banner1-md.png" alt="img: banner" class="main-banner__img main-banner__img_mobile" />
-                  
                 </div>
               </div>
             </div>
@@ -225,6 +231,7 @@
                 <div class="how-it-works-section__desc">С 4-го года инвесторы начинают получать доход после реализации урожая сервисной компанией</div>
               </li>
               <li class="how-it-works-section__item how-it-works-section__item_img">
+                <!-- TODO: сделать высоту по ширине -->
                 <div class="how-it-works-section__wrap-img">
                   <img src="./img/media/hand-to-tree.jpg" alt="img: hand-to-tree" class="how-it-works-section__img" />
                 </div>
@@ -308,64 +315,66 @@
             на полях.
           </p>
           <div class="team-section__container">
-            <div class="team-section__slider team-slider">
-              <div class="team-slider__card">
-                <div class="team-slider__card-inner">
-                  <div class="team-slider__wrap-img"><img src="./img/user-1.jpg" alt="photo: user-1" class="team-slider__img" /></div>
-                  <div class="team-slider__name">Александр Савин</div>
-                  <div class="team-slider__desc">
-                    CEO и основатель проекта Более 8 лет в оливковом бизнесе, где под управлением более 300 000 оливковых деревьев. Более 10 лет опыта
-                    управления бизнесом и в маркетинге.
+            <div class="swiper">
+              <div class="team-section__slider team-slider">
+                <div class="team-slider__card">
+                  <div class="team-slider__card-inner">
+                    <div class="team-slider__wrap-img"><img src="./img/user-1.jpg" alt="photo: user-1" class="team-slider__img" /></div>
+                    <div class="team-slider__name">Александр Савин</div>
+                    <div class="team-slider__desc">
+                      CEO и основатель проекта Более 8 лет в оливковом бизнесе, где под управлением более 300 000 оливковых деревьев. Более 10 лет опыта
+                      управления бизнесом и в маркетинге.
+                    </div>
+                  </div>
+                </div>
+                <div class="team-slider__card">
+                  <div class="team-slider__card-inner">
+                    <div class="team-slider__wrap-img"><img src="./img/user-default.png" alt="photo: user-default" class="team-slider__img" /></div>
+                    <div class="team-slider__name">Мераб Липартелиани</div>
+                    <div class="team-slider__desc">
+                      Координатор процессов создания оливковых плантаций. Выпускник Высшего Сельскохозяйственного университета Тбилиси. Операционный сотрудник
+                      сельскохозяйственного научно-исследовательского центра при министерстве сельского хозяйства Грузии. 17-летний опыт работы в
+                      сельхозиндустрии, специализация – почвоведенье, удобрение, механизация, агрономическое сервисное обслуживание, организация логистики
+                      сельхозтехники.
+                    </div>
+                  </div>
+                </div>
+                <div class="team-slider__card">
+                  <div class="team-slider__card-inner">
+                    <div class="team-slider__wrap-img"><img src="./img/user-2.jpg" alt="photo: user-2" class="team-slider__img" /></div>
+                    <div class="team-slider__name">Педро Лечуга(Испания)</div>
+                    <div class="team-slider__desc">
+                      Консультант проекта. Более 50 лет опыта в выращивании оливок, создании новых плантаций, переработке оливки и торговле готовой продукцией в
+                      Испании, Канаде и США. Фермер, владелец оливковых плантаций и собственного бренда оливкового масла
+                    </div>
+                  </div>
+                </div>
+                <div class="team-slider__card">
+                  <div class="team-slider__card-inner">
+                    <div class="team-slider__wrap-img"><img src="./img/user-default.png" alt="photo: user-default" class="team-slider__img" /></div>
+                    <div class="team-slider__name">Ахмад Хасан Собейх (Египет)</div>
+                    <div class="team-slider__desc">
+                      10-летний опыт в развитии международной оптовой торговли продуктами сельскохозяйственной деятельности. Консультирует проект по вопросам
+                      международной торговли, обеспечивает коммуникацию между проектом, египетскими фермерами оливковой отрасли и владельцами заводов по
+                      переработке оливы.
+                    </div>
+                  </div>
+                </div>
+                <div class="team-slider__card">
+                  <div class="team-slider__card-inner">
+                    <div class="team-slider__wrap-img"><img src="./img/user-default.png" alt="photo: user-default" class="team-slider__img" /></div>
+                    <div class="team-slider__name">Жикирия Тикер (Турция)</div>
+                    <div class="team-slider__desc">
+                      Консультант проекта по связям с фермерами и участниками турецкой оливковой индустрии. Имеет международный опыт работы (в том числе в сфере
+                      производства косметики из оливки). Живет и работает в Турции – стране с наиболее активно развивающейся оливковой индустрией.
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="team-slider__card">
-                <div class="team-slider__card-inner">
-                  <div class="team-slider__wrap-img"><img src="./img/user-default.png" alt="photo: user-default" class="team-slider__img" /></div>
-                  <div class="team-slider__name">Мераб Липартелиани</div>
-                  <div class="team-slider__desc">
-                    Координатор процессов создания оливковых плантаций. Выпускник Высшего Сельскохозяйственного университета Тбилиси. Операционный сотрудник
-                    сельскохозяйственного научно-исследовательского центра при министерстве сельского хозяйства Грузии. 17-летний опыт работы в
-                    сельхозиндустрии, специализация – почвоведенье, удобрение, механизация, агрономическое сервисное обслуживание, организация логистики
-                    сельхозтехники.
-                  </div>
-                </div>
+              <div class="team-section__arrows">
+                <div class="team-section__arrow team-section__arrow_left team-section__arrow_not-active"></div>
+                <div class="team-section__arrow team-section__arrow_right"></div>
               </div>
-              <div class="team-slider__card">
-                <div class="team-slider__card-inner">
-                  <div class="team-slider__wrap-img"><img src="./img/user-2.jpg" alt="photo: user-2" class="team-slider__img" /></div>
-                  <div class="team-slider__name">Педро Лечуга(Испания)</div>
-                  <div class="team-slider__desc">
-                    Консультант проекта. Более 50 лет опыта в выращивании оливок, создании новых плантаций, переработке оливки и торговле готовой продукцией в
-                    Испании, Канаде и США. Фермер, владелец оливковых плантаций и собственного бренда оливкового масла
-                  </div>
-                </div>
-              </div>
-              <div class="team-slider__card">
-                <div class="team-slider__card-inner">
-                  <div class="team-slider__wrap-img"><img src="./img/user-default.png" alt="photo: user-default" class="team-slider__img" /></div>
-                  <div class="team-slider__name">Ахмад Хасан Собейх (Египет)</div>
-                  <div class="team-slider__desc">
-                    10-летний опыт в развитии международной оптовой торговли продуктами сельскохозяйственной деятельности. Консультирует проект по вопросам
-                    международной торговли, обеспечивает коммуникацию между проектом, египетскими фермерами оливковой отрасли и владельцами заводов по
-                    переработке оливы.
-                  </div>
-                </div>
-              </div>
-              <div class="team-slider__card">
-                <div class="team-slider__card-inner">
-                  <div class="team-slider__wrap-img"><img src="./img/user-default.png" alt="photo: user-default" class="team-slider__img" /></div>
-                  <div class="team-slider__name">Жикирия Тикер (Турция)</div>
-                  <div class="team-slider__desc">
-                    Консультант проекта по связям с фермерами и участниками турецкой оливковой индустрии. Имеет международный опыт работы (в том числе в сфере
-                    производства косметики из оливки). Живет и работает в Турции – стране с наиболее активно развивающейся оливковой индустрией.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="team-section__arrows">
-              <div class="team-section__arrow team-section__arrow_left team-section__arrow_not-active"></div>
-              <div class="team-section__arrow team-section__arrow_right"></div>
             </div>
           </div>
         </section>
@@ -409,7 +418,7 @@
             </div>
           </form>
         </section>
-        <section class="section-mt faq-section">
+        <section id="faq" class="section-mt faq-section">
           <div class="faq-section__title default-title">Faq</div>
           <div class="faq-section__container faq-section__container_desktop">
             <ul class="faq-section__list">
@@ -966,5 +975,8 @@
         </div>
       </div>
     </footer>
+
+    <script src="./js/accordion.min.js"></script>
+    <!-- <script src="./js/modules/slider.js"></script> -->
   </body>
 </html>
