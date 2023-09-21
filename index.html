@@ -4,16 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-
+    <title>Biodeposit</title>
+    <link rel="stylesheet" href="./libs/animate/animate.min.css" />
     <link rel="stylesheet" href="./libs/normalize.css" />
     <link rel="stylesheet" href="./css/main.min.css" />
-    <!-- <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
-/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   </head>
   <body>
     <div class="wrap-header">
@@ -28,17 +25,17 @@
           </div>
           <div class="header__navigate">
             <nav class="navigate">
-              <div class="navigate__wrapper-link"><a href="#" class="navigate__link">Доходность</a></div>
-              <div class="navigate__wrapper-link"><a href="#" class="navigate__link">Калькулятор</a></div>
-              <div class="navigate__wrapper-link"><a href="#" class="navigate__link">FAQ</a></div>
-              <div class="navigate__wrapper-link"><a href="#" class="navigate__link">Контакты</a></div>
+              <div class="navigate__wrapper-link"><a href="#expected-section" class="navigate__link">Доходность</a></div>
+              <div class="navigate__wrapper-link"><a href="#calculate-section" class="navigate__link">Калькулятор</a></div>
+              <div class="navigate__wrapper-link"><a href="#faq" class="navigate__link">FAQ</a></div>
+              <div class="navigate__wrapper-link"><a href="#tree-form-section" class="navigate__link">Контакты</a></div>
             </nav>
           </div>
           <div class="header__authorization">
             <div class="authorization">
-              <a href="#" class="authorization__link authorization__entry">Вход</a>
+              <a href="entry.html" class="authorization__link authorization__entry">Вход</a>
               <span class="authorization__delimiter"> / </span>
-              <a href="#" class="authorization__link authorization__registration">Регистрация</a>
+              <a href="register.html" class="authorization__link authorization__registration">Регистрация</a>
             </div>
           </div>
           <div class="header__localization">
@@ -46,17 +43,22 @@
           </div>
           <div class="header__menu">
             <div class="menu">
-              <button class="menu__btn"><span class="menu__btn-line"></span></button>
+              <button id="menu-btn" class="menu__btn"><span class="menu__btn-line"></span></button>
               <div class="menu__dropdown dropdown-menu" data-visible="hide">
-                <a href="#" class="dropdown-menu__link">Доходность</a>
-                <a href="#" class="dropdown-menu__link">Калькулятор</a>
-                <a href="#" class="dropdown-menu__link">FAQ</a>
-                <a href="#" class="dropdown-menu__link">Контакты</a>
-                <a href="#" class="dropdown-menu__link">Вход / Регистрация</a>
+                <a href="#expected-section" class="dropdown-menu__link">Доходность</a>
+                <a href="#calculate-section" class="dropdown-menu__link">Калькулятор</a>
+                <a href="#faq" class="dropdown-menu__link">FAQ</a>
+                <a href="#tree-form-section" class="dropdown-menu__link">Контакты</a>
+                <div class="dropdown-menu__auth">
+                  <a href="entry.html">Вход</a>
+                  <span> / </span>
+                  <a href="register.html">Регистрация</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <div id="menu-ground" class="header__ground header__ground_hide"></div>
       </header>
     </div>
     <div class="wrap-content">
@@ -109,7 +111,7 @@
             </div>
           </section>
         </div>
-        <section class="section-mt feature-section">
+        <section data-wow-duration="0.6s" class="wow fadeInUp section-mt feature-section">
           <h2 class="feature-section__title">
             <span>BioDeposit</span> — революционный проект, <br />соединяющий традиционный бизнес <br />с современными технологиями
           </h2>
@@ -160,26 +162,28 @@
             </div>
           </div>
         </section>
-        <section class="section-mt explanation-section">
+        <section data-wow-duration="0.6s" class="wow fadeInUp  section-mt explanation-section">
           <h2 class="explanation-section__title">Оливковое дерево - <span>высокодоходный актив</span></h2>
           <div class="explanation-section__container">
             <div class="explanation">
               <h3 class="explanation__title">За счет чего формируется высокая доходность инвестиций в оливковый бизнес?</h3>
-              <ul class="explanation__list">
-                <li class="explanation__item">Низкая стоимость плодородной земли по сравнению с Европой</li>
-                <li class="explanation__item">Низкая себестоимость выращивания, переработки и рабочей силы</li>
-                <li class="explanation__item">Поддержка государства, оказывающее поддержку сельскому хозяйству в виде инфраструктуры</li>
-                <li class="explanation__item">Льготное налогообложение для сельхозпроизводителей</li>
-                <li class="explanation__item">Применение современных технологий</li>
-                <li class="explanation__item">
-                  Регион Кахетия географически влажнее самых лучших регионов Испании, которая является мировым лидером в производстве оливок
-                </li>
-                <li class="explanation__item">Благоприятный экономический климат в Грузии</li>
-              </ul>
+              <div style="overflow: hidden;">
+                <ul class="explanation__list">
+                  <li class="explanation__item">Низкая стоимость плодородной земли по сравнению с Европой</li>
+                  <li class="explanation__item">Низкая себестоимость выращивания, переработки и рабочей силы</li>
+                  <li class="explanation__item">Поддержка государства, оказывающее поддержку сельскому хозяйству в виде инфраструктуры</li>
+                  <li class="explanation__item">Льготное налогообложение для сельхозпроизводителей</li>
+                  <li class="explanation__item">Применение современных технологий</li>
+                  <li class="explanation__item">
+                    Регион Кахетия географически влажнее самых лучших регионов Испании, которая является мировым лидером в производстве оливок
+                  </li>
+                  <li class="explanation__item">Благоприятный экономический климат в Грузии</li>
+                </ul>
+              </div>
             </div>
           </div>
         </section>
-        <section class="section-mt income-section">
+        <section data-wow-duration="0.6s" class="wow fadeInUp section-mt income-section">
           <h3 class="income-section__title">Как формируется доход инвестора?</h3>
           <div class="income-section__container">
             <div class="income-section__block">
@@ -206,7 +210,7 @@
           </div>
         </section>
         <!-- TODO: доделать высоту -->
-        <section class="section-mt how-it-works-section">
+        <section data-wow-duration="0.6s" class="wow fadeInUp section-mt how-it-works-section">
           <h3 class="how-it-works-section__title">Как устроен оливковый бизнес</h3>
           <div class="how-it-works-section__container">
             <ul class="how-it-works-section__list">
@@ -239,7 +243,7 @@
             </ul>
           </div>
         </section>
-        <section class="section-mt expected-section">
+        <section data-wow-duration="0.6s" class="wow fadeInUp section-mt expected-section" id="expected-section">
           <h4 class="expected-section__title">Ожидаемый доход <br />инвестора c 1 дерева</h4>
           <div class="expected-section__wrap-img"><img src="./img/expected-graph.png" alt="img: expected-graph" class="expected-section__img" /></div>
           <div class="expected-section__container">
@@ -250,7 +254,7 @@
             </div>
           </div>
         </section>
-        <section class="section-mt calculate-section">
+        <section data-wow-duration="0.6s" class="wow fadeInUp section-mt calculate-section" id="calculate-section">
           <h4 class="calculate-section__title">Рассчитайте свой доход:</h4>
           <div class="calculate-section__desc">Выберите цель инвестирования:</div>
           <div class="calculate-section__container">
@@ -277,7 +281,7 @@
             </div>
           </div>
         </section>
-        <section class="section-mt what-included-section">
+        <section data-wow-duration="0.6s" class="wow fadeInUp section-mt what-included-section">
           <h4 class="what-included-section__title default-title">Что входит в стоимость дерева?</h4>
           <div class="what-included-section__container">
             <div class="what-included-section__block included-block">
@@ -307,7 +311,7 @@
             </div>
           </div>
         </section>
-        <section class="section-mt team-section">
+        <section data-wow-duration="0.6s" class="wow fadeInUp section-mt team-section">
           <h4 class="team-section__title default-title">Опытная команда проекта</h4>
           <p class="team-section__desc">
             Мы выращиваем оливковые деревья уже более 8 лет <br />В нашей команде много специалистов различных сфер, таких как агрономы, специалисты по
@@ -316,69 +320,79 @@
           </p>
           <div class="team-section__container">
             <div class="swiper">
-              <div class="team-section__slider team-slider">
-                <div class="team-slider__card">
-                  <div class="team-slider__card-inner">
-                    <div class="team-slider__wrap-img"><img src="./img/user-1.jpg" alt="photo: user-1" class="team-slider__img" /></div>
-                    <div class="team-slider__name">Александр Савин</div>
-                    <div class="team-slider__desc">
-                      CEO и основатель проекта Более 8 лет в оливковом бизнесе, где под управлением более 300 000 оливковых деревьев. Более 10 лет опыта
-                      управления бизнесом и в маркетинге.
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="team-slider__card">
+                    <div class="team-slider__card-inner">
+                      <div class="team-slider__wrap-img"><img src="./img/user-1.jpg" alt="photo: user-1" class="team-slider__img" /></div>
+                      <div class="team-slider__name">Александр Савин</div>
+                      <div class="team-slider__desc">
+                        CEO и основатель проекта Более 8 лет в оливковом бизнесе, где под управлением более 300 000 оливковых деревьев. Более 10 лет опыта
+                        управления бизнесом и в маркетинге.
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="team-slider__card">
-                  <div class="team-slider__card-inner">
-                    <div class="team-slider__wrap-img"><img src="./img/user-default.png" alt="photo: user-default" class="team-slider__img" /></div>
-                    <div class="team-slider__name">Мераб Липартелиани</div>
-                    <div class="team-slider__desc">
-                      Координатор процессов создания оливковых плантаций. Выпускник Высшего Сельскохозяйственного университета Тбилиси. Операционный сотрудник
-                      сельскохозяйственного научно-исследовательского центра при министерстве сельского хозяйства Грузии. 17-летний опыт работы в
-                      сельхозиндустрии, специализация – почвоведенье, удобрение, механизация, агрономическое сервисное обслуживание, организация логистики
-                      сельхозтехники.
+                <div class="swiper-slide">
+                  <div class="team-slider__card">
+                    <div class="team-slider__card-inner">
+                      <div class="team-slider__wrap-img"><img src="./img/user-default.png" alt="photo: user-default" class="team-slider__img" /></div>
+                      <div class="team-slider__name">Мераб Липартелиани</div>
+                      <div class="team-slider__desc">
+                        Координатор процессов создания оливковых плантаций. Выпускник Высшего Сельскохозяйственного университета Тбилиси. Операционный сотрудник
+                        сельскохозяйственного научно-исследовательского центра при министерстве сельского хозяйства Грузии. 17-летний опыт работы в
+                        сельхозиндустрии, специализация – почвоведенье, удобрение, механизация, агрономическое сервисное обслуживание, организация логистики
+                        сельхозтехники.
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="team-slider__card">
-                  <div class="team-slider__card-inner">
-                    <div class="team-slider__wrap-img"><img src="./img/user-2.jpg" alt="photo: user-2" class="team-slider__img" /></div>
-                    <div class="team-slider__name">Педро Лечуга(Испания)</div>
-                    <div class="team-slider__desc">
-                      Консультант проекта. Более 50 лет опыта в выращивании оливок, создании новых плантаций, переработке оливки и торговле готовой продукцией в
-                      Испании, Канаде и США. Фермер, владелец оливковых плантаций и собственного бренда оливкового масла
+                <div class="swiper-slide">
+                  <div class="team-slider__card">
+                    <div class="team-slider__card-inner">
+                      <div class="team-slider__wrap-img"><img src="./img/user-2.jpg" alt="photo: user-2" class="team-slider__img" /></div>
+                      <div class="team-slider__name">Педро Лечуга(Испания)</div>
+                      <div class="team-slider__desc">
+                        Консультант проекта. Более 50 лет опыта в выращивании оливок, создании новых плантаций, переработке оливки и торговле готовой продукцией
+                        в Испании, Канаде и США. Фермер, владелец оливковых плантаций и собственного бренда оливкового масла
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="team-slider__card">
-                  <div class="team-slider__card-inner">
-                    <div class="team-slider__wrap-img"><img src="./img/user-default.png" alt="photo: user-default" class="team-slider__img" /></div>
-                    <div class="team-slider__name">Ахмад Хасан Собейх (Египет)</div>
-                    <div class="team-slider__desc">
-                      10-летний опыт в развитии международной оптовой торговли продуктами сельскохозяйственной деятельности. Консультирует проект по вопросам
-                      международной торговли, обеспечивает коммуникацию между проектом, египетскими фермерами оливковой отрасли и владельцами заводов по
-                      переработке оливы.
+                <div class="swiper-slide">
+                  <div class="team-slider__card">
+                    <div class="team-slider__card-inner">
+                      <div class="team-slider__wrap-img"><img src="./img/user-default.png" alt="photo: user-default" class="team-slider__img" /></div>
+                      <div class="team-slider__name">Ахмад Хасан Собейх (Египет)</div>
+                      <div class="team-slider__desc">
+                        10-летний опыт в развитии международной оптовой торговли продуктами сельскохозяйственной деятельности. Консультирует проект по вопросам
+                        международной торговли, обеспечивает коммуникацию между проектом, египетскими фермерами оливковой отрасли и владельцами заводов по
+                        переработке оливы.
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="team-slider__card">
-                  <div class="team-slider__card-inner">
-                    <div class="team-slider__wrap-img"><img src="./img/user-default.png" alt="photo: user-default" class="team-slider__img" /></div>
-                    <div class="team-slider__name">Жикирия Тикер (Турция)</div>
-                    <div class="team-slider__desc">
-                      Консультант проекта по связям с фермерами и участниками турецкой оливковой индустрии. Имеет международный опыт работы (в том числе в сфере
-                      производства косметики из оливки). Живет и работает в Турции – стране с наиболее активно развивающейся оливковой индустрией.
+                <div class="swiper-slide">
+                  <div class="team-slider__card">
+                    <div class="team-slider__card-inner">
+                      <div class="team-slider__wrap-img"><img src="./img/user-default.png" alt="photo: user-default" class="team-slider__img" /></div>
+                      <div class="team-slider__name">Жикирия Тикер (Турция)</div>
+                      <div class="team-slider__desc">
+                        Консультант проекта по связям с фермерами и участниками турецкой оливковой индустрии. Имеет международный опыт работы (в том числе в
+                        сфере производства косметики из оливки). Живет и работает в Турции – стране с наиболее активно развивающейся оливковой индустрией.
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="team-section__arrows">
-                <div class="team-section__arrow team-section__arrow_left team-section__arrow_not-active"></div>
+                <div class="team-section__arrow team-section__arrow_left"></div>
                 <div class="team-section__arrow team-section__arrow_right"></div>
               </div>
             </div>
           </div>
         </section>
-        <section class="section-mt tree-form-section">
+        <section data-wow-duration="0.6s" class="wow fadeInUp section-mt tree-form-section" id="tree-form-section">
           <h4 class="tree-form-section__title">
             Покупая оливковые деревья – <br /><span>вы инвестируете в свое <br />будущее и в будущее планеты!</span>
           </h4>
@@ -401,7 +415,7 @@
             </div>
           </div>
         </section>
-        <section class="section-mt partner-form-section">
+        <section data-wow-duration="0.6s" class="wow fadeInUp section-mt partner-form-section">
           <h4 class="partner-form-section__title">Стать <span>партнером</span></h4>
           <p class="partner-form-section__desc">
             Наша компания постоянно развивается и расширяет свой штат партнеров по всему миру. Мы платим прозрачную и честную комиссию в момент сделки с
@@ -418,7 +432,7 @@
             </div>
           </form>
         </section>
-        <section id="faq" class="section-mt faq-section">
+        <section data-wow-duration="0.6s" class="wow fadeInUp section-mt faq-section" id="faq">
           <div class="faq-section__title default-title">Faq</div>
           <div class="faq-section__container faq-section__container_desktop">
             <ul class="faq-section__list">
@@ -944,7 +958,7 @@
             </ul>
           </div>
         </section>
-        <section class="section-mt difference-section">
+        <section data-wow-duration="0.6s" class="wow fadeInUp section-mt difference-section">
           <h2 class="difference-section__title">Благородный бизнес<span>, который вы оставите </span>в наследство своим потомкам</h2>
           <div class="difference-section__year-foundation">BioDeposit <span>since 2017</span></div>
         </section>
@@ -953,8 +967,8 @@
     <footer class="footer">
       <div class="footer__inner">
         <div class="footer__nav">
-          <a href="#" class="footer__link">Доходность</a><a href="#" class="footer__link">Калькулятор</a><a href="#" class="footer__link">FAQ</a
-          ><a href="#" class="footer__link">Контакты</a>
+          <a href="#expected-section" class="footer__link">Доходность</a><a href="#calculate-section" class="footer__link">Калькулятор</a
+          ><a href="#faq" class="footer__link">FAQ</a><a href="#tree-form-section" class="footer__link">Контакты</a>
         </div>
         <div class="footer__social social">
           <div class="social__box">
@@ -975,8 +989,54 @@
         </div>
       </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-    <script src="./js/accordion.min.js"></script>
-    <!-- <script src="./js/modules/slider.js"></script> -->
+    <script>
+      if (window.innerWidth >= 960) {
+        
+      let tween = gsap.to(".explanation__list", {y:'-65%'}),
+      st = ScrollTrigger.create({
+          trigger: ".explanation-section",
+          start: "80% center",
+          end: "280% top",
+          animation: tween,
+          // markers: true,
+          scrub: true,
+          pin: true,
+        });
+      }
+      new Swiper('.swiper', {
+  slidesPerView: 1,
+  navigation: {
+    disabledClass: 'team-section__arrow_not-active',
+    nextEl: '.team-section__arrow_right',
+    prevEl: '.team-section__arrow_left',
+  },
+  breakpoints: {
+    480: {
+      slidesPerView: 1.5,
+    },
+    640: {
+      slidesPerView: 2,
+    },
+    960: {
+      slidesPerView: 3,
+      
+  grabCursor: true,
+    }
+  }
+});
+      
+      
+    </script>
+    <script src="./libs/wow/wow.min.js"></script>
+    <script>
+      new WOW({
+        offset: 0,
+        mobile: false,
+      }).init();
+    </script>
+    <script src="./js/index.min.js"></script>
   </body>
 </html>

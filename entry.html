@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auth</title>
+
+    <link rel="stylesheet" href="./libs/normalize.css" />
+    <link rel="stylesheet" href="./css/auth.min.css" />
+  </head>
+  <body>
+    <div class="wrap-header">
+      <header class="header">
+        <div class="header__inner">
+          <div class="header__logo">
+            <div class="logo">
+              <a href="/" class="logo__link">
+                <img src="./img/logo.svg" alt="logo: biodeposit" class="logo__img" />
+              </a>
+            </div>
+          </div>
+          <div class="header__navigate">
+            <nav class="navigate">
+              <div class="navigate__wrapper-link"><a href="#expected-section" class="navigate__link">Доходность</a></div>
+              <div class="navigate__wrapper-link"><a href="#calculate-section" class="navigate__link">Калькулятор</a></div>
+              <div class="navigate__wrapper-link"><a href="#faq" class="navigate__link">FAQ</a></div>
+              <div class="navigate__wrapper-link"><a href="#tree-form-section" class="navigate__link">Контакты</a></div>
+            </nav>
+          </div>
+          <div class="header__authorization">
+            <div class="authorization">
+              <a href="entry.html" class="authorization__link authorization__entry">Вход</a>
+              <span class="authorization__delimiter"> / </span>
+              <a href="register.html" class="authorization__link authorization__registration">Регистрация</a>
+            </div>
+          </div>
+          <div class="header__localization">
+            <div class="localization"><button class="localization__btn localization__btn_active">RU</button><button class="localization__btn">EN</button></div>
+          </div>
+          <div class="header__menu">
+            <div class="menu">
+              <button id="menu-btn" class="menu__btn"><span class="menu__btn-line"></span></button>
+              <div class="menu__dropdown dropdown-menu" data-visible="hide">
+                <a href="#expected-section" class="dropdown-menu__link">Доходность</a>
+                <a href="#calculate-section" class="dropdown-menu__link">Калькулятор</a>
+                <a href="#faq" class="dropdown-menu__link">FAQ</a>
+                <a href="#tree-form-section" class="dropdown-menu__link">Контакты</a>
+                <div class="dropdown-menu__auth">
+                  <a href="entry.html">Вход</a>
+                  <span> / </span>
+                  <a href="register.html">Регистрация</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="menu-ground" class="header__ground header__ground_hide"></div>
+      </header>
+    </div>
+    <div class="wrap-content">
+      <main class="content">
+        <div id="entry" class="entry auth">
+          <div class="auth__inner">
+            <form action="" class="auth__form form-entry form-auth">
+              <div class="form-entry__inner">
+                <h3 class="def-title form-auth__title">Вход</h3>
+                <input type="email" name="entry-email" id="entry-email" class="def-input form-auth__input" placeholder="Электронная почта" />
+                <div class="form-entry__wrap-password">
+                  <input
+                    type="password"
+                    name="entry-password"
+                    id="entry-password"
+                    class="def-input form-auth__input def-input_error" placeholder="Пароль" />
+                    <button class="form-entry__btn-eye"></button>
+                </div>
+                <div class="form-auth__message def-desc">
+                  Неправильный пароль, введите корректный пароль, либо <a href="#" class="def-link">восстановите пароль</a>
+                </div>
+                <div class="form-entry__forgot"><a href="#" class="def-link">Забыли пароль?</a></div>
+                <button type="submit" class="def-btn def-btn_entry form-auth__btn">Войти</button>
+                <div class="form-entry__register"><a href="" class="def-link form-entry__register-link">Регистрация</a></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__nav">
+          <a href="#expected-section" class="footer__link">Доходность</a><a href="#calculate-section" class="footer__link">Калькулятор</a
+          ><a href="#faq" class="footer__link">FAQ</a><a href="#tree-form-section" class="footer__link">Контакты</a>
+        </div>
+        <div class="footer__social social">
+          <div class="social__box">
+            <a href="#" class="social__link"><img src="./img/icons/telegram.svg" alt="icon: telegram" class="social__icon" /></a>
+          </div>
+          <div class="social__box">
+            <a href="#" class="social__link"><img src="./img/icons/insta.svg" alt="icon: instagram" class="social__icon" /></a>
+          </div>
+          <div class="social__box">
+            <a href="#" class="social__link"><img src="./img/icons/facebook.svg" alt="icon: facebook" class="social__icon" /></a>
+          </div>
+          <div class="social__box">
+            <a href="#" class="social__link"><img src="./img/icons/youtube.svg" alt="icon: youtube" class="social__icon" /></a>
+          </div>
+        </div>
+        <div class="footer__copyright">
+          <div class="copyright">©2023 BioDeposit. Все права защищены</div>
+        </div>
+      </div>
+    </footer>
+    <script src="./js/menu.min.js"></script>
+  </body>
+</html>
