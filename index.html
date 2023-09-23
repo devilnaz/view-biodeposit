@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/main.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.11.1/math.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   </head>
   <body>
@@ -18,7 +19,7 @@
         <div class="header__inner">
           <div class="header__logo">
             <div class="logo">
-              <a href="/" class="logo__link">
+              <a href="./" class="logo__link">
                 <img src="./img/logo.svg" alt="logo: biodeposit" class="logo__img" />
               </a>
             </div>
@@ -162,12 +163,12 @@
             </div>
           </div>
         </section>
-        <section data-wow-duration="0.6s" class="wow fadeInUp  section-mt explanation-section">
+        <section data-wow-duration="0.6s" class="wow fadeInUp section-mt explanation-section">
           <h2 class="explanation-section__title">Оливковое дерево - <span>высокодоходный актив</span></h2>
           <div class="explanation-section__container">
             <div class="explanation">
               <h3 class="explanation__title">За счет чего формируется высокая доходность инвестиций в оливковый бизнес?</h3>
-              <div style="overflow: hidden;">
+              <div style="overflow: hidden">
                 <ul class="explanation__list">
                   <li class="explanation__item">Низкая стоимость плодородной земли по сравнению с Европой</li>
                   <li class="explanation__item">Низкая себестоимость выращивания, переработки и рабочей силы</li>
@@ -209,7 +210,6 @@
             </div>
           </div>
         </section>
-        <!-- TODO: доделать высоту -->
         <section data-wow-duration="0.6s" class="wow fadeInUp section-mt how-it-works-section">
           <h3 class="how-it-works-section__title">Как устроен оливковый бизнес</h3>
           <div class="how-it-works-section__container">
@@ -235,7 +235,6 @@
                 <div class="how-it-works-section__desc">С 4-го года инвесторы начинают получать доход после реализации урожая сервисной компанией</div>
               </li>
               <li class="how-it-works-section__item how-it-works-section__item_img">
-                <!-- TODO: сделать высоту по ширине -->
                 <div class="how-it-works-section__wrap-img">
                   <img src="./img/media/hand-to-tree.jpg" alt="img: hand-to-tree" class="how-it-works-section__img" />
                 </div>
@@ -265,7 +264,7 @@
                   Стабильные долгосрочные инвестиции в оливковый бизнес с прогнозируемой высокой ожидаемой доходностью в длительном периоде времени за счет
                   покупки молодых деревьев с выходом на урожай в 4-ый год
                 </div>
-                <div class="calculate-card__wrap-btn"><button class="calculate-card__btn">Выбрать</button></div>
+                <div class="calculate-card__wrap-btn"><button data-open="modal-capital" class="calculate-card__btn">Выбрать</button></div>
               </div>
             </div>
             <div class="calculate-section__block">
@@ -276,7 +275,7 @@
                   актива: • Период накопления капитала – до достижения 18 лет ребенку: покупка деревьев и реинвестирование дохода в новые молодые деревья в
                   период накопления • Период получения дохода после периода накопления или продажа части или всех деревьев
                 </div>
-                <div class="calculate-card__wrap-btn"><button class="calculate-card__btn">Выбрать</button></div>
+                <div class="calculate-card__wrap-btn"><button data-open="modal-invest" class="calculate-card__btn">Выбрать</button></div>
               </div>
             </div>
           </div>
@@ -989,54 +988,280 @@
         </div>
       </div>
     </footer>
+
+    <div id="modal-invest" class="modal">
+      <div class="modal__overlay">
+        <div class="wrap-window-modal">
+          <div class="modal__window window-modal">
+            <div class="window-modal__inner">
+              <button class="window-modal__close"></button>
+              <div class="income-calculator">
+                <div class="calculator__title income-calculator__title">Калькулятор <br />ожидаемого дохода</div>
+                <div class="income-calculator__container">
+                  <div class="initial-data">
+                    <div class="initial-data__column">
+                      <div class="calculator__card calculator__icon calculator__icon_tree">
+                        <div class="calculator__title calculator__title_sm">Количество деревьев:</div>
+                        <div class="calculator__card-range">
+                          <input
+                            id="tree-count-input"
+                            class="calculator__input"
+                            type="range"
+                            min="1"
+                            max="3000"
+                            step="1"
+                            value="1"
+                            oninput="outputUpdate(this)" />
+                          <output class="calculator__output" id="tree-count-output" for="tree-count-input"><span>1</span> шт</output>
+                          <span class="calculator__range-value calculator__range-value_start">1</span
+                          ><span class="calculator__range-value calculator__range-value_finish">3000</span>
+                        </div>
+                        <div class="calculator__card-desc">
+                          <div class="calculator__desc">Размер инвестиций</div>
+                          <div class="calculator__card-num calculator__num calculator__num_md">$<span data-num="investment-size">35 400</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="initial-data__column">
+                      <div class="initial-data__panel initial-data__panel_average-income">
+                        <div class="initial-data__panel-title calculator__title calculator__title_xs">Средний ожидаемый доход в год:</div>
+                        <div class="calculator__num initial-data__num">
+                          <span>$</span>
+                          <span data-num="average-income">133 800</span>
+                          <span class="initial-data__num-delimiter"></span>
+                          <span  data-num="average-percentage">55,8</span>
+                          <span>%</span>
+                        </div>
+                      </div>
+                      <div class="initial-data__panel initial-data__panel_green">
+                        <div class="initial-data__panel-title calculator__white calculator__title calculator__title_xs">Ожидаемый доход за первые 10 лет:</div>
+                        <div class="calculator__white calculator__num initial-data__num">
+                          <span>$</span>
+                          <span data-num="income-first-years">156 678</span>
+                          <span class="initial-data__num-delimiter"></span>
+                          <span data-num="percentage-first-years">443</span>
+                          <span>%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="income-calculator__container">
+                  <div class="expected-income">
+                    <div class="calculator__title calculator__title_sm">Доход в год в первые 10 лет</div>
+                    <ul class="expected-income__container">
+                      <li class="expected-income__card">
+                        <div class="expected-income__card-title calculator__title calculator__title_xs">1 год</div>
+                        <div class="expected-income__card-num calculator__num calculator__num_sm">
+                          <div class="expected-income__profit">$<span data-num="expected-income">0</span></div>
+                          <div class="expected-income__percentage">
+                            <span data-num="expected-percentage">0,0</span><span>%</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="expected-income__card">
+                        <div class="expected-income__card-title calculator__title calculator__title_xs">2 год</div>
+                        <div class="expected-income__card-num calculator__num calculator__num_sm">
+                          <div class="expected-income__profit">$<span data-num="expected-income">0</span></div>
+                          <div class="expected-income__percentage">
+                            <span data-num="expected-percentage">0,0</span><span>%</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="expected-income__card">
+                        <div class="expected-income__card-title calculator__title calculator__title_xs">3 год</div>
+                        <div class="expected-income__card-num calculator__num calculator__num_sm">
+                          <div class="expected-income__profit">$<span data-num="expected-income">0</span></div>
+                          <div class="expected-income__percentage">
+                            <span data-num="expected-percentage">0,0</span><span>%</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="expected-income__card">
+                        <div class="expected-income__card-title calculator__title calculator__title_xs">4 год</div>
+                        <div class="expected-income__card-num calculator__num calculator__num_sm">
+                          <div class="expected-income__profit">$<span data-num="expected-income">120 000</span></div>
+                          <div class="expected-income__percentage">
+                            <span data-num="expected-percentage">50,0</span><span>%</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="expected-income__card">
+                        <div class="expected-income__card-title calculator__title calculator__title_xs">5 год</div>
+                        <div class="expected-income__card-num calculator__num calculator__num_sm">
+                          <div class="expected-income__profit">$<span data-num="expected-income">144 000</span></div>
+                          <div class="expected-income__percentage">
+                            <span data-num="expected-percentage">60,0</span><span>%</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="expected-income__card">
+                        <div class="expected-income__card-title calculator__title calculator__title_xs">6 год</div>
+                        <div class="expected-income__card-num calculator__num calculator__num_sm">
+                          <div class="expected-income__profit">$<span data-num="expected-income">162 000</span></div>
+                          <div class="expected-income__percentage">
+                            <span data-num="expected-percentage">67,5</span><span>%</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="expected-income__card">
+                        <div class="expected-income__card-title calculator__title calculator__title_xs">7 год</div>
+                        <div class="expected-income__card-num calculator__num calculator__num_sm">
+                          <div class="expected-income__profit">$<span data-num="expected-income">180 000</span></div>
+                          <div class="expected-income__percentage">
+                            <span data-num="expected-percentage">75,0</span><span>%</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="expected-income__card">
+                        <div class="expected-income__card-title calculator__title calculator__title_xs">8 год</div>
+                        <div class="expected-income__card-num calculator__num calculator__num_sm">
+                          <div class="expected-income__profit">$<span data-num="expected-income">204 000</span></div>
+                          <div class="expected-income__percentage">
+                            <span data-num="expected-percentage">85,0</span><span>%</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="expected-income__card">
+                        <div class="expected-income__card-title calculator__title calculator__title_xs">9 год</div>
+                        <div class="expected-income__card-num calculator__num calculator__num_sm">
+                          <div class="expected-income__profit">$<span data-num="expected-income">240 000</span></div>
+                          <div class="expected-income__percentage">
+                            <span data-num="expected-percentage">100,0</span><span>%</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="expected-income__card expected-income__card_accent">
+                        <div class="expected-income__card-title calculator__title calculator__title_xs">10 год и далее</div>
+                        <div class="expected-income__card-num calculator__num calculator__num_sm">
+                          <div class="expected-income__profit">$<span data-num="expected-income">288 000</span></div>
+                          <div class="expected-income__percentage">
+                            <span data-num="expected-percentage">120,0</span><span>%</span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="income-calculator__container">
+                  <div class="extra-options">
+                    <div class="extra-options__title calculator__title calculator__title_md">Дополнительные параметры:</div>
+                    <div class="extra-options__oil">
+                      <div class="calculator__card calculator__icon calculator__icon_oil">
+                        <div class="calculator__title calculator__title_sm">Стоимость оливкого масла, 1л:</div>
+                        <div class="calculator__card-range">
+                          <input id="oil-price-input" class="calculator__input" type="range" min="0" max="10" step="1" value="5" oninput="outputUpdate(this)" />
+                          <output class="calculator__output" id="oil-price-output" for="oil-price-input"><span>0</span></output>
+                          <span class="calculator__range-value calculator__range-value_start">0</span
+                          ><span class="calculator__range-value calculator__range-value_finish">10</span>
+                        </div>
+                        <div class="calculator__card-desc">
+                          <div  class="extra-options__desc calculator__desc">Стоимость оливкого масла</div>
+                          <div class="calculator__card-num calculator__num calculator__num_md">$<span data-num="oil-price">5,0</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="extra-options__productivity">
+                      <div class="calculator__card calculator__icon calculator__icon_olive">
+                        <div class="extra-options__productivity-title calculator__title calculator__title_sm">
+                          Урожайность на 1 дерево, кг оливок с 10-го года:
+                        </div>
+                        <div class="calculator__card-range">
+                          <input
+                            id="productivity-input"
+                            class="calculator__input"
+                            type="range"
+                            min="1"
+                            max="200"
+                            step="1"
+                            value="80"
+                            oninput="outputUpdate(this)" />
+                          <output class="calculator__output" id="productivity-output" for="productivity-input"><span>0</span></output>
+                          <span class="calculator__range-value calculator__range-value_start">0</span
+                          ><span class="calculator__range-value calculator__range-value_finish">200</span>
+                        </div>
+                        <div class="calculator__card-desc">
+                          <div class="extra-options__desc calculator__desc">Уражайность на 1 дерево</div>
+                          <div class="calculator__card-num calculator__num calculator__num_md"><span data-num="productivity">80</span> кг</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="calculator__btn income-calculator__btn">Купить деревья</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="./libs/wow/wow.min.js"></script>
 
     <script>
-      if (window.innerWidth >= 960) {
-        
-      let tween = gsap.to(".explanation__list", {y:'-65%'}),
-      st = ScrollTrigger.create({
-          trigger: ".explanation-section",
-          start: "300 center",
-          end: "280% top",
-          animation: tween,
-          // markers: true,
-          scrub: true,
-          pin: true,
-        });
-      }
-      new Swiper('.swiper', {
-  slidesPerView: 1,
-  navigation: {
-    disabledClass: 'team-section__arrow_not-active',
-    nextEl: '.team-section__arrow_right',
-    prevEl: '.team-section__arrow_left',
-  },
-  breakpoints: {
-    480: {
-      slidesPerView: 1.5,
-    },
-    640: {
-      slidesPerView: 2,
-    },
-    960: {
-      slidesPerView: 3,
+      // gsap.utils.toArray('.explanation__item').forEach(element => {
+      //   ScrollTrigger.create({
+      //     // trigger: '.explanation__list',
+      //     trigger: element,
+      //     markers: true,
+      //     start: "top +=200",
+      //     end: 'bottom +=200',
+      //     scrub: true,
+      //     pin: true,
+      //     pinSpacing: false
+      //   })
+      // });
       
-  grabCursor: true,
-    }
-  }
-});
-      
-      
-    </script>
-    <script src="./libs/wow/wow.min.js"></script>
-    <script>
       new WOW({
         offset: 0,
         mobile: false,
       }).init();
+
+      if (window.innerWidth >= 960) {
+        let tween = gsap.to('.explanation__list', { y: '-65%' }),
+          st = ScrollTrigger.create({
+            trigger: '.explanation-section',
+            start: '300 center',
+            end: '280% top',
+            animation: tween,
+            // markers: true,
+            scrub: true,
+            pin: true,
+          });
+      }
+      
+      new Swiper('.swiper', {
+        slidesPerView: 1,
+        navigation: {
+          disabledClass: 'team-section__arrow_not-active',
+          nextEl: '.team-section__arrow_right',
+          prevEl: '.team-section__arrow_left',
+        },
+        breakpoints: {
+          480: {
+            slidesPerView: 1.5,
+          },
+          640: {
+            slidesPerView: 2,
+          },
+          960: {
+            slidesPerView: 3,
+            
+        grabCursor: true,
+          }
+        }
+      });
+
     </script>
+    <!-- <script src="./js/modules/scroll.js"></script>
+    <script src="./js/modules/accordion.js"></script>
+    <script src="./js/modules/slider.js"></script>
+    <script src="./js/modules/menu.js"></script>
+    <script src="./js/modules/modal.js"></script>
+    
+    <script src="./js/modules/calculate.js"></script> -->
     <script src="./js/index.min.js"></script>
   </body>
 </html>
