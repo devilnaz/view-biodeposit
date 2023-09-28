@@ -356,7 +356,7 @@
             <h4 class="expected-section__title" data-i18n="[html]expected.title">Ожидаемый доход <br />инвестора c 1 дерева</h4>
             <!-- <div class="expected-section__wrap-img"><img src="./img/expected-graph.png" alt="img: expected-graph" class="expected-section__img" /></div> -->
             <div class="expected-section__bar-chart">
-              <canvas id="main-bar-chart"></canvas>
+              <!-- <canvas id="main-bar-chart"></canvas>
               <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
               <script>
                 let averagePrice;
@@ -381,9 +381,6 @@
                     // skipNull: false,
                     // inflateAmount: 0,
                     // maxBarThickness: 10, // max-width для столбцов
-                    // layout: {
-                    //   autoPadding: false,
-                    // },
                     layout: {
                       padding: 0,
                     },
@@ -393,34 +390,13 @@
                         // всплывающие подсказки
                         enabled: false,
                       },
-                      // title: {
-                      //   font: {
-                      //     size: 26
-                      //   }
-                      // }
                     },
                     borderWidth: 2,
-                    borderRadius: 5,
+                    borderRadius: 4,
                     borderSkipped: false, // добавить border-radius для bottom
                     // inflateAmount: 100,
                     // borderWidth: 0,
                     scales: {
-                      // scales: {
-                      //   xAxes: [
-                      //     {
-                      //       ticks: {
-                      //         display: false,
-                      //       },
-                      //     },
-                      //   ],
-                      //   yAxes: [
-                      //     {
-                      //       ticks: {
-                      //         display: false,
-                      //       },
-                      //     },
-                      //   ],
-                      // },
                       x: {
                         grid: {
                           display: false,
@@ -430,7 +406,7 @@
                           color: '#353535',
                           font: {
                             size: 20,
-                            family: 'Inter',
+                            family: 'Roboto',
                             weight: '600'
                           }
                         },
@@ -447,7 +423,7 @@
                           display: false,
                           font: {
                             size: 20,
-                            family: 'Inter',
+                            family: 'Onset',
                             weight: '600'
                           }
                         },
@@ -464,7 +440,6 @@
                         label: 'at average price',
                         data: averagePrice,
                         backgroundColor: 'white',
-                        // hoverBackgroundColor: '#000',
                         borderColor: '#929292',
                         showLine: false,
                       },
@@ -472,22 +447,110 @@
                         label: 'at current price',
                         data: currentPrice,
                         backgroundColor: '#87b81d',
-                        // borderRadius: 5,
-                        // borderWidth: 2,
                         borderColor: '#87b81d',
                         showLine: false,
                       },
                     ],
                   },
-                  // options: {
-                  //   scales: {
-                  //     y: {
-                  //       beginAtZero: true,
-                  //     },
-                  //   },
-                  // },
                 });
-              </script>
+              </script> -->
+            </div>
+            <div class="expected-section__bar">
+              <div class="expected-section__bar-inner">
+                <div class="invest-bar">
+                  <div class="invest-bar__column">
+                    <div class="invest-bar__indicators">
+                      <div class="invest-bar__wrap-indicator">
+                        <span class="invest-bar__text"></span>
+                        <div class="invest-bar__indicator invest-bar__indicator_average"></div>
+                      </div>
+                      <div class="invest-bar__wrap-indicator">
+                        <span class="invest-bar__text"></span>
+                        <div class="invest-bar__indicator"></div>
+                      </div>
+                    </div>
+                    <div class="invest-bar__ticks">+4 года</div>
+                  </div>
+                  <div class="invest-bar__column">
+                    <div class="invest-bar__indicators">
+                      <div class="invest-bar__wrap-indicator">
+                        <span class="invest-bar__text"></span>
+                        <div class="invest-bar__indicator invest-bar__indicator_average"></div>
+                      </div>
+                      <div class="invest-bar__wrap-indicator">
+                        <span class="invest-bar__text"></span>
+                        <div class="invest-bar__indicator"></div>
+                      </div>
+                    </div>
+                    <div class="invest-bar__ticks">+5 лет</div>
+                  </div>
+                  <div class="invest-bar__column">
+                    <div class="invest-bar__indicators">
+                      <div class="invest-bar__wrap-indicator">
+                        <span class="invest-bar__text"></span>
+                        <div class="invest-bar__indicator invest-bar__indicator_average"></div>
+                      </div>
+                      <div class="invest-bar__wrap-indicator">
+                        <span class="invest-bar__text"></span>
+                        <div class="invest-bar__indicator"></div>
+                      </div>
+                    </div>
+                    <div class="invest-bar__ticks">+6 лет</div>
+                  </div>
+                  <div class="invest-bar__column">
+                    <div class="invest-bar__indicators">
+                      <div class="invest-bar__wrap-indicator">
+                        <span class="invest-bar__text"></span>
+                        <div class="invest-bar__indicator invest-bar__indicator_average"></div>
+                      </div>
+                      <div class="invest-bar__wrap-indicator">
+                        <span class="invest-bar__text"></span>
+                        <div class="invest-bar__indicator"></div>
+                      </div>
+                    </div>
+                    <div class="invest-bar__ticks">+7 лет</div>
+                  </div>
+                  <div class="invest-bar__column">
+                    <div class="invest-bar__indicators">
+                      <div class="invest-bar__wrap-indicator">
+                        <span class="invest-bar__text"></span>
+                        <div class="invest-bar__indicator invest-bar__indicator_average"></div>
+                      </div>
+                      <div class="invest-bar__wrap-indicator">
+                        <span class="invest-bar__text"></span>
+                        <div class="invest-bar__indicator"></div>
+                      </div>
+                    </div>
+                    <div class="invest-bar__ticks">+8 лет</div>
+                  </div>
+                  <div class="invest-bar__column">
+                    <div class="invest-bar__indicators">
+                      <div class="invest-bar__wrap-indicator">
+                        <span class="invest-bar__text"></span>
+                        <div class="invest-bar__indicator invest-bar__indicator_average"></div>
+                      </div>
+                      <div class="invest-bar__wrap-indicator">
+                        <span class="invest-bar__text"></span>
+                        <div class="invest-bar__indicator"></div>
+                      </div>
+                    </div>
+                    <div class="invest-bar__ticks">+9 лет</div>
+                  </div>
+                  <div class="invest-bar__column">
+                    <div class="invest-bar__indicators">
+                      <div class="invest-bar__wrap-indicator">
+                        <span class="invest-bar__text"></span>
+                        <div class="invest-bar__indicator invest-bar__indicator_average"></div>
+                      </div>
+                      <div class="invest-bar__wrap-indicator">
+                        <span class="invest-bar__text invest-bar__text_green"></span>
+                        <div class="invest-bar__indicator"></div>
+                      </div>
+                    </div>
+                    <div class="invest-bar__ticks">+10 лет и далее</div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="expected-section__container">
               <div class="expected-section__container-inner">
