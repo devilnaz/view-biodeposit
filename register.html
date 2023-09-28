@@ -6,8 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Auth</title>
 
+    <link type="image/x-icon" href="./favicon.ico" rel="shortcut icon" />
+    <link type="Image/x-icon" href="./favicon.ico" rel="icon" />
+    
     <link rel="stylesheet" href="./libs/normalize.css" />
     <link rel="stylesheet" href="./css/auth.min.css" />
+    
+    <script src="https://unpkg.com/i18next@23.5.1/dist/umd/i18next.min.js"></script>
+    <script src="./libs/loc-i18next.min.js"></script>
   </head>
   <body>
     
@@ -23,34 +29,34 @@
           </div>
           <div class="header__navigate">
             <nav class="navigate">
-              <div class="navigate__wrapper-link"><a href="#expected-section" class="navigate__link">Доходность</a></div>
-              <div class="navigate__wrapper-link"><a href="#calculate-section" class="navigate__link">Калькулятор</a></div>
-              <div class="navigate__wrapper-link"><a href="#faq" class="navigate__link">FAQ</a></div>
-              <div class="navigate__wrapper-link"><a href="#tree-form-section" class="navigate__link">Контакты</a></div>
+              <div class="navigate__wrapper-link"><a href="./#expected-section" class="navigate__link" data-i18n="nav.roi">Доходность</a></div>
+              <div class="navigate__wrapper-link"><a href="./#calculate-section" class="navigate__link" data-i18n="nav.yieldCalculator">Калькулятор</a></div>
+              <div class="navigate__wrapper-link" data-i18n="nav.faq"><a href="./#faq" class="navigate__link">FAQ</a></div>
+              <div class="navigate__wrapper-link"><a href="./#tree-form-section" class="navigate__link" data-i18n="nav.contactUs">Контакты</a></div>
             </nav>
           </div>
           <div class="header__authorization">
             <div class="authorization">
-              <a href="entry.html" class="authorization__link authorization__entry">Вход</a>
+              <a href="entry.html" class="authorization__link authorization__entry" data-i18n="auth.logIn">Вход</a>
               <span class="authorization__delimiter"> / </span>
-              <a href="register.html" class="authorization__link authorization__registration">Регистрация</a>
+              <a href="register.html" class="authorization__link authorization__registration" data-i18n="auth.registration">Регистрация</a>
             </div>
           </div>
           <div class="header__localization">
-            <div class="localization"><button class="localization__btn localization__btn_active">RU</button><button class="localization__btn">EN</button></div>
+            <div class="localization"><button class="localization__btn localization__btn_active" data-lang="ru" >RU</button><button class="localization__btn" data-lang="en" >EN</button></div>
           </div>
           <div class="header__menu">
             <div class="menu">
               <button id="menu-btn" class="menu__btn"><span class="menu__btn-line"></span></button>
               <div class="menu__dropdown dropdown-menu" data-visible="hide">
-                <a href="#expected-section" class="dropdown-menu__link">Доходность</a>
-                <a href="#calculate-section" class="dropdown-menu__link">Калькулятор</a>
-                <a href="#faq" class="dropdown-menu__link">FAQ</a>
-                <a href="#tree-form-section" class="dropdown-menu__link">Контакты</a>
+                <a href="./#expected-section" class="dropdown-menu__link" data-i18n="nav.roi">Доходность</a>
+                <a href="./#calculate-section" class="dropdown-menu__link" data-i18n="nav.yieldCalculator">Калькулятор</a>
+                <a href="./#faq" class="dropdown-menu__link" data-i18n="nav.faq">FAQ</a>
+                <a href="./#tree-form-section" class="dropdown-menu__link" data-i18n="nav.contactUs">Контакты</a>
                 <div class="dropdown-menu__auth">
-                  <a href="entry.html">Вход</a>
+                  <a href="entry.html" data-i18n="auth.logIn">Вход</a>
                   <span> / </span>
-                  <a href="register.html">Регистрация</a>
+                  <a href="register.html" data-i18n="auth.registration">Регистрация</a>
                 </div>
               </div>
             </div>
@@ -64,20 +70,20 @@
         <div id="register" class="register auth">
           <div class="auth__inner">
             <form action="" class="auth__form form-register">
-              <div class="def-title form-auth__title">Регистрация</div>
-              <input type="text" name="firstname-register" class="def-input form-auth__input" placeholder="Имя">
-              <input type="text" name="secondname-register" class="def-input form-auth__input" placeholder="Фамилия">
-              <input type="tel" name="phone-register" class="def-input form-auth__input" placeholder="Номер телефона">
-              <input type="email" name="email-register" class="def-input form-auth__input" placeholder="Электронная почта">
-              <input type="password" name="password-register" class="def-input form-auth__input" placeholder="Пароль">
-              <input type="password" name="doublepassword-register" class="def-input form-auth__input" placeholder="Подтверждение пароля">
-              <input type="number" name="code-register" class="def-input form-auth__input" placeholder="Код">
+              <div class="def-title form-auth__title" data-i18n="auth.registration">Регистрация</div>
+              <input  data-i18n="[placeholder]auth.name" type="text" name="firstname-register" class="def-input form-auth__input" placeholder="Имя">
+              <input  data-i18n="[placeholder]auth.surname" type="text" name="secondname-register" class="def-input form-auth__input" placeholder="Фамилия">
+              <input  data-i18n="[placeholder]auth.phone" type="tel" name="phone-register" class="def-input form-auth__input" placeholder="Номер телефона">
+              <input  data-i18n="[placeholder]auth.email" type="email" name="email-register" class="def-input form-auth__input" placeholder="Электронная почта">
+              <input  data-i18n="[placeholder]auth.password" type="password" name="password-register" class="def-input form-auth__input" placeholder="Пароль">
+              <input  data-i18n="[placeholder]auth.confirm" type="password" name="doublepassword-register" class="def-input form-auth__input" placeholder="Подтверждение пароля">
+              <input  data-i18n="[placeholder]auth.code" type="number" name="code-register" class="def-input form-auth__input" placeholder="Код">
               <div class="form-register__wrap-confid">
                 
                   <input class="form-register__confid-checkbox" type="checkbox" id="confid-register" name="confid-register" value="yes">
-                  <label class="form-register__confid-label" for="confid-register">Политика конфиденциальности</label>
+                  <label class="form-register__confid-label" for="confid-register" data-i18n="auth.privacyPolicy" >Политика конфиденциальности</label>
               </div>
-              <button type="submit" class="def-btn def-btn_entry form-auth__btn">Регистрация</button>
+              <button type="submit" class="def-btn def-btn_entry form-auth__btn" data-i18n="auth.signUp" >Регистрация</button>
 
             </form>
           </div>
@@ -87,8 +93,8 @@
     <footer class="footer">
       <div class="footer__inner">
         <div class="footer__nav">
-          <a href="#expected-section" class="footer__link">Доходность</a><a href="#calculate-section" class="footer__link">Калькулятор</a
-          ><a href="#faq" class="footer__link">FAQ</a><a href="#tree-form-section" class="footer__link">Контакты</a>
+          <a href="./#expected-section" class="footer__link" data-i18n="nav.roi">Доходность</a><a href="./#calculate-section" class="footer__link" data-i18n="nav.yieldCalculator">Калькулятор</a
+          ><a href="./#faq" class="footer__link" data-i18n="nav.faq">FAQ</a><a href="./#tree-form-section" class="footer__link" data-i18n="nav.contactUs">Контакты</a>
         </div>
         <div class="footer__social social">
           <div class="social__box">
@@ -105,10 +111,10 @@
           </div>
         </div>
         <div class="footer__copyright">
-          <div class="copyright">©2023 BioDeposit. Все права защищены</div>
+          <div class="copyright" data-i18n="copyright">©2023 BioDeposit. Все права защищены</div>
         </div>
       </div>
     </footer>
-    <script src="./js/menu.min.js"></script>
+    <script type="module" src="./js/auth.js"></script>
   </body>
 </html>

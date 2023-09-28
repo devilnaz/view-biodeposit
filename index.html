@@ -5,15 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Biodeposit</title>
-    <link type="image/x-icon" href="./favicon.ico" rel="shortcut icon">
-<link type="Image/x-icon" href="./favicon.ico" rel="icon">
+
+    <link type="image/x-icon" href="./favicon.ico" rel="shortcut icon" />
+    <link type="Image/x-icon" href="./favicon.ico" rel="icon" />
     <link rel="stylesheet" href="./libs/animate/animate.min.css" />
     <link rel="stylesheet" href="./libs/normalize.css" />
     <link rel="stylesheet" href="./css/main.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.11.1/math.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script src="https://unpkg.com/i18next@23.5.1/dist/umd/i18next.min.js"></script>
+    <script src="./libs/loc-i18next.min.js"></script>
   </head>
   <body>
     <div class="wrap-header">
@@ -28,34 +32,38 @@
           </div>
           <div class="header__navigate">
             <nav class="navigate">
-              <div class="navigate__wrapper-link"><a href="#expected-section" class="navigate__link">Доходность</a></div>
-              <div class="navigate__wrapper-link"><a href="#calculate-section" class="navigate__link">Калькулятор</a></div>
-              <div class="navigate__wrapper-link"><a href="#faq" class="navigate__link">FAQ</a></div>
-              <div class="navigate__wrapper-link"><a href="#tree-form-section" class="navigate__link">Контакты</a></div>
+              <div class="navigate__wrapper-link"><a href="#expected-section" class="navigate__link" data-i18n="nav.roi">Доходность</a></div>
+              <div class="navigate__wrapper-link"><a href="#calculate-section" class="navigate__link" data-i18n="nav.yieldCalculator">Калькулятор</a></div>
+              <div class="navigate__wrapper-link"><a href="#faq" class="navigate__link" data-i18n="nav.faq">FAQ</a></div>
+              <div class="navigate__wrapper-link"><a href="#tree-form-section" class="navigate__link" data-i18n="nav.contactUs">Контакты</a></div>
             </nav>
           </div>
           <div class="header__authorization">
             <div class="authorization">
-              <a href="entry.html" class="authorization__link authorization__entry">Вход</a>
+              <a href="entry.html" class="authorization__link authorization__entry" data-i18n="auth.logIn">Вход</a>
               <span class="authorization__delimiter"> / </span>
-              <a href="register.html" class="authorization__link authorization__registration">Регистрация</a>
+              <a href="register.html" class="authorization__link authorization__registration" data-i18n="auth.signUp">Регистрация</a>
             </div>
           </div>
           <div class="header__localization">
-            <div class="localization"><button class="localization__btn localization__btn_active">RU</button><button class="localization__btn">EN</button></div>
+            <div class="localization">
+              <button data-lang="ru" class="localization__btn localization__btn_active">RU</button>
+
+              <button data-lang="en" class="localization__btn">EN</button>
+            </div>
           </div>
           <div class="header__menu">
             <div class="menu">
               <button id="menu-btn" class="menu__btn"><span class="menu__btn-line"></span></button>
               <div class="menu__dropdown dropdown-menu" data-visible="hide">
-                <a href="#expected-section" class="dropdown-menu__link">Доходность</a>
-                <a href="#calculate-section" class="dropdown-menu__link">Калькулятор</a>
-                <a href="#faq" class="dropdown-menu__link">FAQ</a>
-                <a href="#tree-form-section" class="dropdown-menu__link">Контакты</a>
+                <a href="#expected-section" class="dropdown-menu__link" data-i18n="nav.roi">Доходность</a>
+                <a href="#calculate-section" class="dropdown-menu__link" data-i18n="nav.yieldCalculator">Калькулятор</a>
+                <a href="#faq" class="dropdown-menu__link" data-i18n="nav.faq">FAQ</a>
+                <a href="#tree-form-section" class="dropdown-menu__link" data-i18n="nav.contactUs">Контакты</a>
                 <div class="dropdown-menu__auth">
-                  <a href="entry.html">Вход</a>
+                  <a href="entry.html" data-i18n="auth.logIn">Вход</a>
                   <span> / </span>
-                  <a href="register.html">Регистрация</a>
+                  <a href="register.html" data-i18n="auth.signUp">Регистрация</a>
                 </div>
               </div>
             </div>
@@ -64,58 +72,146 @@
         <div id="menu-ground" class="header__ground header__ground_hide"></div>
       </header>
     </div>
+    <div class="wrapper">
       <div class="wrap-content">
         <main class="content">
           <div class="content__header">
             <section class="section-mt main-section">
               <div class="main-section__column main-section__column_invest">
-                <h1 class="main-section__title">Инвестиции <span>в оливковый бизнес</span></h1>
-                <p class="main-section__desc">
+                <h1 class="main-section__title" data-i18n="[html]main.title">Инвестиции <span>в оливковый бизнес</span></h1>
+                <p class="main-section__desc" data-i18n="[html]main.desc">
                   Мы предлагаем инвестировать в один из самых прибыльных и надежных биоактивов —
                   <strong><i>оливковые деревья — с постоянным доходом более 100 лет</i></strong>
                 </p>
-                <button class="main-section__btn">Начать инвестировать</button>
+                <a href="#tree-form-section" class="main-section__btn" data-i18n="main.btn">Начать инвестировать</a>
               </div>
               <div class="main-section__column main-section__column_banner">
                 <div class="main-section__banner">
-                  <div class="main-banner">
-                    <img src="./img/banner1.png" alt="img: banner" class="main-banner__img main-banner__img_desktop" />
-                    <img src="./img/banner1-md.png" alt="img: banner" class="main-banner__img main-banner__img_mobile" />
+                  <div id="banner-slider" class="swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="main-banner">
+                          <img src="./img/banner1.png" loading="lazy" alt="img: banner1" class="main-banner__img" />
+                          <!-- <img src="./img/banner1-md.png" alt="img: banner" class="main-banner__img main-banner__img_mobile" /> -->
+                        </div>
+                        <div class="swiper-lazy-preloader"></div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="main-banner">
+                          <img src="./img/banner2.png" loading="lazy" alt="img: banner2" class="main-banner__img" />
+                        </div>
+                        <div class="swiper-lazy-preloader"></div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="main-banner">
+                          <img src="./img/banner3.png" loading="lazy" alt="img: banner3" class="main-banner__img" />
+                        </div>
+                        <div class="swiper-lazy-preloader"></div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="main-banner">
+                          <img src="./img/banner4.png" loading="lazy" alt="img: banner4" class="main-banner__img" />
+                        </div>
+                        <div class="swiper-lazy-preloader"></div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="main-banner">
+                          <img src="./img/banner5.png" loading="lazy" alt="img: banner5" class="main-banner__img" />
+                        </div>
+                        <div class="swiper-lazy-preloader"></div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="main-banner">
+                          <img src="./img/banner6.png" loading="lazy" alt="img: banner6" class="main-banner__img" />
+                        </div>
+                        <div class="swiper-lazy-preloader"></div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="main-banner">
+                          <img src="./img/banner7.png" loading="lazy" alt="img: banner7" class="main-banner__img" />
+                        </div>
+                        <div class="swiper-lazy-preloader"></div>
+                      </div>
+
+                      <div class="swiper-slide">
+                        <div class="main-banner">
+                          <img src="./img/banner2.png" loading="lazy" alt="img: banner2" class="main-banner__img" />
+                        </div>
+                        <div class="swiper-lazy-preloader"></div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="main-banner">
+                          <img src="./img/banner8.png" loading="lazy" alt="img: banner8" class="main-banner__img" />
+                        </div>
+                        <div class="swiper-lazy-preloader"></div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="main-banner">
+                          <img src="./img/banner9.png" loading="lazy" alt="img: banner9" class="main-banner__img" />
+                        </div>
+                        <div class="swiper-lazy-preloader"></div>
+                      </div>
+
+                      <div class="swiper-slide">
+                        <div class="main-banner">
+                          <img src="./img/banner5.png" loading="lazy" alt="img: banner5" class="main-banner__img" />
+                        </div>
+                        <div class="swiper-lazy-preloader"></div>
+                      </div>
+
+                      <div class="swiper-slide">
+                        <div class="main-banner">
+                          <img src="./img/banner3.png" loading="lazy" alt="img: banner3" class="main-banner__img" />
+                        </div>
+                        <div class="swiper-lazy-preloader"></div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="main-banner">
+                          <img src="./img/banner10.png" alt="img: banner10" class="main-banner__img" />
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="main-banner">
+                          <img src="./img/banner6.png" loading="lazy" alt="img: banner6" class="main-banner__img" />
+                        </div>
+                        <div class="swiper-lazy-preloader"></div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
               <div class="main-section__column main-section__column_feature">
                 <div class="feature-main">
                   <div class="feature-main__column">
-                    <div class="feature-main__desc">
+                    <div class="feature-main__desc" data-i18n="[html]main.feature.desc1">
                       средняя ожидаемая <br />
                       доходность в течении <br />
                       первых 10 лет
                     </div>
-                    <div class="feature-main__title">более 27% годовых</div>
+                    <div class="feature-main__title" data-i18n="main.feature.title1">более 27% годовых</div>
                   </div>
                   <div class="feature-main__column">
-                    <div class="feature-main__desc">
+                    <div class="feature-main__desc" data-i18n="[html]main.feature.desc2">
                       ожидаемая <br />
                       доходность инвестора <br />
                       с 10-го года
                     </div>
-                    <div class="feature-main__title">более 58% годовых</div>
+                    <div class="feature-main__title" data-i18n="main.feature.title2">более 58% годовых</div>
                   </div>
                   <div class="feature-main__column">
-                    <div class="feature-main__desc">
+                    <div class="feature-main__desc" data-i18n="[html]main.feature.desc3">
                       по мере роста стоимость <br />
                       оливкового дерева <br />
                       увеличивается в среднем
                     </div>
-                    <div class="feature-main__title">более 5-ти раз</div>
+                    <div class="feature-main__title" data-i18n="main.feature.title3">более 5-ти раз</div>
                   </div>
                 </div>
               </div>
             </section>
           </div>
           <section data-wow-duration="0.6s" class="wow fadeInUp section-mt feature-section">
-            <h2 class="feature-section__title">
+            <h2 class="feature-section__title" data-i18n="[html]feature.title">
               <span>BioDeposit</span> — революционный проект, <br />соединяющий традиционный бизнес <br />с современными технологиями
             </h2>
             <div class="feature-section__container">
@@ -125,8 +221,10 @@
                     <div class="feature-card__circle-img"><img src="./img/icons/income.svg" alt="img: feature-card" class="feature-card__img" /></div>
                   </div>
                   <div class="feature-card__block">
-                    <h5 class="feature-card__title">Стабильный доход</h5>
-                    <p class="feature-card__desc">инвестируя в оливковые деревья вы <br />можете обеспечить себе и своим <br />потомкам стабильный доход</p>
+                    <h5 class="feature-card__title" data-i18n="feature.card1.title">Стабильный доход</h5>
+                    <p class="feature-card__desc" data-i18n="[html]feature.card1.desc">
+                      инвестируя в оливковые деревья вы <br />можете обеспечить себе и своим <br />потомкам стабильный доход
+                    </p>
                   </div>
                 </div>
               </div>
@@ -136,8 +234,8 @@
                     <div class="feature-card__circle-img"><img src="./img/icons/leaf.svg" alt="img: feature-card" class="feature-card__img" /></div>
                   </div>
                   <div class="feature-card__block">
-                    <h5 class="feature-card__title">Cтатус эко инвестора</h5>
-                    <p class="feature-card__desc">получить престижный статус <br />эко инвестора</p>
+                    <h5 class="feature-card__title" data-i18n="feature.card2.title">Cтатус эко инвестора</h5>
+                    <p class="feature-card__desc" data-i18n="[html]feature.card2.desc">получить престижный статус <br />эко инвестора</p>
                   </div>
                 </div>
               </div>
@@ -147,8 +245,8 @@
                     <div class="feature-card__circle-img"><img src="./img/icons/money-bag.svg" alt="img: feature-card" class="feature-card__img" /></div>
                   </div>
                   <div class="feature-card__block">
-                    <h5 class="feature-card__title">Родовой капитал</h5>
-                    <p class="feature-card__desc">создать капитал своим <br />детям и внукам</p>
+                    <h5 class="feature-card__title" data-i18n="feature.card3.title">Родовой капитал</h5>
+                    <p class="feature-card__desc" data-i18n="[html]feature.card3.desc">создать капитал своим <br />детям и внукам</p>
                   </div>
                 </div>
               </div>
@@ -158,83 +256,93 @@
                     <div class="feature-card__circle-img"><img src="./img/icons/shield.svg" alt="img: feature-card" class="feature-card__img" /></div>
                   </div>
                   <div class="feature-card__block">
-                    <h5 class="feature-card__title">Защита накоплений</h5>
-                    <p class="feature-card__desc">Защитить и преумножить <br />свои накопления</p>
+                    <h5 class="feature-card__title" data-i18n="feature.card4.title">Защита накоплений</h5>
+                    <p class="feature-card__desc" data-i18n="[html]feature.card4.desc">Защитить и преумножить <br />свои накопления</p>
                   </div>
                 </div>
               </div>
             </div>
           </section>
           <section data-wow-duration="0.6s" class="wow fadeInUp section-mt explanation-section">
-            <h2 class="explanation-section__title">Оливковое дерево - <span>высокодоходный актив</span></h2>
+            <h2 class="explanation-section__title" data-i18n="[html]explanation.title">Оливковое дерево - <span>высокодоходный актив</span></h2>
             <div class="explanation-section__container">
               <div class="explanation">
-                <h3 class="explanation__title">За счет чего формируется высокая доходность инвестиций в оливковый бизнес?</h3>
+                <h3 class="explanation__title" data-i18n="explanation.container.title">
+                  За счет чего формируется высокая доходность инвестиций в оливковый бизнес?
+                </h3>
                 <div style="overflow: hidden">
                   <ul class="explanation__list">
-                    <li class="explanation__item">Низкая стоимость плодородной земли по сравнению с Европой</li>
-                    <li class="explanation__item">Низкая себестоимость выращивания, переработки и рабочей силы</li>
-                    <li class="explanation__item">Поддержка государства, оказывающее поддержку сельскому хозяйству в виде инфраструктуры</li>
-                    <li class="explanation__item">Льготное налогообложение для сельхозпроизводителей</li>
-                    <li class="explanation__item">Применение современных технологий</li>
-                    <li class="explanation__item">
+                    <li class="explanation__item" data-i18n="explanation.container.item1">Низкая стоимость плодородной земли по сравнению с Европой</li>
+                    <li class="explanation__item" data-i18n="explanation.container.item2">Низкая себестоимость выращивания, переработки и рабочей силы</li>
+                    <li class="explanation__item" data-i18n="explanation.container.item3">
+                      Поддержка государства, оказывающее поддержку сельскому хозяйству в виде инфраструктуры
+                    </li>
+                    <li class="explanation__item" data-i18n="explanation.container.item4">Льготное налогообложение для сельхозпроизводителей</li>
+                    <li class="explanation__item" data-i18n="explanation.container.item5">Применение современных технологий</li>
+                    <li class="explanation__item" data-i18n="explanation.container.item6">
                       Регион Кахетия географически влажнее самых лучших регионов Испании, которая является мировым лидером в производстве оливок
                     </li>
-                    <li class="explanation__item">Благоприятный экономический климат в Грузии</li>
+                    <li class="explanation__item" data-i18n="explanation.container.item7">Благоприятный экономический климат в Грузии</li>
                   </ul>
                 </div>
               </div>
             </div>
           </section>
           <section data-wow-duration="0.6s" class="wow fadeInUp section-mt income-section">
-            <h3 class="income-section__title">Как формируется доход инвестора?</h3>
+            <h3 class="income-section__title" data-i18n="income.title">Как формируется доход инвестора?</h3>
             <div class="income-section__container">
               <div class="income-section__block">
                 <div class="income-section__wrapper-img"><img src="./img/media/wagon-olives.jpg" alt="img: wagon-olives" class="income-section__img" /></div>
-                <p class="income-section__desc">
-                  На плантация посажены оливковые деревья сорта Олива Европейская (Gemlik, Ayvalik, т.п.). Данный сорт оливок может давать до 120-150 кг оливок на
-                  10-й год и далее. Для расчета доходность мы брали урожайность 80 кг с дерева
+                <p class="income-section__desc" data-i18n="[html]income.desc1">
+                  На плантация посажены оливковые деревья сорта Олива Европейская (Gemlik, Ayvalik, т.п.). Данный сорт оливок может давать до 120-150 кг оливок
+                  на 10-й год и далее. Для расчета доходность мы брали урожайность 80 кг с дерева
                 </p>
               </div>
               <div class="income-section__block">
                 <div class="income-section__wrapper-img"><img src="./img/media/olive-oils.jpg" alt="img: olive-oils" class="income-section__img" /></div>
-                <p class="income-section__desc">
+                <p class="income-section__desc" data-i18n="[html]income.desc2">
                   Из 80 кг оливок можно произвести 16-20 л масла. Оливковое масло оптом продается по биржевой цене, в среднем ~$5 за литр (Текущая цена
                   $7,2/литр).
                 </p>
-                <p class="income-section__desc">
-                  Сервисная компания забирает себе 40% от итоговой суммы. Таким образом доход формируется следующим образом: 80кг -> 16л масла x $5 = $80 x 60% =
-                  $48 с 1 дерева
+                <p class="income-section__desc" data-i18n="[html]income.desc3">
+                  Сервисная компания забирает себе 40% от итоговой суммы. Таким образом доход формируется следующим образом: 80кг -> 16л масла x $5 = $80 x 60%
+                  = $48 с 1 дерева
                 </p>
-                <p class="income-section__desc income-section__desc_dedicated">
+                <p class="income-section__desc income-section__desc_dedicated" data-i18n="[html]income.desc4">
                   * Важный момент: урожайность в конкретный год может отличаться от расчетной урожайности
                 </p>
               </div>
             </div>
           </section>
           <section data-wow-duration="0.6s" class="wow fadeInUp section-mt how-it-works-section">
-            <h3 class="how-it-works-section__title">Как устроен оливковый бизнес</h3>
+            <h3 class="how-it-works-section__title" data-i18n="howItWorks.title">Как устроен оливковый бизнес</h3>
             <div class="how-it-works-section__container">
               <ul class="how-it-works-section__list">
                 <li class="how-it-works-section__item">
                   <div class="how-it-works-section__num">01</div>
-                  <div class="how-it-works-section__title_item">Посадка</div>
-                  <div class="how-it-works-section__desc">Засаживается плантация <br />в мягком умеренном <br />климате</div>
+                  <div class="how-it-works-section__title_item" data-i18n="howItWorks.item1.title">Посадка</div>
+                  <div class="how-it-works-section__desc" data-i18n="[html]howItWorks.item1.desc">
+                    Засаживается плантация <br />в мягком умеренном <br />климате
+                  </div>
                 </li>
                 <li class="how-it-works-section__item">
                   <div class="how-it-works-section__num">02</div>
-                  <div class="how-it-works-section__title_item">Выращивание</div>
-                  <div class="how-it-works-section__desc">Первые три года олива <br />растет, с 4-го года <br />начинает плодоносить</div>
+                  <div class="how-it-works-section__title_item" data-i18n="howItWorks.item2.title">Выращивание</div>
+                  <div class="how-it-works-section__desc" data-i18n="[html]howItWorks.item2.desc">
+                    Первые три года олива <br />растет, с 4-го года <br />начинает плодоносить
+                  </div>
                 </li>
                 <li class="how-it-works-section__item">
                   <div class="how-it-works-section__num">03</div>
-                  <div class="how-it-works-section__title_item">Уход</div>
-                  <div class="how-it-works-section__desc">За деревьями ухаживает <br />сервисная компания</div>
+                  <div class="how-it-works-section__title_item" data-i18n="howItWorks.item3.title">Уход</div>
+                  <div class="how-it-works-section__desc" data-i18n="[html]howItWorks.item3.desc">За деревьями ухаживает <br />сервисная компания</div>
                 </li>
                 <li class="how-it-works-section__item">
                   <div class="how-it-works-section__num">04</div>
-                  <div class="how-it-works-section__title_item">Получение дохода</div>
-                  <div class="how-it-works-section__desc">С 4-го года инвесторы начинают получать доход после реализации урожая сервисной компанией</div>
+                  <div class="how-it-works-section__title_item" data-i18n="howItWorks.item4.title">Получение дохода</div>
+                  <div class="how-it-works-section__desc" data-i18n="[html]howItWorks.item4.desc">
+                    С 4-го года инвесторы начинают получать доход после реализации урожая сервисной компанией
+                  </div>
                 </li>
                 <li class="how-it-works-section__item how-it-works-section__item_img">
                   <div class="how-it-works-section__wrap-img">
@@ -245,89 +353,231 @@
             </div>
           </section>
           <section data-wow-duration="0.6s" class="wow fadeInUp section-mt expected-section" id="expected-section">
-            <h4 class="expected-section__title">Ожидаемый доход <br />инвестора c 1 дерева</h4>
-            <div class="expected-section__wrap-img"><img src="./img/expected-graph.png" alt="img: expected-graph" class="expected-section__img" /></div>
+            <h4 class="expected-section__title" data-i18n="[html]expected.title">Ожидаемый доход <br />инвестора c 1 дерева</h4>
+            <!-- <div class="expected-section__wrap-img"><img src="./img/expected-graph.png" alt="img: expected-graph" class="expected-section__img" /></div> -->
+            <div class="expected-section__bar-chart">
+              <canvas id="main-bar-chart"></canvas>
+              <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+              <script>
+                let averagePrice;
+                let currentPrice;
+
+                initBarValues();
+
+                function initBarValues() {
+                  let price = 9;
+                  averagePrice = [20.0, 24.0, 27.0, 30.0, 34.0, 40.0, 48.0];
+                  currentPrice = averagePrice.map((val) => {
+                    return (Math.round((val / 5) * price * 10) / 10).toFixed(1);
+                  });
+                }
+
+                const ctx = document.getElementById('main-bar-chart');
+                new Chart(ctx, {
+                  type: 'bar',
+                  options: {
+                    clip: { left: 0, top: 0, right: 0, bottom: 0 },
+                    // indexAxis: false,
+                    // skipNull: false,
+                    // inflateAmount: 0,
+                    // maxBarThickness: 10, // max-width для столбцов
+                    // layout: {
+                    //   autoPadding: false,
+                    // },
+                    layout: {
+                      padding: 0,
+                    },
+                    plugins: {
+                      legend: false, // сверху, обозначение столбцов
+                      tooltip: {
+                        // всплывающие подсказки
+                        enabled: false,
+                      },
+                      // title: {
+                      //   font: {
+                      //     size: 26
+                      //   }
+                      // }
+                    },
+                    borderWidth: 2,
+                    borderRadius: 5,
+                    borderSkipped: false, // добавить border-radius для bottom
+                    // inflateAmount: 100,
+                    // borderWidth: 0,
+                    scales: {
+                      // scales: {
+                      //   xAxes: [
+                      //     {
+                      //       ticks: {
+                      //         display: false,
+                      //       },
+                      //     },
+                      //   ],
+                      //   yAxes: [
+                      //     {
+                      //       ticks: {
+                      //         display: false,
+                      //       },
+                      //     },
+                      //   ],
+                      // },
+                      x: {
+                        grid: {
+                          display: false,
+                          offset: false,
+                        },
+                        ticks: {
+                          color: '#353535',
+                          font: {
+                            size: 20,
+                            family: 'Inter',
+                            weight: '600'
+                          }
+                        },
+                      border: {
+                        display: false
+                      }
+                      },
+                      y: {
+                        grid: {
+                          display: false,
+                          offset: false,
+                        },
+                        ticks: {
+                          display: false,
+                          font: {
+                            size: 20,
+                            family: 'Inter',
+                            weight: '600'
+                          }
+                        },
+                      border: {
+                        display: false
+                      }
+                      },
+                    },
+                  },
+                  data: {
+                    labels: ['+4 года', '+5 лет', '+6 лет', '+7 лет', '+8 лет', '+9 лет', '+10 лет и далее'],
+                    datasets: [
+                      {
+                        label: 'at average price',
+                        data: averagePrice,
+                        backgroundColor: 'white',
+                        // hoverBackgroundColor: '#000',
+                        borderColor: '#929292',
+                        showLine: false,
+                      },
+                      {
+                        label: 'at current price',
+                        data: currentPrice,
+                        backgroundColor: '#87b81d',
+                        // borderRadius: 5,
+                        // borderWidth: 2,
+                        borderColor: '#87b81d',
+                        showLine: false,
+                      },
+                    ],
+                  },
+                  // options: {
+                  //   scales: {
+                  //     y: {
+                  //       beginAtZero: true,
+                  //     },
+                  //   },
+                  // },
+                });
+              </script>
+            </div>
             <div class="expected-section__container">
               <div class="expected-section__container-inner">
-                <div class="expected-section__short-title">Ожидаемый доход инвестора:</div>
-                <div class="expected-section__desc expected-section__desc_green">при текущей цене $7,2 за литр оливкого масла</div>
-                <div class="expected-section__desc expected-section__desc_white">при средней цене $5 за литр оливкого масла</div>
+                <div class="expected-section__short-title" data-i18n="expected.shortTitle">Ожидаемый доход инвестора:</div>
+                <div class="expected-section__desc expected-section__desc_green" data-i18n="expected.desc1">при текущей цене $9 за литр оливкого масла</div>
+                <div class="expected-section__desc expected-section__desc_white" data-i18n="expected.desc2">при средней цене $5 за литр оливкого масла</div>
               </div>
             </div>
           </section>
           <section data-wow-duration="0.6s" class="wow fadeInUp section-mt calculate-section" id="calculate-section">
-            <h4 class="calculate-section__title">Рассчитайте свой доход:</h4>
-            <div class="calculate-section__desc">Выберите цель инвестирования:</div>
+            <h4 class="calculate-section__title" data-i18n="calculate.title">Рассчитайте свой доход:</h4>
+            <div class="calculate-section__desc" data-i18n="calculate.desc">Выберите цель инвестирования:</div>
             <div class="calculate-section__container">
               <div class="calculate-section__block">
                 <div class="calculate-card calculate-card_selected">
-                  <div class="calculate-card__title">Создание стабильного <br />инвестиционного дохода</div>
-                  <div class="calculate-card__desc">
+                  <div class="calculate-card__title" data-i18n="[html]calculate.card1.title">Создание стабильного <br />инвестиционного дохода</div>
+                  <div class="calculate-card__desc" data-i18n="[html]calculate.card1.desc">
                     Стабильные долгосрочные инвестиции в оливковый бизнес с прогнозируемой высокой ожидаемой доходностью в длительном периоде времени за счет
                     покупки молодых деревьев с выходом на урожай в 4-ый год
                   </div>
-                  <div class="calculate-card__wrap-btn"><button data-open="modal-capital" class="calculate-card__btn">Выбрать</button></div>
+                  <div class="calculate-card__wrap-btn">
+                    <button data-open="modal-invest" class="calculate-card__btn" data-i18n="calculate.btn">Выбрать</button>
+                  </div>
                 </div>
               </div>
               <div class="calculate-section__block">
                 <div class="calculate-card">
-                  <div class="calculate-card__title">Сформировать капитал <br />для своих детей и внуков</div>
-                  <div class="calculate-card__desc">
-                    Долгосрочные инвестиции в оливковые деревья для получения стабильного ежегодного дохода после периода накопления или полной/частичной продаже
-                    актива: • Период накопления капитала – до достижения 18 лет ребенку: покупка деревьев и реинвестирование дохода в новые молодые деревья в
-                    период накопления • Период получения дохода после периода накопления или продажа части или всех деревьев
+                  <div class="calculate-card__title" data-i18n="[html]calculate.card2.title">Сформировать капитал <br />для своих детей и внуков</div>
+                  <div class="calculate-card__desc" data-i18n="[html]calculate.card2.desc">
+                    Долгосрочные инвестиции в оливковые деревья для получения стабильного ежегодного дохода после периода накопления или полной/частичной
+                    продаже актива: <br />
+                    • Период накопления капитала – до достижения 18 лет ребенку: покупка деревьев и реинвестирование дохода в новые молодые деревья в период
+                    накопления <br />
+                    • Период получения дохода после периода накопления или продажа части или всех деревьев
                   </div>
-                  <div class="calculate-card__wrap-btn"><button data-open="modal-invest" class="calculate-card__btn">Выбрать</button></div>
+                  <div class="calculate-card__wrap-btn">
+                    <button data-open="modal-capital" class="calculate-card__btn" data-i18n="calculate.btn">Выбрать</button>
+                  </div>
                 </div>
               </div>
             </div>
           </section>
           <section data-wow-duration="0.6s" class="wow fadeInUp section-mt what-included-section">
-            <h4 class="what-included-section__title default-title">Что входит в стоимость дерева?</h4>
+            <h4 class="what-included-section__title default-title" data-i18n="whatIncluded.title">Что входит в стоимость дерева?</h4>
             <div class="what-included-section__container">
               <div class="what-included-section__block included-block">
                 <div class="included-block__num">01</div>
-                <div class="included-block__title">Обслуживание</div>
-                <div class="included-block__desc">
+                <div class="included-block__title" data-i18n="whatIncluded.block1.title">Обслуживание</div>
+                <div class="included-block__desc" data-i18n="whatIncluded.block1.desc">
                   Полный цикл обслуживания на первые три года, включающий в себя охрану плантации, обработку земли, орошение, борьбу с вредителями, обрезку
                   деревьев, внесение удобрений и т. д.
                 </div>
               </div>
               <div class="what-included-section__block included-block">
                 <div class="included-block__num">02</div>
-                <div class="included-block__title">Замена дерева</div>
-                <div class="included-block__desc">
+                <div class="included-block__title" data-i18n="whatIncluded.block2.title">Замена дерева</div>
+                <div class="included-block__desc" data-i18n="whatIncluded.block2.desc">
                   Гарантия в первые три года жизни дерева: в случае гибели дерева, оно будет заменено на аналогичное из фонда компании
                 </div>
               </div>
               <div class="what-included-section__block included-block">
                 <div class="included-block__num">03</div>
-                <div class="included-block__title">Сбор урожая</div>
-                <div class="included-block__desc">Сервисная компания проводит сбор урожая, переработку в оливковое масло и продажу масла по биржевой цене</div>
+                <div class="included-block__title" data-i18n="whatIncluded.block3.title">Сбор урожая</div>
+                <div class="included-block__desc" data-i18n="whatIncluded.block3.desc">
+                  Сервисная компания проводит сбор урожая, переработку в оливковое масло и продажу масла по биржевой цене
+                </div>
               </div>
               <div class="what-included-section__block included-block">
                 <div class="included-block__num">04</div>
-                <div class="included-block__title">Аудит</div>
-                <div class="included-block__desc">Ежегодный аудит сбора урожая</div>
+                <div class="included-block__title" data-i18n="whatIncluded.block4.title">Аудит</div>
+                <div class="included-block__desc" data-i18n="whatIncluded.block4.desc">Ежегодный аудит сбора урожая</div>
               </div>
             </div>
           </section>
           <section data-wow-duration="0.6s" class="wow fadeInUp section-mt team-section">
-            <h4 class="team-section__title default-title">Опытная команда проекта</h4>
-            <p class="team-section__desc">
+            <h4 class="team-section__title default-title" data-i18n="team.title">Опытная команда проекта</h4>
+            <p class="team-section__desc" data-i18n="[html]team.desc">
               Мы выращиваем оливковые деревья уже более 8 лет <br />В нашей команде много специалистов различных сфер, таких как агрономы, специалисты по
               орошению, операторы сельхозоборудования <br />и многие другие. Так же мы закупаем новые тракторы John Deere, что позволяет оптимизировать процессы
               на полях.
             </p>
             <div class="team-section__container">
-              <div class="swiper">
+              <div id="team-slider" class="swiper">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
                     <div class="team-slider__card">
                       <div class="team-slider__card-inner">
                         <div class="team-slider__wrap-img"><img src="./img/user-1.jpg" alt="photo: user-1" class="team-slider__img" /></div>
-                        <div class="team-slider__name">Александр Савин</div>
-                        <div class="team-slider__desc">
+                        <div class="team-slider__name" data-i18n="team.card1.name">Александр Савин</div>
+                        <div class="team-slider__desc" data-i18n="team.card1.desc">
                           CEO и основатель проекта Более 8 лет в оливковом бизнесе, где под управлением более 300 000 оливковых деревьев. Более 10 лет опыта
                           управления бизнесом и в маркетинге.
                         </div>
@@ -338,10 +588,10 @@
                     <div class="team-slider__card">
                       <div class="team-slider__card-inner">
                         <div class="team-slider__wrap-img"><img src="./img/user-default.png" alt="photo: user-default" class="team-slider__img" /></div>
-                        <div class="team-slider__name">Мераб Липартелиани</div>
-                        <div class="team-slider__desc">
-                          Координатор процессов создания оливковых плантаций. Выпускник Высшего Сельскохозяйственного университета Тбилиси. Операционный сотрудник
-                          сельскохозяйственного научно-исследовательского центра при министерстве сельского хозяйства Грузии. 17-летний опыт работы в
+                        <div class="team-slider__name" data-i18n="team.card2.name">Мераб Липартелиани</div>
+                        <div class="team-slider__desc" data-i18n="team.card2.desc">
+                          Координатор процессов создания оливковых плантаций. Выпускник Высшего Сельскохозяйственного университета Тбилиси. Операционный
+                          сотрудник сельскохозяйственного научно-исследовательского центра при министерстве сельского хозяйства Грузии. 17-летний опыт работы в
                           сельхозиндустрии, специализация – почвоведенье, удобрение, механизация, агрономическое сервисное обслуживание, организация логистики
                           сельхозтехники.
                         </div>
@@ -352,10 +602,10 @@
                     <div class="team-slider__card">
                       <div class="team-slider__card-inner">
                         <div class="team-slider__wrap-img"><img src="./img/user-2.jpg" alt="photo: user-2" class="team-slider__img" /></div>
-                        <div class="team-slider__name">Педро Лечуга(Испания)</div>
-                        <div class="team-slider__desc">
-                          Консультант проекта. Более 50 лет опыта в выращивании оливок, создании новых плантаций, переработке оливки и торговле готовой продукцией
-                          в Испании, Канаде и США. Фермер, владелец оливковых плантаций и собственного бренда оливкового масла
+                        <div class="team-slider__name" data-i18n="team.card3.name">Педро Лечуга(Испания)</div>
+                        <div class="team-slider__desc" data-i18n="team.card3.desc">
+                          Консультант проекта. Более 50 лет опыта в выращивании оливок, создании новых плантаций, переработке оливки и торговле готовой
+                          продукцией в Испании, Канаде и США. Фермер, владелец оливковых плантаций и собственного бренда оливкового масла
                         </div>
                       </div>
                     </div>
@@ -364,11 +614,11 @@
                     <div class="team-slider__card">
                       <div class="team-slider__card-inner">
                         <div class="team-slider__wrap-img"><img src="./img/user-default.png" alt="photo: user-default" class="team-slider__img" /></div>
-                        <div class="team-slider__name">Ахмад Хасан Собейх (Египет)</div>
-                        <div class="team-slider__desc">
-                          10-летний опыт в развитии международной оптовой торговли продуктами сельскохозяйственной деятельности. Консультирует проект по вопросам
-                          международной торговли, обеспечивает коммуникацию между проектом, египетскими фермерами оливковой отрасли и владельцами заводов по
-                          переработке оливы.
+                        <div class="team-slider__name" data-i18n="team.card4.name">Ахмад Хасан Собейх (Египет)</div>
+                        <div class="team-slider__desc" data-i18n="team.card4.desc">
+                          10-летний опыт в развитии международной оптовой торговли продуктами сельскохозяйственной деятельности. Консультирует проект по
+                          вопросам международной торговли, обеспечивает коммуникацию между проектом, египетскими фермерами оливковой отрасли и владельцами
+                          заводов по переработке оливы.
                         </div>
                       </div>
                     </div>
@@ -377,8 +627,8 @@
                     <div class="team-slider__card">
                       <div class="team-slider__card-inner">
                         <div class="team-slider__wrap-img"><img src="./img/user-default.png" alt="photo: user-default" class="team-slider__img" /></div>
-                        <div class="team-slider__name">Жикирия Тикер (Турция)</div>
-                        <div class="team-slider__desc">
+                        <div class="team-slider__name" data-i18n="team.card5.name">Жикирия Тикер (Турция)</div>
+                        <div class="team-slider__desc" data-i18n="team.card5.desc">
                           Консультант проекта по связям с фермерами и участниками турецкой оливковой индустрии. Имеет международный опыт работы (в том числе в
                           сфере производства косметики из оливки). Живет и работает в Турции – стране с наиболее активно развивающейся оливковой индустрией.
                         </div>
@@ -394,60 +644,71 @@
             </div>
           </section>
           <section data-wow-duration="0.6s" class="wow fadeInUp section-mt tree-form-section" id="tree-form-section">
-            <h4 class="tree-form-section__title">
+            <h4 class="tree-form-section__title" data-i18n="[html]treeForm.title">
               Покупая оливковые деревья – <br /><span>вы инвестируете в свое <br />будущее и в будущее планеты!</span>
             </h4>
             <div class="tree-form-section__container">
               <div class="tree-form-section__block">
-                <p class="tree-form-section__desc">Хотите купить дерево или целую плантацию? Оставьте свои контакты и мы свяжемся с вами:</p>
+                <p class="tree-form-section__desc" data-i18n="[html]treeForm.desc">
+                  Хотите купить дерево или целую плантацию? Оставьте свои контакты и мы свяжемся с вами:
+                </p>
               </div>
               <div class="tree-form-section__block tree-form-section__block_form">
                 <form action="post" class="form-tree">
-                  <input class="form-tree__input" type="text" name="user_name" placeholder="Ваше имя" />
-                  <input class="form-tree__input form-tree__input_email" type="text" name="user_email_or_tg" placeholder="Email или Telegram" />
-                  <button type="submit" class="form-tree__btn default-btn">Отправить</button>
+                  <input class="form-tree__input" type="text" name="user_name" placeholder="Ваше имя" data-i18n="[placeholder]form.name" />
+                  <input
+                    class="form-tree__input form-tree__input_email"
+                    type="text"
+                    name="user_email_or_tg"
+                    placeholder="Email или Telegram"
+                    data-i18n="[placeholder]form.email" />
+                  <button type="submit" class="form-tree__btn default-btn" data-i18n="form.btn">Отправить</button>
                 </form>
               </div>
               <div class="tree-form-section__block tree-form-section__block_telegram">
                 <div class="write-telegram">
-                  <div class="write-telegram__title">Или напишите <br />нам в Telegram:</div>
-                  <a href="#" class="write-telegram__link"><span>Написать в Telegram</span></a>
+                  <div class="write-telegram__title" data-i18n="[html]treeForm.telegram.title">Или напишите <br />нам в Telegram:</div>
+                  <a href="#" class="write-telegram__link" data-i18n="[html]treeForm.telegram.btn"><span>Написать в Telegram</span></a>
                 </div>
               </div>
             </div>
           </section>
           <section data-wow-duration="0.6s" class="wow fadeInUp section-mt partner-form-section">
-            <h4 class="partner-form-section__title">Стать <span>партнером</span></h4>
-            <p class="partner-form-section__desc">
+            <h4 class="partner-form-section__title" data-i18n="[html]partnerForm.title">Стать <span>партнером</span></h4>
+            <p class="partner-form-section__desc" data-i18n="partnerForm.desc1">
               Наша компания постоянно развивается и расширяет свой штат партнеров по всему миру. Мы платим прозрачную и честную комиссию в момент сделки с
               инвестором. А лучшие партнеры получают весьма привлекательные и интересные бонусы
             </p>
-            <p class="partner-form-section__desc">
+            <p class="partner-form-section__desc" data-i18n="partnerForm.desc2">
               Наши партнеры проходят профессиональное обучение, чтобы наши клиенты испытывали удовольствие на всех этапах сотрудничества
             </p>
             <form action="post" class="form-partner">
-              <div class="form-partner__block"><input type="text" name="user_name" class="form-partner__input" placeholder="Ваше имя" /></div>
-              <div class="form-partner__block"><input type="text" name="user_email_or_tg" class="form-partner__input" placeholder="Email или Telegram" /></div>
               <div class="form-partner__block">
-                <button type="submit" class="form-partner__btn default-btn">Отправить</button>
+                <input type="text" name="user_name" class="form-partner__input" placeholder="Ваше имя" data-i18n="[placeholder]form.name" />
+              </div>
+              <div class="form-partner__block">
+                <input type="text" name="user_email_or_tg" class="form-partner__input" placeholder="Email или Telegram" data-i18n="[placeholder]form.email" />
+              </div>
+              <div class="form-partner__block">
+                <button type="submit" class="form-partner__btn default-btn" data-i18n="form.btn">Отправить</button>
               </div>
             </form>
           </section>
           <section data-wow-duration="0.6s" class="wow fadeInUp section-mt faq-section" id="faq">
-            <div class="faq-section__title default-title">Faq</div>
+            <div class="faq-section__title default-title" data-i18n="faq.title">Faq</div>
             <div class="faq-section__container faq-section__container_desktop">
               <ul class="faq-section__list">
                 <li class="faq-card faq-card__inner">
                   <div class="faq-card__header">
-                    <div class="faq-card__title">Что такое BioDeposit?</div>
+                    <div class="faq-card__title" data-i18n="faq.card1.title">Что такое BioDeposit?</div>
                     <button class="faq-card__btn"></button>
                   </div>
                   <div class="faq-card__wrap-content">
-                    <div class="faq-card__content">
+                    <div class="faq-card__content" data-i18n="[html]faq.card1.content">
                       <p class="faq-card__desc">BioDeposit — революционный проект, соединяющий традиционный бизнес с современными технологиями.</p>
                       <p class="faq-card__desc">
-                        Мы работаем с биоактивом — наиболее экологичным видом глобальных инвестиций, позволяющим не только обеспечить себя на много лет вперед, но
-                        и оставить потомкам в наследство зеленую планету. Текущая деятельность проекта BioDeposit связана с посадкой оливковых плантаций.
+                        Мы работаем с биоактивом — наиболее экологичным видом глобальных инвестиций, позволяющим не только обеспечить себя на много лет вперед,
+                        но и оставить потомкам в наследство зеленую планету. Текущая деятельность проекта BioDeposit связана с посадкой оливковых плантаций.
                       </p>
                       <p class="faq-card__desc">
                         Оливковый бизнес приносит большие прибыли, много лет оставаясь закрытым. До сих пор он был недоступен обычным инвесторам. Проект
@@ -462,41 +723,41 @@
                 </li>
                 <li class="faq-card faq-card__inner">
                   <div class="faq-card__header">
-                    <div class="faq-card__title">Кто делает проект?</div>
+                    <div class="faq-card__title" data-i18n="faq.card3.title">Кто делает проект?</div>
                     <button class="faq-card__btn"></button>
                   </div>
                   <div class="faq-card__wrap-content">
                     <div class="faq-card__content">
-                      <p class="faq-card__desc">
-                        BioDeposit — проект компании Agromine. Компания базируется в Грузии, где команда проекта занимается посадкой оливковых плантаций уже более
-                        8 лет.
+                      <p class="faq-card__desc" data-i18n="[html]faq.card3.content">
+                        BioDeposit — проект компании Agromine. Компания базируется в Грузии, где команда проекта занимается посадкой оливковых плантаций уже
+                        более 8 лет.
                       </p>
                     </div>
                   </div>
                 </li>
                 <li class="faq-card faq-card__inner">
                   <div class="faq-card__header">
-                    <div class="faq-card__title">Почему проект возник именно сейчас?</div>
+                    <div class="faq-card__title" data-i18n="faq.card5.title">Почему проект возник именно сейчас?</div>
                     <button class="faq-card__btn"></button>
                   </div>
                   <div class="faq-card__wrap-content">
                     <div class="faq-card__content">
-                      <p class="faq-card__desc">
+                      <p class="faq-card__desc" data-i18n="[html]faq.card5.content">
                         Как уже говорилось, благодаря стремительному росту экономики и программе государственной поддержки, в Грузии сегодня сложились особо
-                        благоприятные условия для оливкового бизнеса. Но не менее важна здесь и роль новых цифровых технологий, которые получили распространение в
-                        последние годы, значительно расширили возможности онлайн-бизнеса и позволили реализовать нашу задумку технически.
+                        благоприятные условия для оливкового бизнеса. Но не менее важна здесь и роль новых цифровых технологий, которые получили распространение
+                        в последние годы, значительно расширили возможности онлайн-бизнеса и позволили реализовать нашу задумку технически.
                       </p>
                     </div>
                   </div>
                 </li>
                 <li class="faq-card faq-card__inner">
                   <div class="faq-card__header">
-                    <div class="faq-card__title">Какой минимальный размер инвестиций?</div>
+                    <div class="faq-card__title" data-i18n="faq.card7.title">Какой минимальный размер инвестиций?</div>
                     <button class="faq-card__btn"></button>
                   </div>
                   <div class="faq-card__wrap-content">
                     <div class="faq-card__content">
-                      <p class="faq-card__desc">
+                      <p class="faq-card__desc" data-i18n="[html]faq.card7.content">
                         Базовая цена одного молодого дерева (каковым следует считать саженец, который не достиг 12 месяцев с момента посадки) — $118. По мере
                         роста дерева растет и его цена.
                       </p>
@@ -505,11 +766,11 @@
                 </li>
                 <li class="faq-card faq-card__inner">
                   <div class="faq-card__header">
-                    <div class="faq-card__title">Насколько сохранна такая инвестиция? Что будет, если мое дерево погибнет?</div>
+                    <div class="faq-card__title" data-i18n="faq.card9.title">Насколько сохранна такая инвестиция? Что будет, если мое дерево погибнет?</div>
                     <button class="faq-card__btn"></button>
                   </div>
                   <div class="faq-card__wrap-content">
-                    <div class="faq-card__content">
+                    <div class="faq-card__content" data-i18n="[html]faq.card9.content">
                       <p class="faq-card__desc">
                         Бывает, что молодые деревья не приживаются. Подобное случается редко: риски, называемые нашими эдвайзорами (международными экспертами с
                         многолетним опытом), не превышают 2-3%. Что касается наших партнеров, то они не рискуют ничем, т.к. для каждой плантации мы формируем
@@ -522,20 +783,20 @@
                       </p>
                       <p class="faq-card__desc">
                         Мы берем на себя всю ответственность за сохранность дерева в течении первых трех лет (страховка и уход за деревом входят в его базовую
-                        стоимость). Начиная с четвертого года, когда дерево начнет плодоносить, вы можете застраховать дерево от любых форс-мажорных обстоятельств
-                        в независимой страховой компании.
+                        стоимость). Начиная с четвертого года, когда дерево начнет плодоносить, вы можете застраховать дерево от любых форс-мажорных
+                        обстоятельств в независимой страховой компании.
                       </p>
                     </div>
                   </div>
                 </li>
                 <li class="faq-card faq-card__inner">
                   <div class="faq-card__header">
-                    <div class="faq-card__title">В чем наша выгода?</div>
+                    <div class="faq-card__title" data-i18n="faq.card11.title">В чем наша выгода?</div>
                     <button class="faq-card__btn"></button>
                   </div>
                   <div class="faq-card__wrap-content">
                     <div class="faq-card__content">
-                      <p class="faq-card__desc">
+                      <p class="faq-card__desc" data-i18n="[html]faq.card11.content">
                         Продавая деревья, мы преследуем несколько целей: - Масштабирование плантации, для получения сырьевой базы и производства продуктов из
                         оливки; - Обеспечение собственной обслуживающей компании постоянным доходом (ведь мы получаем часть вашего урожая); - Озеленение планеты
                         (благодаря одному дереву могут дышать два человека); - Популяризация оливкового масла.
@@ -545,12 +806,12 @@
                 </li>
                 <li class="faq-card faq-card__inner">
                   <div class="faq-card__header">
-                    <div class="faq-card__title">Деревья уже посажены, или это еще только предстоит сделать?</div>
+                    <div class="faq-card__title" data-i18n="faq.card13.title">Деревья уже посажены, или это еще только предстоит сделать?</div>
                     <button class="faq-card__btn"></button>
                   </div>
                   <div class="faq-card__wrap-content">
                     <div class="faq-card__content">
-                      <p class="faq-card__desc">
+                      <p class="faq-card__desc" data-i18n="[html]faq.card13.content">
                         Деревья уже посажены. Это сделано для удобства инвесторов. Приобретая не саженец, а молодое дерево, вы быстрее начнете получать с него
                         урожай.
                       </p>
@@ -559,15 +820,15 @@
                 </li>
                 <li class="faq-card faq-card__inner">
                   <div class="faq-card__header">
-                    <div class="faq-card__title">Могу ли я забрать свое дерево?</div>
+                    <div class="faq-card__title" data-i18n="faq.card15.title">Могу ли я забрать свое дерево?</div>
                     <button class="faq-card__btn"></button>
                   </div>
                   <div class="faq-card__wrap-content">
                     <div class="faq-card__content">
-                      <p class="faq-card__desc">
+                      <p class="faq-card__desc" data-i18n="[html]faq.card15.content">
                         Места под посадку плантаций тщательно выбирались агроспециалистами, чтобы каждое дерево росло там, где для этого природой и человеком
-                        созданы наилучшие условия. Но если владельцу оливы захочется выкопать ее и пересадить, допустим, на свой дачный участок, то для этого нет
-                        никаких технических преград.
+                        созданы наилучшие условия. Но если владельцу оливы захочется выкопать ее и пересадить, допустим, на свой дачный участок, то для этого
+                        нет никаких технических преград.
                       </p>
                     </div>
                   </div>
@@ -576,12 +837,12 @@
               <ul class="faq-section__list">
                 <li class="faq-card faq-card__inner">
                   <div class="faq-card__header">
-                    <div class="faq-card__title">Почему выбраны оливки?</div>
+                    <div class="faq-card__title" data-i18n="faq.card2.title">Почему выбраны оливки?</div>
                     <button class="faq-card__btn"></button>
                   </div>
                   <div class="faq-card__wrap-content">
                     <div class="faq-card__content">
-                      <p class="faq-card__desc">
+                      <p class="faq-card__desc" data-i18n="[html]faq.card2.content">
                         На сегодня оливковые деревья признаны как один из самых прибыльных видов биоактива. Они способны жить и плодоносить на протяжении сотен
                         лет. Логично, что именно вокруг оливок было решено построить проект BioDeposit.
                       </p>
@@ -590,14 +851,14 @@
                 </li>
                 <li class="faq-card faq-card__inner">
                   <div class="faq-card__header">
-                    <div class="faq-card__title">
+                    <div class="faq-card__title" data-i18n="faq.card4.title">
                       Почему выбрана не Испания, Греция или еще какая-нибудь страна, для которой олива является традиционной культурой?
                     </div>
                     <button class="faq-card__btn"></button>
                   </div>
                   <div class="faq-card__wrap-content">
                     <div class="faq-card__content">
-                      <p class="faq-card__desc">
+                      <p class="faq-card__desc" data-i18n="[html]faq.card4.content">
                         В Грузии, помимо подходящего климата и плодородной почвы, также присутствует благоприятная экономическая составляющая: поддержка
                         государства, льготное налогообложение для сельхозпроизводителей, а также более низкая себестоимость выращивания, ухода и переработки.
                       </p>
@@ -606,12 +867,12 @@
                 </li>
                 <li class="faq-card faq-card__inner">
                   <div class="faq-card__header">
-                    <div class="faq-card__title">Каковы перспективы бизнеса?</div>
+                    <div class="faq-card__title" data-i18n="faq.card6.title">Каковы перспективы бизнеса?</div>
                     <button class="faq-card__btn"></button>
                   </div>
                   <div class="faq-card__wrap-content">
                     <div class="faq-card__content">
-                      <p class="faq-card__desc">
+                      <p class="faq-card__desc" data-i18n="[html]faq.card6.content">
                         Спрос на качественное масло превышает предложение, а объёмы, которые можно вырастить в Грузии, — это капля в море в сравнении с
                         общемировым потреблением. Так что проблем со сбытом не ожидается.
                       </p>
@@ -620,31 +881,31 @@
                 </li>
                 <li class="faq-card faq-card__inner">
                   <div class="faq-card__header">
-                    <div class="faq-card__title">Как я могу стать владельцем плантации?</div>
+                    <div class="faq-card__title" data-i18n="faq.card8.title">Как я могу стать владельцем плантации?</div>
                     <button class="faq-card__btn"></button>
                   </div>
                   <div class="faq-card__wrap-content">
-                    <div class="faq-card__content">
+                    <div class="faq-card__content" data-i18n="[html]faq.card8.content">
                       <p class="faq-card__desc">
                         Чтобы владеть деревом или даже целой плантацией в Грузии, вам необязательно быть гражданином этой страны. Стать нашим партнером легко:
                         достаточно пройти регистрацию на сайте проекта BioDeposit, или, если вы уже это сделали, перейти в личный кабинет и оплатить нужное
                         количество деревьев.
                       </p>
                       <p class="faq-card__desc">
-                        Также мы предоставляем возможность организации собственной плантации по партнерской программе. Подробности о ней можно отправив нам запрос
-                        в Телеграм @ или заполнив форму выше.
+                        Также мы предоставляем возможность организации собственной плантации по партнерской программе. Подробности о ней можно отправив нам
+                        запрос в Телеграм @ или заполнив форму выше.
                       </p>
                     </div>
                   </div>
                 </li>
                 <li class="faq-card faq-card__inner">
                   <div class="faq-card__header">
-                    <div class="faq-card__title">От чего зависит стоимость дерева?</div>
+                    <div class="faq-card__title" data-i18n="faq.card10.title">От чего зависит стоимость дерева?</div>
                     <button class="faq-card__btn"></button>
                   </div>
                   <div class="faq-card__wrap-content">
                     <div class="faq-card__content">
-                      <p class="faq-card__desc">
+                      <p class="faq-card__desc" data-i18n="[html]faq.card10.content">
                         Чем старше дерево, тем выше его стоимость. В период с 4-го по 10-й год количество прибыли растет за счет приносимого деревом урожая.
                         Соответственно, повышается и стоимость биоактива. По достижению деревом 10-летнего возраста рост стоимости останавливается.
                       </p>
@@ -653,12 +914,12 @@
                 </li>
                 <li class="faq-card faq-card__inner">
                   <div class="faq-card__header">
-                    <div class="faq-card__title">Олива – единственный биоактив, приносящий большую прибыль?</div>
+                    <div class="faq-card__title" data-i18n="faq.card12.title">Олива – единственный биоактив, приносящий большую прибыль?</div>
                     <button class="faq-card__btn"></button>
                   </div>
                   <div class="faq-card__wrap-content">
                     <div class="faq-card__content">
-                      <p class="faq-card__desc">
+                      <p class="faq-card__desc" data-i18n="[html]faq.card12.content">
                         Не единственный. Мы изучаем все виды прибыльных биоактивов, и не исключено, что также включим их в проект BioDeposit в будущем.
                       </p>
                     </div>
@@ -666,26 +927,28 @@
                 </li>
                 <li class="faq-card faq-card__inner">
                   <div class="faq-card__header">
-                    <div class="faq-card__title">Смогу ли я свое дерево кому-то подарить?</div>
+                    <div class="faq-card__title" data-i18n="faq.card14.title">Смогу ли я свое дерево кому-то подарить?</div>
                     <button class="faq-card__btn"></button>
                   </div>
                   <div class="faq-card__wrap-content">
                     <div class="faq-card__content">
-                      <p class="faq-card__desc">
-                        Разумеется. И не только подарить. Для проекта BioDeposit нами разработан ряд юридически защищенных опций, куда кроме дарения также входит
-                        возможность жертвования (благотворительности) и передачи в наследство.
+                      <p class="faq-card__desc" data-i18n="[html]faq.card14.content">
+                        Разумеется. И не только подарить. Для проекта BioDeposit нами разработан ряд юридически защищенных опций, куда кроме дарения также
+                        входит возможность жертвования (благотворительности) и передачи в наследство.
                       </p>
                     </div>
                   </div>
                 </li>
                 <li class="faq-card faq-card__inner">
                   <div class="faq-card__header">
-                    <div class="faq-card__title">Если я захочу купить сразу много деревьев, можно ли рассчитывать на оптовую цену?</div>
+                    <div class="faq-card__title" data-i18n="faq.card16.title">
+                      Если я захочу купить сразу много деревьев, можно ли рассчитывать на оптовую цену?
+                    </div>
                     <button class="faq-card__btn"></button>
                   </div>
                   <div class="faq-card__wrap-content">
                     <div class="faq-card__content">
-                      <p class="faq-card__desc">
+                      <p class="faq-card__desc" data-i18n="[html]faq.card16.content">
                         Если Вы готовы купить более 3 тысяч оливковых деревьев, то для вас действуют специальные условия, о которых вы можете узнать, заполнив
                         форму на этой странице.
                       </p>
@@ -698,15 +961,15 @@
               <ul class="faq-section__list">
                 <li class="faq-card faq-card__inner">
                   <div class="faq-card__header">
-                    <div class="faq-card__title">Что такое BioDeposit?</div>
+                    <div class="faq-card__title" data-i18n="faq.card1.title">Что такое BioDeposit?</div>
                     <button class="faq-card__btn"></button>
                   </div>
                   <div class="faq-card__wrap-content">
-                    <div class="faq-card__content">
+                    <div class="faq-card__content" data-i18n="[html]faq.card1.content">
                       <p class="faq-card__desc">BioDeposit — революционный проект, соединяющий традиционный бизнес с современными технологиями.</p>
                       <p class="faq-card__desc">
-                        Мы работаем с биоактивом — наиболее экологичным видом глобальных инвестиций, позволяющим не только обеспечить себя на много лет вперед, но
-                        и оставить потомкам в наследство зеленую планету. Текущая деятельность проекта BioDeposit связана с посадкой оливковых плантаций.
+                        Мы работаем с биоактивом — наиболее экологичным видом глобальных инвестиций, позволяющим не только обеспечить себя на много лет вперед,
+                        но и оставить потомкам в наследство зеленую планету. Текущая деятельность проекта BioDeposit связана с посадкой оливковых плантаций.
                       </p>
                       <p class="faq-card__desc">
                         Оливковый бизнес приносит большие прибыли, много лет оставаясь закрытым. До сих пор он был недоступен обычным инвесторам. Проект
@@ -721,12 +984,12 @@
                 </li>
                 <li class="faq-card faq-card__inner">
                   <div class="faq-card__header">
-                    <div class="faq-card__title">Почему выбраны оливки?</div>
+                    <div class="faq-card__title" data-i18n="faq.card2.title">Почему выбраны оливки?</div>
                     <button class="faq-card__btn"></button>
                   </div>
                   <div class="faq-card__wrap-content">
                     <div class="faq-card__content">
-                      <p class="faq-card__desc">
+                      <p class="faq-card__desc" data-i18n="[html]faq.card2.content">
                         На сегодня оливковые деревья признаны как один из самых прибыльных видов биоактива. Они способны жить и плодоносить на протяжении сотен
                         лет. Логично, что именно вокруг оливок было решено построить проект BioDeposit.
                       </p>
@@ -735,28 +998,28 @@
                 </li>
                 <li class="faq-card faq-card__inner">
                   <div class="faq-card__header">
-                    <div class="faq-card__title">Кто делает проект?</div>
+                    <div class="faq-card__title" data-i18n="faq.card3.title">Кто делает проект?</div>
                     <button class="faq-card__btn"></button>
                   </div>
                   <div class="faq-card__wrap-content">
                     <div class="faq-card__content">
-                      <p class="faq-card__desc">
-                        BioDeposit — проект компании Agromine. Компания базируется в Грузии, где команда проекта занимается посадкой оливковых плантаций уже более
-                        8 лет.
+                      <p class="faq-card__desc" data-i18n="[html]faq.card3.content">
+                        BioDeposit — проект компании Agromine. Компания базируется в Грузии, где команда проекта занимается посадкой оливковых плантаций уже
+                        более 8 лет.
                       </p>
                     </div>
                   </div>
                 </li>
                 <li class="faq-card faq-card__inner">
                   <div class="faq-card__header">
-                    <div class="faq-card__title">
+                    <div class="faq-card__title" data-i18n="faq.card4.title">
                       Почему выбрана не Испания, Греция или еще какая-нибудь страна, для которой олива является традиционной культурой?
                     </div>
                     <button class="faq-card__btn"></button>
                   </div>
                   <div class="faq-card__wrap-content">
                     <div class="faq-card__content">
-                      <p class="faq-card__desc">
+                      <p class="faq-card__desc" data-i18n="[html]faq.card4.content">
                         В Грузии, помимо подходящего климата и плодородной почвы, также присутствует благоприятная экономическая составляющая: поддержка
                         государства, льготное налогообложение для сельхозпроизводителей, а также более низкая себестоимость выращивания, ухода и переработки.
                       </p>
@@ -765,27 +1028,27 @@
                 </li>
                 <li class="faq-card faq-card__inner">
                   <div class="faq-card__header">
-                    <div class="faq-card__title">Почему проект возник именно сейчас?</div>
+                    <div class="faq-card__title" data-i18n="faq.card5.title">Почему проект возник именно сейчас?</div>
                     <button class="faq-card__btn"></button>
                   </div>
                   <div class="faq-card__wrap-content">
                     <div class="faq-card__content">
-                      <p class="faq-card__desc">
+                      <p class="faq-card__desc" data-i18n="[html]faq.card5.content">
                         Как уже говорилось, благодаря стремительному росту экономики и программе государственной поддержки, в Грузии сегодня сложились особо
-                        благоприятные условия для оливкового бизнеса. Но не менее важна здесь и роль новых цифровых технологий, которые получили распространение в
-                        последние годы, значительно расширили возможности онлайн-бизнеса и позволили реализовать нашу задумку технически.
+                        благоприятные условия для оливкового бизнеса. Но не менее важна здесь и роль новых цифровых технологий, которые получили распространение
+                        в последние годы, значительно расширили возможности онлайн-бизнеса и позволили реализовать нашу задумку технически.
                       </p>
                     </div>
                   </div>
                 </li>
                 <li class="faq-card faq-card__inner">
                   <div class="faq-card__header">
-                    <div class="faq-card__title">Каковы перспективы бизнеса?</div>
+                    <div class="faq-card__title" data-i18n="faq.card6.title">Каковы перспективы бизнеса?</div>
                     <button class="faq-card__btn"></button>
                   </div>
                   <div class="faq-card__wrap-content">
                     <div class="faq-card__content">
-                      <p class="faq-card__desc">
+                      <p class="faq-card__desc" data-i18n="[html]faq.card6.content">
                         Спрос на качественное масло превышает предложение, а объёмы, которые можно вырастить в Грузии, — это капля в море в сравнении с
                         общемировым потреблением. Так что проблем со сбытом не ожидается.
                       </p>
@@ -794,12 +1057,12 @@
                 </li>
                 <li class="faq-card faq-card__inner">
                   <div class="faq-card__header">
-                    <div class="faq-card__title">Какой минимальный размер инвестиций?</div>
+                    <div class="faq-card__title" data-i18n="faq.card7.title">Какой минимальный размер инвестиций?</div>
                     <button class="faq-card__btn"></button>
                   </div>
                   <div class="faq-card__wrap-content">
                     <div class="faq-card__content">
-                      <p class="faq-card__desc">
+                      <p class="faq-card__desc" data-i18n="[html]faq.card7.content">
                         Базовая цена одного молодого дерева (каковым следует считать саженец, который не достиг 12 месяцев с момента посадки) — $118. По мере
                         роста дерева растет и его цена.
                       </p>
@@ -808,30 +1071,30 @@
                 </li>
                 <li class="faq-card faq-card__inner">
                   <div class="faq-card__header">
-                    <div class="faq-card__title">Как я могу стать владельцем плантации?</div>
+                    <div class="faq-card__title" data-i18n="faq.card8.title">Как я могу стать владельцем плантации?</div>
                     <button class="faq-card__btn"></button>
                   </div>
                   <div class="faq-card__wrap-content">
-                    <div class="faq-card__content">
+                    <div class="faq-card__content" data-i18n="[html]faq.card8.content">
                       <p class="faq-card__desc">
                         Чтобы владеть деревом или даже целой плантацией в Грузии, вам необязательно быть гражданином этой страны. Стать нашим партнером легко:
                         достаточно пройти регистрацию на сайте проекта BioDeposit, или, если вы уже это сделали, перейти в личный кабинет и оплатить нужное
                         количество деревьев.
                       </p>
                       <p class="faq-card__desc">
-                        Также мы предоставляем возможность организации собственной плантации по партнерской программе. Подробности о ней можно отправив нам запрос
-                        в Телеграм @ или заполнив форму выше.
+                        Также мы предоставляем возможность организации собственной плантации по партнерской программе. Подробности о ней можно отправив нам
+                        запрос в Телеграм @ или заполнив форму выше.
                       </p>
                     </div>
                   </div>
                 </li>
                 <li class="faq-card faq-card__inner">
                   <div class="faq-card__header">
-                    <div class="faq-card__title">Насколько сохранна такая инвестиция? Что будет, если мое дерево погибнет?</div>
+                    <div class="faq-card__title" data-i18n="faq.card9.title">Насколько сохранна такая инвестиция? Что будет, если мое дерево погибнет?</div>
                     <button class="faq-card__btn"></button>
                   </div>
                   <div class="faq-card__wrap-content">
-                    <div class="faq-card__content">
+                    <div class="faq-card__content" data-i18n="[html]faq.card9.content">
                       <p class="faq-card__desc">
                         Бывает, что молодые деревья не приживаются. Подобное случается редко: риски, называемые нашими эдвайзорами (международными экспертами с
                         многолетним опытом), не превышают 2-3%. Что касается наших партнеров, то они не рискуют ничем, т.к. для каждой плантации мы формируем
@@ -844,20 +1107,20 @@
                       </p>
                       <p class="faq-card__desc">
                         Мы берем на себя всю ответственность за сохранность дерева в течении первых трех лет (страховка и уход за деревом входят в его базовую
-                        стоимость). Начиная с четвертого года, когда дерево начнет плодоносить, вы можете застраховать дерево от любых форс-мажорных обстоятельств
-                        в независимой страховой компании.
+                        стоимость). Начиная с четвертого года, когда дерево начнет плодоносить, вы можете застраховать дерево от любых форс-мажорных
+                        обстоятельств в независимой страховой компании.
                       </p>
                     </div>
                   </div>
                 </li>
                 <li class="faq-card faq-card__inner">
                   <div class="faq-card__header">
-                    <div class="faq-card__title">От чего зависит стоимость дерева?</div>
+                    <div class="faq-card__title" data-i18n="faq.card10.title">От чего зависит стоимость дерева?</div>
                     <button class="faq-card__btn"></button>
                   </div>
                   <div class="faq-card__wrap-content">
                     <div class="faq-card__content">
-                      <p class="faq-card__desc">
+                      <p class="faq-card__desc" data-i18n="[html]faq.card10.content">
                         Чем старше дерево, тем выше его стоимость. В период с 4-го по 10-й год количество прибыли растет за счет приносимого деревом урожая.
                         Соответственно, повышается и стоимость биоактива. По достижению деревом 10-летнего возраста рост стоимости останавливается.
                       </p>
@@ -866,27 +1129,29 @@
                 </li>
                 <li class="faq-card faq-card__inner">
                   <div class="faq-card__header">
-                    <div class="faq-card__title">В чем наша выгода?</div>
+                    <div class="faq-card__title" data-i18n="faq.card11.title">В чем наша выгода?</div>
                     <button class="faq-card__btn"></button>
                   </div>
                   <div class="faq-card__wrap-content">
                     <div class="faq-card__content">
-                      <p class="faq-card__desc">
+                      <p class="faq-card__desc" data-i18n="[html]faq.card11.content">
                         Продавая деревья, мы преследуем несколько целей: - Масштабирование плантации, для получения сырьевой базы и производства продуктов из
-                        оливки; - Обеспечение собственной обслуживающей компании постоянным доходом (ведь мы получаем часть вашего урожая); - Озеленение планеты
-                        (благодаря одному дереву могут дышать два человека); - Популяризация оливкового масла.
+                        оливки; <br />
+                        - Обеспечение собственной обслуживающей компании постоянным доходом (ведь мы получаем часть вашего урожая); <br />
+                        - Озеленение планеты (благодаря одному дереву могут дышать два человека); <br />
+                        - Популяризация оливкового масла.<br />
                       </p>
                     </div>
                   </div>
                 </li>
                 <li class="faq-card faq-card__inner">
                   <div class="faq-card__header">
-                    <div class="faq-card__title">Олива – единственный биоактив, приносящий большую прибыль?</div>
+                    <div class="faq-card__title" data-i18n="faq.card12.title">Олива – единственный биоактив, приносящий большую прибыль?</div>
                     <button class="faq-card__btn"></button>
                   </div>
                   <div class="faq-card__wrap-content">
                     <div class="faq-card__content">
-                      <p class="faq-card__desc">
+                      <p class="faq-card__desc" data-i18n="[html]faq.card12.content">
                         Не единственный. Мы изучаем все виды прибыльных биоактивов, и не исключено, что также включим их в проект BioDeposit в будущем.
                       </p>
                     </div>
@@ -894,12 +1159,12 @@
                 </li>
                 <li class="faq-card faq-card__inner">
                   <div class="faq-card__header">
-                    <div class="faq-card__title">Деревья уже посажены, или это еще только предстоит сделать?</div>
+                    <div class="faq-card__title" data-i18n="faq.card13.title">Деревья уже посажены, или это еще только предстоит сделать?</div>
                     <button class="faq-card__btn"></button>
                   </div>
                   <div class="faq-card__wrap-content">
                     <div class="faq-card__content">
-                      <p class="faq-card__desc">
+                      <p class="faq-card__desc" data-i18n="[html]faq.card13.content">
                         Деревья уже посажены. Это сделано для удобства инвесторов. Приобретая не саженец, а молодое дерево, вы быстрее начнете получать с него
                         урожай.
                       </p>
@@ -908,41 +1173,43 @@
                 </li>
                 <li class="faq-card faq-card__inner">
                   <div class="faq-card__header">
-                    <div class="faq-card__title">Смогу ли я свое дерево кому-то подарить?</div>
+                    <div class="faq-card__title" data-i18n="faq.card14.title">Смогу ли я свое дерево кому-то подарить?</div>
                     <button class="faq-card__btn"></button>
                   </div>
                   <div class="faq-card__wrap-content">
                     <div class="faq-card__content">
-                      <p class="faq-card__desc">
-                        Разумеется. И не только подарить. Для проекта BioDeposit нами разработан ряд юридически защищенных опций, куда кроме дарения также входит
-                        возможность жертвования (благотворительности) и передачи в наследство.
+                      <p class="faq-card__desc" data-i18n="[html]faq.card14.content">
+                        Разумеется. И не только подарить. Для проекта BioDeposit нами разработан ряд юридически защищенных опций, куда кроме дарения также
+                        входит возможность жертвования (благотворительности) и передачи в наследство.
                       </p>
                     </div>
                   </div>
                 </li>
                 <li class="faq-card faq-card__inner">
                   <div class="faq-card__header">
-                    <div class="faq-card__title">Могу ли я забрать свое дерево?</div>
+                    <div class="faq-card__title" data-i18n="faq.card15.title">Могу ли я забрать свое дерево?</div>
                     <button class="faq-card__btn"></button>
                   </div>
                   <div class="faq-card__wrap-content">
                     <div class="faq-card__content">
-                      <p class="faq-card__desc">
+                      <p class="faq-card__desc" data-i18n="[html]faq.card15.content">
                         Места под посадку плантаций тщательно выбирались агроспециалистами, чтобы каждое дерево росло там, где для этого природой и человеком
-                        созданы наилучшие условия. Но если владельцу оливы захочется выкопать ее и пересадить, допустим, на свой дачный участок, то для этого нет
-                        никаких технических преград.
+                        созданы наилучшие условия. Но если владельцу оливы захочется выкопать ее и пересадить, допустим, на свой дачный участок, то для этого
+                        нет никаких технических преград.
                       </p>
                     </div>
                   </div>
                 </li>
                 <li class="faq-card faq-card__inner">
                   <div class="faq-card__header">
-                    <div class="faq-card__title">Если я захочу купить сразу много деревьев, можно ли рассчитывать на оптовую цену?</div>
+                    <div class="faq-card__title" data-i18n="faq.card16.title">
+                      Если я захочу купить сразу много деревьев, можно ли рассчитывать на оптовую цену?
+                    </div>
                     <button class="faq-card__btn"></button>
                   </div>
                   <div class="faq-card__wrap-content">
                     <div class="faq-card__content">
-                      <p class="faq-card__desc">
+                      <p class="faq-card__desc" data-i18n="[html]faq.card16.content">
                         Если Вы готовы купить более 3 тысяч оливковых деревьев, то для вас действуют специальные условия, о которых вы можете узнать, заполнив
                         форму на этой странице.
                       </p>
@@ -953,16 +1220,22 @@
             </div>
           </section>
           <section data-wow-duration="0.6s" class="wow fadeInUp section-mt difference-section">
-            <h2 class="difference-section__title">Благородный бизнес<span>, который вы оставите </span>в наследство своим потомкам</h2>
-            <div class="difference-section__year-foundation">BioDeposit <span>since 2017</span></div>
+            <h2 class="difference-section__title" data-i18n="[html]difference.title">
+              Благородный бизнес<span>, который вы оставите </span>в наследство своим потомкам
+            </h2>
+            <div class="difference-section__year-foundation" data-i18n="[html]difference.yearFoundation">BioDeposit <span>since 2017</span></div>
           </section>
         </main>
+      </div>
     </div>
+
     <footer class="footer">
       <div class="footer__inner">
         <div class="footer__nav">
-          <a href="#expected-section" class="footer__link">Доходность</a><a href="#calculate-section" class="footer__link">Калькулятор</a
-          ><a href="#faq" class="footer__link">FAQ</a><a href="#tree-form-section" class="footer__link">Контакты</a>
+          <a href="#expected-section" class="footer__link" data-i18n="nav.roi">Доходность</a
+          ><a href="#calculate-section" class="footer__link" data-i18n="nav.yieldCalculator">Калькулятор</a
+          ><a href="#faq" class="footer__link" data-i18n="nav.faq">FAQ</a
+          ><a href="#tree-form-section" class="footer__link" data-i18n="nav.contactUs">Контакты</a>
         </div>
         <div class="footer__social social">
           <div class="social__box">
@@ -979,57 +1252,63 @@
           </div>
         </div>
         <div class="footer__copyright">
-          <div class="copyright">©2023 BioDeposit. Все права защищены</div>
+          <div class="copyright" data-i18n="copyright">©2023 BioDeposit. Все права защищены</div>
         </div>
       </div>
     </footer>
 
-    <div id="modal-invest" class="modal">
+    <div id="modal-invest" data-attr="modal-calculate" class="modal">
       <div class="modal__overlay">
         <div class="wrap-window-modal">
           <div class="modal__window window-modal">
             <div class="window-modal__inner">
               <button class="window-modal__close"></button>
               <div class="income-calculator">
-                <div class="calculator__title income-calculator__title">Калькулятор <br />ожидаемого дохода</div>
+                <div class="calculator__title income-calculator__title" data-i18n="[html]modal.title">Калькулятор <br />ожидаемого дохода</div>
                 <div class="income-calculator__container">
                   <div class="initial-data">
                     <div class="initial-data__column">
                       <div class="calculator__card calculator__icon calculator__icon_tree">
-                        <div class="calculator__title calculator__title_sm">Количество деревьев:</div>
+                        <div class="calculator__title calculator__title_sm" data-i18n="modal.numberTrees">Количество деревьев:</div>
                         <div class="calculator__card-range">
                           <input
                             id="tree-count-input"
                             class="calculator__input"
                             type="range"
-                            min="1"
+                            min="0"
                             max="3000"
-                            step="1"
-                            value="1"
-                            oninput="outputUpdate(this)" />
-                          <output class="calculator__output" id="tree-count-output" for="tree-count-input"><span>1</span> шт</output>
+                            step="10"
+                            value="10"
+                            oninput="window.outputUpdate(this, true)" />
+                          <output class="calculator__output" id="tree-count-output" for="tree-count-input"
+                            ><span>1</span><span data-i18n="modal.things"> шт</span></output
+                          >
                           <span class="calculator__range-value calculator__range-value_start">1</span
                           ><span class="calculator__range-value calculator__range-value_finish">3000</span>
                         </div>
                         <div class="calculator__card-desc">
-                          <div class="calculator__desc">Размер инвестиций</div>
+                          <div class="calculator__desc" data-i18n="modal.investmentAmount">Размер инвестиций</div>
                           <div class="calculator__card-num calculator__num calculator__num_md">$<span data-num="investment-size">35 400</span></div>
                         </div>
                       </div>
                     </div>
                     <div class="initial-data__column">
                       <div class="initial-data__panel initial-data__panel_average-income">
-                        <div class="initial-data__panel-title calculator__title calculator__title_xs">Средний ожидаемый доход в год:</div>
+                        <div class="initial-data__panel-title calculator__title calculator__title_xs" data-i18n="modal.invest.card1">
+                          Средний ожидаемый доход в год:
+                        </div>
                         <div class="calculator__num initial-data__num">
                           <span>$</span>
                           <span data-num="average-income">133 800</span>
                           <span class="initial-data__num-delimiter"></span>
-                          <span  data-num="average-percentage">55,8</span>
+                          <span data-num="average-percentage">55,8</span>
                           <span>%</span>
                         </div>
                       </div>
                       <div class="initial-data__panel initial-data__panel_green">
-                        <div class="initial-data__panel-title calculator__white calculator__title calculator__title_xs">Ожидаемый доход за первые 10 лет:</div>
+                        <div class="initial-data__panel-title calculator__white calculator__title calculator__title_xs" data-i18n="modal.invest.card2">
+                          Ожидаемый доход за первые 10 лет:
+                        </div>
                         <div class="calculator__white calculator__num initial-data__num">
                           <span>$</span>
                           <span data-num="income-first-years">156 678</span>
@@ -1043,96 +1322,78 @@
                 </div>
                 <div class="income-calculator__container">
                   <div class="expected-income">
-                    <div class="calculator__title calculator__title_sm">Доход в год в первые 10 лет</div>
+                    <div class="calculator__title calculator__title_sm" data-i18n="modal.invest.title">Доход в год в первые 10 лет</div>
                     <ul class="expected-income__container">
                       <li class="expected-income__card">
-                        <div class="expected-income__card-title calculator__title calculator__title_xs">1 год</div>
+                        <div class="expected-income__card-title calculator__title calculator__title_xs">1 <span data-i18n="modal.invest.year">год</span></div>
                         <div class="expected-income__card-num calculator__num calculator__num_sm">
                           <div class="expected-income__profit">$<span data-num="expected-income">0</span></div>
-                          <div class="expected-income__percentage">
-                            <span data-num="expected-percentage">0,0</span><span>%</span>
-                          </div>
+                          <div class="expected-income__percentage"><span data-num="expected-percentage">0,0</span><span>%</span></div>
                         </div>
                       </li>
                       <li class="expected-income__card">
-                        <div class="expected-income__card-title calculator__title calculator__title_xs">2 год</div>
+                        <div class="expected-income__card-title calculator__title calculator__title_xs">2 <span data-i18n="modal.invest.year">год</span></div>
                         <div class="expected-income__card-num calculator__num calculator__num_sm">
                           <div class="expected-income__profit">$<span data-num="expected-income">0</span></div>
-                          <div class="expected-income__percentage">
-                            <span data-num="expected-percentage">0,0</span><span>%</span>
-                          </div>
+                          <div class="expected-income__percentage"><span data-num="expected-percentage">0,0</span><span>%</span></div>
                         </div>
                       </li>
                       <li class="expected-income__card">
-                        <div class="expected-income__card-title calculator__title calculator__title_xs">3 год</div>
+                        <div class="expected-income__card-title calculator__title calculator__title_xs">3 <span data-i18n="modal.invest.year">год</span></div>
                         <div class="expected-income__card-num calculator__num calculator__num_sm">
                           <div class="expected-income__profit">$<span data-num="expected-income">0</span></div>
-                          <div class="expected-income__percentage">
-                            <span data-num="expected-percentage">0,0</span><span>%</span>
-                          </div>
+                          <div class="expected-income__percentage"><span data-num="expected-percentage">0,0</span><span>%</span></div>
                         </div>
                       </li>
                       <li class="expected-income__card">
-                        <div class="expected-income__card-title calculator__title calculator__title_xs">4 год</div>
+                        <div class="expected-income__card-title calculator__title calculator__title_xs">4 <span data-i18n="modal.invest.year">год</span></div>
                         <div class="expected-income__card-num calculator__num calculator__num_sm">
                           <div class="expected-income__profit">$<span data-num="expected-income">120 000</span></div>
-                          <div class="expected-income__percentage">
-                            <span data-num="expected-percentage">50,0</span><span>%</span>
-                          </div>
+                          <div class="expected-income__percentage"><span data-num="expected-percentage">50,0</span><span>%</span></div>
                         </div>
                       </li>
                       <li class="expected-income__card">
-                        <div class="expected-income__card-title calculator__title calculator__title_xs">5 год</div>
+                        <div class="expected-income__card-title calculator__title calculator__title_xs">5 <span data-i18n="modal.invest.year">год</span></div>
                         <div class="expected-income__card-num calculator__num calculator__num_sm">
                           <div class="expected-income__profit">$<span data-num="expected-income">144 000</span></div>
-                          <div class="expected-income__percentage">
-                            <span data-num="expected-percentage">60,0</span><span>%</span>
-                          </div>
+                          <div class="expected-income__percentage"><span data-num="expected-percentage">60,0</span><span>%</span></div>
                         </div>
                       </li>
                       <li class="expected-income__card">
-                        <div class="expected-income__card-title calculator__title calculator__title_xs">6 год</div>
+                        <div class="expected-income__card-title calculator__title calculator__title_xs">6 <span data-i18n="modal.invest.year">год</span></div>
                         <div class="expected-income__card-num calculator__num calculator__num_sm">
                           <div class="expected-income__profit">$<span data-num="expected-income">162 000</span></div>
-                          <div class="expected-income__percentage">
-                            <span data-num="expected-percentage">67,5</span><span>%</span>
-                          </div>
+                          <div class="expected-income__percentage"><span data-num="expected-percentage">67,5</span><span>%</span></div>
                         </div>
                       </li>
                       <li class="expected-income__card">
-                        <div class="expected-income__card-title calculator__title calculator__title_xs">7 год</div>
+                        <div class="expected-income__card-title calculator__title calculator__title_xs">7 <span data-i18n="modal.invest.year">год</span></div>
                         <div class="expected-income__card-num calculator__num calculator__num_sm">
                           <div class="expected-income__profit">$<span data-num="expected-income">180 000</span></div>
-                          <div class="expected-income__percentage">
-                            <span data-num="expected-percentage">75,0</span><span>%</span>
-                          </div>
+                          <div class="expected-income__percentage"><span data-num="expected-percentage">75,0</span><span>%</span></div>
                         </div>
                       </li>
                       <li class="expected-income__card">
-                        <div class="expected-income__card-title calculator__title calculator__title_xs">8 год</div>
+                        <div class="expected-income__card-title calculator__title calculator__title_xs">8 <span data-i18n="modal.invest.year">год</span></div>
                         <div class="expected-income__card-num calculator__num calculator__num_sm">
                           <div class="expected-income__profit">$<span data-num="expected-income">204 000</span></div>
-                          <div class="expected-income__percentage">
-                            <span data-num="expected-percentage">85,0</span><span>%</span>
-                          </div>
+                          <div class="expected-income__percentage"><span data-num="expected-percentage">85,0</span><span>%</span></div>
                         </div>
                       </li>
                       <li class="expected-income__card">
-                        <div class="expected-income__card-title calculator__title calculator__title_xs">9 год</div>
+                        <div class="expected-income__card-title calculator__title calculator__title_xs">9 <span data-i18n="modal.invest.year">год</span></div>
                         <div class="expected-income__card-num calculator__num calculator__num_sm">
                           <div class="expected-income__profit">$<span data-num="expected-income">240 000</span></div>
-                          <div class="expected-income__percentage">
-                            <span data-num="expected-percentage">100,0</span><span>%</span>
-                          </div>
+                          <div class="expected-income__percentage"><span data-num="expected-percentage">100,0</span><span>%</span></div>
                         </div>
                       </li>
                       <li class="expected-income__card expected-income__card_accent">
-                        <div class="expected-income__card-title calculator__title calculator__title_xs">10 год и далее</div>
+                        <div class="expected-income__card-title calculator__title calculator__title_xs">
+                          10 <span data-i18n="modal.invest.yearLast">год и далее</span>
+                        </div>
                         <div class="expected-income__card-num calculator__num calculator__num_sm">
                           <div class="expected-income__profit">$<span data-num="expected-income">288 000</span></div>
-                          <div class="expected-income__percentage">
-                            <span data-num="expected-percentage">120,0</span><span>%</span>
-                          </div>
+                          <div class="expected-income__percentage"><span data-num="expected-percentage">120,0</span><span>%</span></div>
                         </div>
                       </li>
                     </ul>
@@ -1140,25 +1401,35 @@
                 </div>
                 <div class="income-calculator__container">
                   <div class="extra-options">
-                    <div class="extra-options__title calculator__title calculator__title_md">Дополнительные параметры:</div>
+                    <div class="extra-options__title calculator__title calculator__title_md" data-i18n="modal.additionalParameters">
+                      Дополнительные параметры:
+                    </div>
                     <div class="extra-options__oil">
                       <div class="calculator__card calculator__icon calculator__icon_oil">
-                        <div class="calculator__title calculator__title_sm">Стоимость оливкого масла, 1л:</div>
+                        <div class="calculator__title calculator__title_sm" data-i18n="modal.oilDesc">Стоимость оливкого масла, 1л:</div>
                         <div class="calculator__card-range">
-                          <input id="oil-price-input" class="calculator__input" type="range" min="0" max="10" step="1" value="5" oninput="outputUpdate(this)" />
+                          <input
+                            id="oil-price-input"
+                            class="calculator__input"
+                            type="range"
+                            min="0"
+                            max="100"
+                            step="1"
+                            value="50"
+                            oninput="window.outputUpdate(this, true)" />
                           <output class="calculator__output" id="oil-price-output" for="oil-price-input"><span>0</span></output>
                           <span class="calculator__range-value calculator__range-value_start">0</span
                           ><span class="calculator__range-value calculator__range-value_finish">10</span>
                         </div>
                         <div class="calculator__card-desc">
-                          <div  class="extra-options__desc calculator__desc">Стоимость оливкого масла</div>
+                          <div class="extra-options__desc calculator__desc" data-i18n="modal.oil">Стоимость оливкого масла</div>
                           <div class="calculator__card-num calculator__num calculator__num_md">$<span data-num="oil-price">5,0</span></div>
                         </div>
                       </div>
                     </div>
                     <div class="extra-options__productivity">
                       <div class="calculator__card calculator__icon calculator__icon_olive">
-                        <div class="extra-options__productivity-title calculator__title calculator__title_sm">
+                        <div class="extra-options__productivity-title calculator__title calculator__title_sm" data-i18n="modal.productivityDesc">
                           Урожайность на 1 дерево, кг оливок с 10-го года:
                         </div>
                         <div class="calculator__card-range">
@@ -1166,49 +1437,251 @@
                             id="productivity-input"
                             class="calculator__input"
                             type="range"
-                            min="1"
+                            min="0"
                             max="200"
-                            step="1"
+                            step="5"
                             value="80"
-                            oninput="outputUpdate(this)" />
+                            oninput="window.outputUpdate(this, true)" />
                           <output class="calculator__output" id="productivity-output" for="productivity-input"><span>0</span></output>
                           <span class="calculator__range-value calculator__range-value_start">0</span
                           ><span class="calculator__range-value calculator__range-value_finish">200</span>
                         </div>
                         <div class="calculator__card-desc">
-                          <div class="extra-options__desc calculator__desc">Уражайность на 1 дерево</div>
-                          <div class="calculator__card-num calculator__num calculator__num_md"><span data-num="productivity">80</span> кг</div>
+                          <div class="extra-options__desc calculator__desc" data-i18n="modal.productivity">Урожайность на 1 дерево</div>
+                          <div class="calculator__card-num calculator__num calculator__num_md">
+                            <span data-num="productivity">80</span><span data-i18n="modal.kg"> кг</span>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <button class="calculator__btn income-calculator__btn">Купить деревья</button>
+                <button class="calculator__btn income-calculator__btn" data-i18n="modal.btn">Купить деревья</button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    
+
+    <div id="modal-capital" data-attr="modal-calculate" class="modal">
+      <div class="modal__overlay">
+        <div class="wrap-window-modal">
+          <div class="modal__window window-modal">
+            <div class="window-modal__inner">
+              <button class="window-modal__close"></button>
+              <div class="income-calculator">
+                <div class="calculator__title income-calculator__title" data-i18n="[html]modal.title">Калькулятор <br />ожидаемого дохода</div>
+                <div class="income-calculator__container">
+                  <div class="initial-data">
+                    <div class="initial-data__column">
+                      <div class="calculator__card calculator__icon calculator__icon_tree">
+                        <div class="calculator__title calculator__title_sm" data-i18n="modal.numberTrees">Количество деревьев:</div>
+                        <div class="calculator__card-range">
+                          <input
+                            id="tree-count-input"
+                            class="calculator__input"
+                            type="range"
+                            min="0"
+                            max="3000"
+                            step="10"
+                            value="10"
+                            oninput="window.outputUpdate(this, true)" />
+                          <output class="calculator__output" id="tree-count-output" for="tree-count-input"
+                            ><span>1</span><span data-i18n="modal.things"> шт</span></output
+                          >
+                          <span class="calculator__range-value calculator__range-value_start">1</span
+                          ><span class="calculator__range-value calculator__range-value_finish">3000</span>
+                        </div>
+                        <div class="calculator__card-desc">
+                          <div class="calculator__desc" data-i18n="modal.investmentAmount">Размер инвестиций</div>
+                          <div class="calculator__card-num calculator__num calculator__num_md">$<span data-num="investment-size">35 400</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="initial-data__column">
+                      <div class="initial-data__panel initial-data__panel_average-income">
+                        <div class="initial-data__panel-title calculator__title calculator__title_xs" data-i18n="modal.capital.card1">
+                          Кол-во деревьев в 18-й год
+                        </div>
+                        <div class="calculator__num initial-data__num">
+                          <span data-num="count-tree">7028</span>
+                          <span data-i18n="modal.things">шт</span>
+                        </div>
+                      </div>
+                      <div class="initial-data__panel initial-data__panel_green">
+                        <div class="initial-data__panel-title calculator__white calculator__title calculator__title_xs" data-i18n="modal.capital.card2">
+                          Ожидаемый доход в 18-й год
+                        </div>
+                        <div class="calculator__white calculator__num initial-data__num">
+                          <span>$</span>
+                          <span data-num="income-card-green">156 678</span>
+                          <span class="initial-data__num-delimiter"></span>
+                          <span data-num="percentage-card-green">443</span>
+                          <span>%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="income-calculator__container">
+                  <div class="expected-income">
+                    <div class="calculator__title calculator__title_sm" data-i18n="modal.capital.title">Ожидаемый доход в год, когда ребенку</div>
+                    <ul class="expected-income__container">
+                      <li class="expected-income__card">
+                        <div class="expected-income__card-title calculator__title calculator__title_xs">
+                          19 <span data-i18n="modal.capital.year1">лет</span>
+                        </div>
+                        <div class="expected-income__card-num calculator__num calculator__num_sm">
+                          <div class="expected-income__profit">$<span data-num="expected-income">0</span></div>
+                          <div class="expected-income__percentage"><span data-num="expected-percentage">0,0</span><span>%</span></div>
+                        </div>
+                      </li>
+                      <li class="expected-income__card">
+                        <div class="expected-income__card-title calculator__title calculator__title_xs">
+                          20 <span data-i18n="modal.capital.year1">лет</span>
+                        </div>
+                        <div class="expected-income__card-num calculator__num calculator__num_sm">
+                          <div class="expected-income__profit">$<span data-num="expected-income">0</span></div>
+                          <div class="expected-income__percentage"><span data-num="expected-percentage">0,0</span><span>%</span></div>
+                        </div>
+                      </li>
+                      <li class="expected-income__card">
+                        <div class="expected-income__card-title calculator__title calculator__title_xs">
+                          21 <span data-i18n="modal.capital.year2">год</span>
+                        </div>
+                        <div class="expected-income__card-num calculator__num calculator__num_sm">
+                          <div class="expected-income__profit">$<span data-num="expected-income">0</span></div>
+                          <div class="expected-income__percentage"><span data-num="expected-percentage">0,0</span><span>%</span></div>
+                        </div>
+                      </li>
+                      <li class="expected-income__card">
+                        <div class="expected-income__card-title calculator__title calculator__title_xs">
+                          22 <span data-i18n="modal.capital.year3">года</span>
+                        </div>
+                        <div class="expected-income__card-num calculator__num calculator__num_sm">
+                          <div class="expected-income__profit">$<span data-num="expected-income">120 000</span></div>
+                          <div class="expected-income__percentage"><span data-num="expected-percentage">50,0</span><span>%</span></div>
+                        </div>
+                      </li>
+                      <li class="expected-income__card">
+                        <div class="expected-income__card-title calculator__title calculator__title_xs">
+                          23 <span data-i18n="modal.capital.year3">года</span>
+                        </div>
+                        <div class="expected-income__card-num calculator__num calculator__num_sm">
+                          <div class="expected-income__profit">$<span data-num="expected-income">144 000</span></div>
+                          <div class="expected-income__percentage"><span data-num="expected-percentage">60,0</span><span>%</span></div>
+                        </div>
+                      </li>
+                      <li class="expected-income__card">
+                        <div class="expected-income__card-title calculator__title calculator__title_xs">
+                          24 <span data-i18n="modal.capital.year3">года</span>
+                        </div>
+                        <div class="expected-income__card-num calculator__num calculator__num_sm">
+                          <div class="expected-income__profit">$<span data-num="expected-income">162 000</span></div>
+                          <div class="expected-income__percentage"><span data-num="expected-percentage">67,5</span><span>%</span></div>
+                        </div>
+                      </li>
+                      <li class="expected-income__card">
+                        <div class="expected-income__card-title calculator__title calculator__title_xs">
+                          25 <span data-i18n="modal.capital.year1">лет</span>
+                        </div>
+                        <div class="expected-income__card-num calculator__num calculator__num_sm">
+                          <div class="expected-income__profit">$<span data-num="expected-income">180 000</span></div>
+                          <div class="expected-income__percentage"><span data-num="expected-percentage">75,0</span><span>%</span></div>
+                        </div>
+                      </li>
+                      <li class="expected-income__card">
+                        <div class="expected-income__card-title calculator__title calculator__title_xs">
+                          26 <span data-i18n="modal.capital.year1">лет</span>
+                        </div>
+                        <div class="expected-income__card-num calculator__num calculator__num_sm">
+                          <div class="expected-income__profit">$<span data-num="expected-income">204 000</span></div>
+                          <div class="expected-income__percentage"><span data-num="expected-percentage">85,0</span><span>%</span></div>
+                        </div>
+                      </li>
+                      <li class="expected-income__card expected-income__card_accent">
+                        <div class="expected-income__card-title calculator__title calculator__title_xs">
+                          27 <span data-i18n="modal.capital.yearLast">лет и далее</span>
+                        </div>
+                        <div class="expected-income__card-num calculator__num calculator__num_sm">
+                          <div class="expected-income__profit">$<span data-num="expected-income">288 000</span></div>
+                          <div class="expected-income__percentage"><span data-num="expected-percentage">120,0</span><span>%</span></div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="income-calculator__container">
+                  <div class="extra-options">
+                    <div class="extra-options__title calculator__title calculator__title_md" data-i18n="modal.additionalParameters">
+                      Дополнительные параметры:
+                    </div>
+                    <div class="extra-options__oil">
+                      <div class="calculator__card calculator__icon calculator__icon_oil">
+                        <div class="calculator__title calculator__title_sm" data-i18n="modal.oilDesc">Стоимость оливкого масла, 1л:</div>
+                        <div class="calculator__card-range">
+                          <input
+                            id="oil-price-input"
+                            class="calculator__input"
+                            type="range"
+                            min="0"
+                            max="100"
+                            step="1"
+                            value="50"
+                            oninput="window.outputUpdate(this, true)" />
+                          <output class="calculator__output" id="oil-price-output" for="oil-price-input"><span>0</span></output>
+                          <span class="calculator__range-value calculator__range-value_start">0</span
+                          ><span class="calculator__range-value calculator__range-value_finish">10</span>
+                        </div>
+                        <div class="calculator__card-desc">
+                          <div class="extra-options__desc calculator__desc" data-i18n="modal.oil">Стоимость оливкого масла</div>
+                          <div class="calculator__card-num calculator__num calculator__num_md">$<span data-num="oil-price">5,0</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="extra-options__productivity">
+                      <div class="calculator__card calculator__icon calculator__icon_olive">
+                        <div class="extra-options__productivity-title calculator__title calculator__title_sm" data-i18n="modal.productivityDesc">
+                          Урожайность на 1 дерево, кг оливок с 10-го года:
+                        </div>
+                        <div class="calculator__card-range">
+                          <input
+                            id="productivity-input"
+                            class="calculator__input"
+                            type="range"
+                            min="0"
+                            max="200"
+                            step="5"
+                            value="80"
+                            oninput="window.outputUpdate(this, true)" />
+                          <output class="calculator__output" id="productivity-output" for="productivity-input"><span>0</span></output>
+                          <span class="calculator__range-value calculator__range-value_start">0</span
+                          ><span class="calculator__range-value calculator__range-value_finish">200</span>
+                        </div>
+                        <div class="calculator__card-desc">
+                          <div class="extra-options__desc calculator__desc" data-i18n="modal.productivity">Урожайность на 1 дерево</div>
+                          <div class="calculator__card-num calculator__num calculator__num_md">
+                            <span data-num="productivity">80</span> <span data-i18n="modal.kg">кг</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="calculator__btn income-calculator__btn" data-i18n="modal.btn">Купить деревья</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="./libs/wow/wow.min.js"></script>
 
     <script>
-      // gsap.utils.toArray('.explanation__item').forEach(element => {
-      //   ScrollTrigger.create({
-      //     // trigger: '.explanation__list',
-      //     trigger: element,
-      //     markers: true,
-      //     start: "top +=200",
-      //     end: 'bottom +=200',
-      //     scrub: true,
-      //     pin: true,
-      //     pinSpacing: false
-      //   })
-      // });
-      
       new WOW({
         offset: 0,
         mobile: false,
@@ -1226,8 +1699,20 @@
             pin: true,
           });
       }
-      
-      new Swiper('.swiper', {
+
+      new Swiper('#banner-slider', {
+        slidesPerView: 1,
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+        },
+        // effect: 'coverflow',
+        effect: 'fade',
+        lazyPreloadPrevNext: 2,
+        loop: true,
+      });
+
+      new Swiper('#team-slider', {
         slidesPerView: 1,
         navigation: {
           disabledClass: 'team-section__arrow_not-active',
@@ -1243,20 +1728,14 @@
           },
           960: {
             slidesPerView: 3,
-            
-        grabCursor: true,
-          }
-        }
-      });
 
+            grabCursor: true,
+          },
+        },
+      });
     </script>
-    <!-- <script src="./js/modules/scroll.js"></script>
-    <script src="./js/modules/accordion.js"></script>
-    <script src="./js/modules/slider.js"></script>
-    <script src="./js/modules/menu.js"></script>
-    <script src="./js/modules/modal.js"></script>
-    
-    <script src="./js/modules/calculate.js"></script> -->
-    <script src="./js/index.min.js"></script>
+
+    <script type="module" src="./js/index.js"></script>
+    <!-- <script type="module" src="./js/modules/localize.js"></script> -->
   </body>
 </html>
