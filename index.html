@@ -20,57 +20,58 @@
     <script src="./libs/loc-i18next.min.js"></script>
   </head>
   <body>
-    <div class="wrap-header">
-      <header class="header">
-        <div class="header__inner">
-          <div class="header__logo">
-            <div class="logo">
-              <a href="./" class="logo__link">
-                <img src="./img/logo.svg" alt="logo: biodeposit" class="logo__img" />
-              </a>
+    <div class="box-header">
+      <div class="wrap-header">
+        <header class="header">
+          <div class="header__inner">
+            <div class="header__logo">
+              <div class="logo">
+                <a href="./" class="logo__link">
+                  <img src="./img/logo.svg" alt="logo: biodeposit" class="logo__img" />
+                </a>
+              </div>
             </div>
-          </div>
-          <div class="header__navigate">
-            <nav class="navigate">
-              <div class="navigate__wrapper-link"><a href="#expected-section" class="navigate__link" data-i18n="nav.roi">Доходность</a></div>
-              <div class="navigate__wrapper-link"><a href="#calculate-section" class="navigate__link" data-i18n="nav.yieldCalculator">Калькулятор</a></div>
-              <div class="navigate__wrapper-link"><a href="#faq" class="navigate__link" data-i18n="nav.faq">FAQ</a></div>
-              <div class="navigate__wrapper-link"><a href="#tree-form-section" class="navigate__link" data-i18n="nav.contactUs">Контакты</a></div>
-            </nav>
-          </div>
-          <div class="header__authorization">
-            <div class="authorization">
-              <a href="entry.html" class="authorization__link authorization__entry" data-i18n="auth.logIn">Вход</a>
-              <span class="authorization__delimiter"> / </span>
-              <a href="register.html" class="authorization__link authorization__registration" data-i18n="auth.signUp">Регистрация</a>
+            <div class="header__navigate">
+              <nav class="navigate">
+                <div class="navigate__wrapper-link"><a href="#expected-section" class="navigate__link" data-i18n="nav.roi">Доходность</a></div>
+                <div class="navigate__wrapper-link"><a href="#calculate-section" class="navigate__link" data-i18n="nav.yieldCalculator">Калькулятор</a></div>
+                <div class="navigate__wrapper-link"><a href="#faq" class="navigate__link" data-i18n="nav.faq">FAQ</a></div>
+                <div class="navigate__wrapper-link"><a href="#tree-form-section" class="navigate__link" data-i18n="nav.contactUs">Контакты</a></div>
+              </nav>
             </div>
-          </div>
-          <div class="header__localization">
-            <div class="localization">
-              <button data-lang="ru" class="localization__btn localization__btn_active">RU</button>
-
-              <button data-lang="en" class="localization__btn">EN</button>
+            <div class="header__authorization">
+              <div class="authorization">
+                <a href="entry.html" class="authorization__link authorization__entry" data-i18n="auth.logIn">Вход</a>
+                <span class="authorization__delimiter"> / </span>
+                <a href="register.html" class="authorization__link authorization__registration" data-i18n="auth.signUp">Регистрация</a>
+              </div>
             </div>
-          </div>
-          <div class="header__menu">
-            <div class="menu">
-              <button id="menu-btn" class="menu__btn"><span class="menu__btn-line"></span></button>
-              <div class="menu__dropdown dropdown-menu" data-visible="hide">
-                <a href="#expected-section" class="dropdown-menu__link" data-i18n="nav.roi">Доходность</a>
-                <a href="#calculate-section" class="dropdown-menu__link" data-i18n="nav.yieldCalculator">Калькулятор</a>
-                <a href="#faq" class="dropdown-menu__link" data-i18n="nav.faq">FAQ</a>
-                <a href="#tree-form-section" class="dropdown-menu__link" data-i18n="nav.contactUs">Контакты</a>
-                <div class="dropdown-menu__auth">
-                  <a href="entry.html" data-i18n="auth.logIn">Вход</a>
-                  <span> / </span>
-                  <a href="register.html" data-i18n="auth.signUp">Регистрация</a>
+            <div class="header__localization">
+              <div class="localization">
+                <button data-lang="ru" class="localization__btn localization__btn_active">RU</button>
+                <button data-lang="en" class="localization__btn">EN</button>
+              </div>
+            </div>
+            <div class="header__menu">
+              <div class="menu">
+                <button id="menu-btn" class="menu__btn"><span class="menu__btn-line"></span></button>
+                <div class="menu__dropdown dropdown-menu" data-visible="hide">
+                  <a href="#expected-section" class="dropdown-menu__link" data-i18n="nav.roi">Доходность</a>
+                  <a href="#calculate-section" class="dropdown-menu__link" data-i18n="nav.yieldCalculator">Калькулятор</a>
+                  <a href="#faq" class="dropdown-menu__link" data-i18n="nav.faq">FAQ</a>
+                  <a href="#tree-form-section" class="dropdown-menu__link" data-i18n="nav.contactUs">Контакты</a>
+                  <div class="dropdown-menu__auth">
+                    <a href="entry.html" data-i18n="auth.logIn">Вход</a>
+                    <span> / </span>
+                    <a href="register.html" data-i18n="auth.signUp">Регистрация</a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div id="menu-ground" class="header__ground header__ground_hide"></div>
-      </header>
+          <div id="menu-ground" class="header__ground header__ground_hide"></div>
+        </header>
+      </div>
     </div>
     <div class="wrapper">
       <div class="wrap-content">
@@ -91,88 +92,152 @@
                     <div class="swiper-wrapper">
                       <div class="swiper-slide">
                         <div class="main-banner">
-                          <img src="./img/banner1.png" loading="lazy" alt="img: banner1" class="main-banner__img" />
+                          <img src="./img/banner1.jpg" loading="lazy" alt="img: banner1" class="main-banner__img" />
+                          <div class="main-banner__desc" data-i18n="[html]banner.text1">
+                            Как создать <br>стабильную <br>пенсию в $5 000?
+                          </div>
                           <!-- <img src="./img/banner1-md.png" alt="img: banner" class="main-banner__img main-banner__img_mobile" /> -->
                         </div>
                         <div class="swiper-lazy-preloader"></div>
                       </div>
                       <div class="swiper-slide">
                         <div class="main-banner">
-                          <img src="./img/banner2.png" loading="lazy" alt="img: banner2" class="main-banner__img" />
+                          <img src="./img/banner2.jpg" loading="lazy" alt="img: banner2" class="main-banner__img" />
+                          <div class="main-banner__desc main-banner__desc_other" data-i18n="[html]banner.text2">
+                            Как создать капитал <br>
+                            в $64 000 своим детям,  <br>
+                            проинвестировав $1180?
+                          </div>
                         </div>
                         <div class="swiper-lazy-preloader"></div>
                       </div>
                       <div class="swiper-slide">
                         <div class="main-banner">
-                          <img src="./img/banner3.png" loading="lazy" alt="img: banner3" class="main-banner__img" />
+                          <img src="./img/banner3.jpg" loading="lazy" alt="img: banner3" class="main-banner__img" />
+                          <div class="main-banner__desc main-banner__desc_other" data-i18n="[html]banner.text3">
+                            Инвестиции  <br>
+                            с доходностью  <br>
+                            от 39% годовых для<br>
+                            крупных инвесторов
+                          </div>
                         </div>
                         <div class="swiper-lazy-preloader"></div>
                       </div>
                       <div class="swiper-slide">
                         <div class="main-banner">
-                          <img src="./img/banner4.png" loading="lazy" alt="img: banner4" class="main-banner__img" />
+                          <img src="./img/banner4.jpg" loading="lazy" alt="img: banner4" class="main-banner__img" />
+                          <div class="main-banner__desc" data-i18n="[html]banner.text1">
+                            Как создать <br>стабильную <br>пенсию в $5 000?
+                          </div>
                         </div>
                         <div class="swiper-lazy-preloader"></div>
                       </div>
                       <div class="swiper-slide">
                         <div class="main-banner">
-                          <img src="./img/banner5.png" loading="lazy" alt="img: banner5" class="main-banner__img" />
+                          <img src="./img/banner5.jpg" loading="lazy" alt="img: banner5" class="main-banner__img" />
+                          <div class="main-banner__desc main-banner__desc_other" data-i18n="[html]banner.text2">
+                            Как создать капитал <br>
+                            в $64 000 своим детям,  <br>
+                            проинвестировав $1180?
+                          </div>
                         </div>
                         <div class="swiper-lazy-preloader"></div>
                       </div>
                       <div class="swiper-slide">
                         <div class="main-banner">
-                          <img src="./img/banner6.png" loading="lazy" alt="img: banner6" class="main-banner__img" />
+                          <img src="./img/banner6.jpg" loading="lazy" alt="img: banner6" class="main-banner__img" />
+                          <div class="main-banner__desc main-banner__desc_other" data-i18n="[html]banner.text3">
+                            Инвестиции  <br>
+                            с доходностью  <br>
+                            от 39% годовых для<br>
+                            крупных инвесторов
+                          </div>
                         </div>
                         <div class="swiper-lazy-preloader"></div>
                       </div>
                       <div class="swiper-slide">
                         <div class="main-banner">
-                          <img src="./img/banner7.png" loading="lazy" alt="img: banner7" class="main-banner__img" />
+                          <img src="./img/banner7.jpg" loading="lazy" alt="img: banner7" class="main-banner__img" />
+                          <div class="main-banner__desc" data-i18n="[html]banner.text1">
+                            Как создать <br>стабильную <br>пенсию в $5 000?
+                          </div>
                         </div>
                         <div class="swiper-lazy-preloader"></div>
                       </div>
 
                       <div class="swiper-slide">
                         <div class="main-banner">
-                          <img src="./img/banner2.png" loading="lazy" alt="img: banner2" class="main-banner__img" />
+                          <img src="./img/banner2.jpg" loading="lazy" alt="img: banner2" class="main-banner__img" />
+                          <div class="main-banner__desc main-banner__desc_other" data-i18n="[html]banner.text2">
+                            Как создать капитал <br>
+                            в $64 000 своим детям,  <br>
+                            проинвестировав $1180?
+                          </div>
                         </div>
                         <div class="swiper-lazy-preloader"></div>
                       </div>
                       <div class="swiper-slide">
                         <div class="main-banner">
-                          <img src="./img/banner8.png" loading="lazy" alt="img: banner8" class="main-banner__img" />
+                          <img src="./img/banner8.jpg" loading="lazy" alt="img: banner8" class="main-banner__img" />
+                          <div class="main-banner__desc main-banner__desc_other" data-i18n="[html]banner.text3">
+                            Инвестиции  <br>
+                            с доходностью  <br>
+                            от 39% годовых для<br>
+                            крупных инвесторов
+                          </div>
                         </div>
                         <div class="swiper-lazy-preloader"></div>
                       </div>
                       <div class="swiper-slide">
                         <div class="main-banner">
-                          <img src="./img/banner9.png" loading="lazy" alt="img: banner9" class="main-banner__img" />
+                          <img src="./img/banner9.jpg" loading="lazy" alt="img: banner9" class="main-banner__img" />
+                          <div class="main-banner__desc" data-i18n="[html]banner.text1">
+                            Как создать <br>стабильную <br>пенсию в $5 000?
+                          </div>
                         </div>
                         <div class="swiper-lazy-preloader"></div>
                       </div>
 
                       <div class="swiper-slide">
                         <div class="main-banner">
-                          <img src="./img/banner5.png" loading="lazy" alt="img: banner5" class="main-banner__img" />
+                          <img src="./img/banner5.jpg" loading="lazy" alt="img: banner5" class="main-banner__img" />
+                          <div class="main-banner__desc main-banner__desc_other" data-i18n="[html]banner.text2">
+                            Как создать капитал <br>
+                            в $64 000 своим детям,  <br>
+                            проинвестировав $1180?
+                          </div>
                         </div>
                         <div class="swiper-lazy-preloader"></div>
                       </div>
 
                       <div class="swiper-slide">
                         <div class="main-banner">
-                          <img src="./img/banner3.png" loading="lazy" alt="img: banner3" class="main-banner__img" />
+                          <img src="./img/banner3.jpg" loading="lazy" alt="img: banner3" class="main-banner__img" />
+                          <div class="main-banner__desc main-banner__desc_other" data-i18n="[html]banner.text3">
+                            Инвестиции  <br>
+                            с доходностью  <br>
+                            от 39% годовых для<br>
+                            крупных инвесторов
+                          </div>
                         </div>
                         <div class="swiper-lazy-preloader"></div>
                       </div>
                       <div class="swiper-slide">
                         <div class="main-banner">
-                          <img src="./img/banner10.png" alt="img: banner10" class="main-banner__img" />
+                          <img src="./img/banner10.jpg" loading="lazy" alt="img: banner10" class="main-banner__img" />
+                          <div class="main-banner__desc" data-i18n="[html]banner.text1">
+                            Как создать <br>стабильную <br>пенсию в $5 000?
+                          </div>
                         </div>
                       </div>
                       <div class="swiper-slide">
                         <div class="main-banner">
-                          <img src="./img/banner6.png" loading="lazy" alt="img: banner6" class="main-banner__img" />
+                          <img src="./img/banner6.jpg" loading="lazy" alt="img: banner6" class="main-banner__img" />
+                          <div class="main-banner__desc main-banner__desc_other" data-i18n="[html]banner.text2">
+                            Как создать капитал <br>
+                            в $64 000 своим детям,  <br>
+                            проинвестировав $1180?
+                          </div>
                         </div>
                         <div class="swiper-lazy-preloader"></div>
                       </div>
@@ -469,7 +534,7 @@
                         <div class="invest-bar__indicator"></div>
                       </div>
                     </div>
-                    <div class="invest-bar__ticks">+4 года</div>
+                    <div class="invest-bar__ticks"><span>+4 </span> <span class="invest-bar__ticks-year"  data-i18n="expected.year2">года</span></div>
                   </div>
                   <div class="invest-bar__column">
                     <div class="invest-bar__indicators">
@@ -482,7 +547,7 @@
                         <div class="invest-bar__indicator"></div>
                       </div>
                     </div>
-                    <div class="invest-bar__ticks">+5 лет</div>
+                    <div class="invest-bar__ticks"><span>+5 </span> <span class="invest-bar__ticks-year"  data-i18n="expected.year">лет</span></div>
                   </div>
                   <div class="invest-bar__column">
                     <div class="invest-bar__indicators">
@@ -495,7 +560,7 @@
                         <div class="invest-bar__indicator"></div>
                       </div>
                     </div>
-                    <div class="invest-bar__ticks">+6 лет</div>
+                    <div class="invest-bar__ticks"><span>+6 </span> <span class="invest-bar__ticks-year"  data-i18n="expected.year">лет</span></div>
                   </div>
                   <div class="invest-bar__column">
                     <div class="invest-bar__indicators">
@@ -508,7 +573,7 @@
                         <div class="invest-bar__indicator"></div>
                       </div>
                     </div>
-                    <div class="invest-bar__ticks">+7 лет</div>
+                    <div class="invest-bar__ticks"><span>+7 </span> <span class="invest-bar__ticks-year"  data-i18n="expected.year">лет</span></div>
                   </div>
                   <div class="invest-bar__column">
                     <div class="invest-bar__indicators">
@@ -521,7 +586,7 @@
                         <div class="invest-bar__indicator"></div>
                       </div>
                     </div>
-                    <div class="invest-bar__ticks">+8 лет</div>
+                    <div class="invest-bar__ticks"><span>+8 </span> <span class="invest-bar__ticks-year"  data-i18n="expected.year">лет</span></div>
                   </div>
                   <div class="invest-bar__column">
                     <div class="invest-bar__indicators">
@@ -534,7 +599,7 @@
                         <div class="invest-bar__indicator"></div>
                       </div>
                     </div>
-                    <div class="invest-bar__ticks">+9 лет</div>
+                    <div class="invest-bar__ticks"><span>+9 </span> <span class="invest-bar__ticks-year"  data-i18n="expected.year">лет</span></div>
                   </div>
                   <div class="invest-bar__column">
                     <div class="invest-bar__indicators">
@@ -547,7 +612,7 @@
                         <div class="invest-bar__indicator"></div>
                       </div>
                     </div>
-                    <div class="invest-bar__ticks">+10 лет и далее</div>
+                    <div class="invest-bar__ticks"><span>+10 </span> <span class="invest-bar__ticks-year"  data-i18n="expected.yearLast">лет и далее</span></div>
                   </div>
                 </div>
               </div>

@@ -16,53 +16,55 @@
     <script src="./libs/loc-i18next.min.js"></script>
   </head>
   <body>
-    <div class="wrap-header">
-      <header class="header">
-        <div class="header__inner">
-          <div class="header__logo">
-            <div class="logo">
-              <a href="./" class="logo__link">
-                <img src="./img/logo.svg" alt="logo: biodeposit" class="logo__img" />
-              </a>
+    <div class="box-header">
+      <div class="wrap-header">
+        <header class="header">
+          <div class="header__inner">
+            <div class="header__logo">
+              <div class="logo">
+                <a href="./" class="logo__link">
+                  <img src="./img/logo.svg" alt="logo: biodeposit" class="logo__img" />
+                </a>
+              </div>
             </div>
-          </div>
-          <div class="header__navigate">
-            <nav class="navigate">
-              <div class="navigate__wrapper-link"><a href="./#expected-section" class="navigate__link" data-i18n="nav.roi">Доходность</a></div>
-              <div class="navigate__wrapper-link"><a href="./#calculate-section" class="navigate__link" data-i18n="nav.yieldCalculator">Калькулятор</a></div>
-              <div class="navigate__wrapper-link" data-i18n="nav.faq"><a href="./#faq" class="navigate__link">FAQ</a></div>
-              <div class="navigate__wrapper-link"><a href="./#tree-form-section" class="navigate__link" data-i18n="nav.contactUs">Контакты</a></div>
-            </nav>
-          </div>
-          <div class="header__authorization">
-            <div class="authorization">
-              <a href="entry.html" class="authorization__link authorization__entry" data-i18n="auth.logIn">Вход</a>
-              <span class="authorization__delimiter"> / </span>
-              <a href="register.html" class="authorization__link authorization__registration" data-i18n="auth.signUp">Регистрация</a>
+            <div class="header__navigate">
+              <nav class="navigate">
+                <div class="navigate__wrapper-link"><a href="./#expected-section" class="navigate__link" data-i18n="nav.roi">Доходность</a></div>
+                <div class="navigate__wrapper-link"><a href="./#calculate-section" class="navigate__link" data-i18n="nav.yieldCalculator">Калькулятор</a></div>
+                <div class="navigate__wrapper-link" data-i18n="nav.faq"><a href="./#faq" class="navigate__link">FAQ</a></div>
+                <div class="navigate__wrapper-link"><a href="./#tree-form-section" class="navigate__link" data-i18n="nav.contactUs">Контакты</a></div>
+              </nav>
             </div>
-          </div>
-          <div class="header__localization">
-            <div class="localization"><button class="localization__btn localization__btn_active" data-lang="ru" >RU</button><button class="localization__btn" data-lang="en" >EN</button></div>
-          </div>
-          <div class="header__menu">
-            <div class="menu">
-              <button id="menu-btn" class="menu__btn"><span class="menu__btn-line"></span></button>
-              <div class="menu__dropdown dropdown-menu" data-visible="hide">
-                <a href="./#expected-section" class="dropdown-menu__link" data-i18n="nav.roi">Доходность</a>
-                <a href="./#calculate-section" class="dropdown-menu__link" data-i18n="nav.yieldCalculator">Калькулятор</a>
-                <a href="./#faq" class="dropdown-menu__link" data-i18n="nav.faq">FAQ</a>
-                <a href="./#tree-form-section" class="dropdown-menu__link" data-i18n="nav.contactUs">Контакты</a>
-                <div class="dropdown-menu__auth">
-                  <a href="entry.html" data-i18n="auth.logIn">Вход</a>
-                  <span> / </span>
-                  <a href="register.html" data-i18n="auth.signUp">Регистрация</a>
+            <div class="header__authorization">
+              <div class="authorization">
+                <a href="entry.html" class="authorization__link authorization__entry" data-i18n="auth.logIn">Вход</a>
+                <span class="authorization__delimiter"> / </span>
+                <a href="register.html" class="authorization__link authorization__registration" data-i18n="auth.signUp">Регистрация</a>
+              </div>
+            </div>
+            <div class="header__localization">
+              <div class="localization"><button class="localization__btn localization__btn_active" data-lang="ru" >RU</button><button class="localization__btn" data-lang="en" >EN</button></div>
+            </div>
+            <div class="header__menu">
+              <div class="menu">
+                <button id="menu-btn" class="menu__btn"><span class="menu__btn-line"></span></button>
+                <div class="menu__dropdown dropdown-menu" data-visible="hide">
+                  <a href="./#expected-section" class="dropdown-menu__link" data-i18n="nav.roi">Доходность</a>
+                  <a href="./#calculate-section" class="dropdown-menu__link" data-i18n="nav.yieldCalculator">Калькулятор</a>
+                  <a href="./#faq" class="dropdown-menu__link" data-i18n="nav.faq">FAQ</a>
+                  <a href="./#tree-form-section" class="dropdown-menu__link" data-i18n="nav.contactUs">Контакты</a>
+                  <div class="dropdown-menu__auth">
+                    <a href="entry.html" data-i18n="auth.logIn">Вход</a>
+                    <span> / </span>
+                    <a href="register.html" data-i18n="auth.signUp">Регистрация</a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div id="menu-ground" class="header__ground header__ground_hide"></div>
-      </header>
+          <div id="menu-ground" class="header__ground header__ground_hide"></div>
+        </header>
+      </div>
     </div>
     <div class="wrap-content">
       <main class="content">
