@@ -18,6 +18,9 @@
 
     <script src="https://unpkg.com/i18next@23.5.1/dist/umd/i18next.min.js"></script>
     <script src="./libs/loc-i18next.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   </head>
   <body>
     <div class="box-header">
@@ -60,6 +63,7 @@
                   <a href="#calculate-section" class="dropdown-menu__link" data-i18n="nav.yieldCalculator">Калькулятор</a>
                   <a href="#faq" class="dropdown-menu__link" data-i18n="nav.faq">FAQ</a>
                   <a href="#tree-form-section" class="dropdown-menu__link" data-i18n="nav.contactUs">Контакты</a>
+                  <a href="#tree-form-section" class="dropdown-menu__btn-link" data-i18n="btns.invest">Инвестировать</a>
                   <div class="dropdown-menu__auth">
                     <a href="entry.html" data-i18n="auth.logIn">Вход</a>
                     <span> / </span>
@@ -76,347 +80,342 @@
     <div class="wrapper">
       <div class="wrap-content">
         <main class="content">
-          <div class="content__header">
-            <section class="section-mt main-section">
-              <div class="main-section__column main-section__column_invest">
-                <h1 class="main-section__title" data-i18n="[html]main.title">Инвестиции <span>в оливковый бизнес</span></h1>
-                <p class="main-section__desc" data-i18n="[html]main.desc">
-                  Мы предлагаем инвестировать в один из самых прибыльных и надежных биоактивов —
-                  <strong><i>оливковые деревья — с постоянным доходом более 100 лет</i></strong>
-                </p>
-                <a href="#tree-form-section" class="main-section__btn" data-i18n="main.btn">Начать инвестировать</a>
-              </div>
-              <div class="main-section__column main-section__column_banner">
-                <div class="main-section__banner">
-                  <div id="banner-slider" class="swiper">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide">
-                        <div class="main-banner">
-                          <img src="./img/banner1.jpg" loading="lazy" alt="img: banner1" class="main-banner__img" />
-                          <div class="main-banner__desc" data-i18n="[html]banner.text1">
-                            Как создать <br>стабильную <br>пенсию в $5 000?
+          <div class="gsap-wrapper">
+            <div class="content__header">
+              <section class="section-mt main-section">
+                <div class="main-section__column main-section__column_invest">
+                  <h1 class="main-section__title" data-i18n="[html]main.title">Инвестиции <span>в оливковый бизнес</span></h1>
+                  <p class="main-section__desc" data-i18n="[html]main.desc">
+                    Мы предлагаем инвестировать в один из самых прибыльных и надежных биоактивов —
+                    <strong><i>оливковые деревья — с постоянным доходом более 100 лет</i></strong>
+                  </p>
+                  <a href="#tree-form-section" class="main-section__btn" data-i18n="main.btn">Начать инвестировать</a>
+                </div>
+                <div class="main-section__column main-section__column_banner">
+                  <div class="main-section__banner">
+                    <div id="banner-slider" class="swiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <div class="main-banner">
+                            <img src="./img/banner1.jpg" loading="lazy" alt="img: banner1" class="main-banner__img" />
+                            <div class="main-banner__desc" data-i18n="[html]banner.text1">Как создать <br />стабильную <br />пенсию в $5 000?</div>
+                            <!-- <img src="./img/banner1-md.png" alt="img: banner" class="main-banner__img main-banner__img_mobile" /> -->
                           </div>
-                          <!-- <img src="./img/banner1-md.png" alt="img: banner" class="main-banner__img main-banner__img_mobile" /> -->
+                          <div class="swiper-lazy-preloader"></div>
                         </div>
-                        <div class="swiper-lazy-preloader"></div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="main-banner">
-                          <img src="./img/banner2.jpg" loading="lazy" alt="img: banner2" class="main-banner__img" />
-                          <div class="main-banner__desc main-banner__desc_other" data-i18n="[html]banner.text2">
-                            Как создать капитал <br>
-                            в $64 000 своим детям,  <br>
-                            проинвестировав $1180?
+                        <div class="swiper-slide">
+                          <div class="main-banner">
+                            <img src="./img/banner2.jpg" loading="lazy" alt="img: banner2" class="main-banner__img" />
+                            <div class="main-banner__desc main-banner__desc_other" data-i18n="[html]banner.text2">
+                              Как создать капитал <br />
+                              в $64 000 своим детям, <br />
+                              проинвестировав $1180?
+                            </div>
                           </div>
+                          <div class="swiper-lazy-preloader"></div>
                         </div>
-                        <div class="swiper-lazy-preloader"></div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="main-banner">
-                          <img src="./img/banner3.jpg" loading="lazy" alt="img: banner3" class="main-banner__img" />
-                          <div class="main-banner__desc main-banner__desc_other" data-i18n="[html]banner.text3">
-                            Инвестиции  <br>
-                            с доходностью  <br>
-                            от 39% годовых для<br>
-                            крупных инвесторов
+                        <div class="swiper-slide">
+                          <div class="main-banner">
+                            <img src="./img/banner3.jpg" loading="lazy" alt="img: banner3" class="main-banner__img" />
+                            <div class="main-banner__desc main-banner__desc_other" data-i18n="[html]banner.text3">
+                              Инвестиции <br />
+                              с доходностью <br />
+                              от 39% годовых для<br />
+                              крупных инвесторов
+                            </div>
                           </div>
+                          <div class="swiper-lazy-preloader"></div>
                         </div>
-                        <div class="swiper-lazy-preloader"></div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="main-banner">
-                          <img src="./img/banner4.jpg" loading="lazy" alt="img: banner4" class="main-banner__img" />
-                          <div class="main-banner__desc" data-i18n="[html]banner.text1">
-                            Как создать <br>стабильную <br>пенсию в $5 000?
+                        <div class="swiper-slide">
+                          <div class="main-banner">
+                            <img src="./img/banner4.jpg" loading="lazy" alt="img: banner4" class="main-banner__img" />
+                            <div class="main-banner__desc" data-i18n="[html]banner.text1">Как создать <br />стабильную <br />пенсию в $5 000?</div>
                           </div>
+                          <div class="swiper-lazy-preloader"></div>
                         </div>
-                        <div class="swiper-lazy-preloader"></div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="main-banner">
-                          <img src="./img/banner5.jpg" loading="lazy" alt="img: banner5" class="main-banner__img" />
-                          <div class="main-banner__desc main-banner__desc_other" data-i18n="[html]banner.text2">
-                            Как создать капитал <br>
-                            в $64 000 своим детям,  <br>
-                            проинвестировав $1180?
+                        <div class="swiper-slide">
+                          <div class="main-banner">
+                            <img src="./img/banner5.jpg" loading="lazy" alt="img: banner5" class="main-banner__img" />
+                            <div class="main-banner__desc main-banner__desc_other" data-i18n="[html]banner.text2">
+                              Как создать капитал <br />
+                              в $64 000 своим детям, <br />
+                              проинвестировав $1180?
+                            </div>
                           </div>
+                          <div class="swiper-lazy-preloader"></div>
                         </div>
-                        <div class="swiper-lazy-preloader"></div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="main-banner">
-                          <img src="./img/banner6.jpg" loading="lazy" alt="img: banner6" class="main-banner__img" />
-                          <div class="main-banner__desc main-banner__desc_other" data-i18n="[html]banner.text3">
-                            Инвестиции  <br>
-                            с доходностью  <br>
-                            от 39% годовых для<br>
-                            крупных инвесторов
+                        <div class="swiper-slide">
+                          <div class="main-banner">
+                            <img src="./img/banner6.jpg" loading="lazy" alt="img: banner6" class="main-banner__img" />
+                            <div class="main-banner__desc main-banner__desc_other" data-i18n="[html]banner.text3">
+                              Инвестиции <br />
+                              с доходностью <br />
+                              от 39% годовых для<br />
+                              крупных инвесторов
+                            </div>
                           </div>
+                          <div class="swiper-lazy-preloader"></div>
                         </div>
-                        <div class="swiper-lazy-preloader"></div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="main-banner">
-                          <img src="./img/banner7.jpg" loading="lazy" alt="img: banner7" class="main-banner__img" />
-                          <div class="main-banner__desc" data-i18n="[html]banner.text1">
-                            Как создать <br>стабильную <br>пенсию в $5 000?
+                        <div class="swiper-slide">
+                          <div class="main-banner">
+                            <img src="./img/banner7.jpg" loading="lazy" alt="img: banner7" class="main-banner__img" />
+                            <div class="main-banner__desc" data-i18n="[html]banner.text1">Как создать <br />стабильную <br />пенсию в $5 000?</div>
                           </div>
+                          <div class="swiper-lazy-preloader"></div>
                         </div>
-                        <div class="swiper-lazy-preloader"></div>
-                      </div>
-
-                      <div class="swiper-slide">
-                        <div class="main-banner">
-                          <img src="./img/banner2.jpg" loading="lazy" alt="img: banner2" class="main-banner__img" />
-                          <div class="main-banner__desc main-banner__desc_other" data-i18n="[html]banner.text2">
-                            Как создать капитал <br>
-                            в $64 000 своим детям,  <br>
-                            проинвестировав $1180?
+                        <div class="swiper-slide">
+                          <div class="main-banner">
+                            <img src="./img/banner2.jpg" loading="lazy" alt="img: banner2" class="main-banner__img" />
+                            <div class="main-banner__desc main-banner__desc_other" data-i18n="[html]banner.text2">
+                              Как создать капитал <br />
+                              в $64 000 своим детям, <br />
+                              проинвестировав $1180?
+                            </div>
                           </div>
+                          <div class="swiper-lazy-preloader"></div>
                         </div>
-                        <div class="swiper-lazy-preloader"></div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="main-banner">
-                          <img src="./img/banner8.jpg" loading="lazy" alt="img: banner8" class="main-banner__img" />
-                          <div class="main-banner__desc main-banner__desc_other" data-i18n="[html]banner.text3">
-                            Инвестиции  <br>
-                            с доходностью  <br>
-                            от 39% годовых для<br>
-                            крупных инвесторов
+                        <div class="swiper-slide">
+                          <div class="main-banner">
+                            <img src="./img/banner8.jpg" loading="lazy" alt="img: banner8" class="main-banner__img" />
+                            <div class="main-banner__desc main-banner__desc_other" data-i18n="[html]banner.text3">
+                              Инвестиции <br />
+                              с доходностью <br />
+                              от 39% годовых для<br />
+                              крупных инвесторов
+                            </div>
                           </div>
+                          <div class="swiper-lazy-preloader"></div>
                         </div>
-                        <div class="swiper-lazy-preloader"></div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="main-banner">
-                          <img src="./img/banner9.jpg" loading="lazy" alt="img: banner9" class="main-banner__img" />
-                          <div class="main-banner__desc" data-i18n="[html]banner.text1">
-                            Как создать <br>стабильную <br>пенсию в $5 000?
+                        <div class="swiper-slide">
+                          <div class="main-banner">
+                            <img src="./img/banner9.jpg" loading="lazy" alt="img: banner9" class="main-banner__img" />
+                            <div class="main-banner__desc" data-i18n="[html]banner.text1">Как создать <br />стабильную <br />пенсию в $5 000?</div>
                           </div>
+                          <div class="swiper-lazy-preloader"></div>
                         </div>
-                        <div class="swiper-lazy-preloader"></div>
-                      </div>
-
-                      <div class="swiper-slide">
-                        <div class="main-banner">
-                          <img src="./img/banner5.jpg" loading="lazy" alt="img: banner5" class="main-banner__img" />
-                          <div class="main-banner__desc main-banner__desc_other" data-i18n="[html]banner.text2">
-                            Как создать капитал <br>
-                            в $64 000 своим детям,  <br>
-                            проинвестировав $1180?
+                        <div class="swiper-slide">
+                          <div class="main-banner">
+                            <img src="./img/banner5.jpg" loading="lazy" alt="img: banner5" class="main-banner__img" />
+                            <div class="main-banner__desc main-banner__desc_other" data-i18n="[html]banner.text2">
+                              Как создать капитал <br />
+                              в $64 000 своим детям, <br />
+                              проинвестировав $1180?
+                            </div>
                           </div>
+                          <div class="swiper-lazy-preloader"></div>
                         </div>
-                        <div class="swiper-lazy-preloader"></div>
-                      </div>
-
-                      <div class="swiper-slide">
-                        <div class="main-banner">
-                          <img src="./img/banner3.jpg" loading="lazy" alt="img: banner3" class="main-banner__img" />
-                          <div class="main-banner__desc main-banner__desc_other" data-i18n="[html]banner.text3">
-                            Инвестиции  <br>
-                            с доходностью  <br>
-                            от 39% годовых для<br>
-                            крупных инвесторов
+                        <div class="swiper-slide">
+                          <div class="main-banner">
+                            <img src="./img/banner3.jpg" loading="lazy" alt="img: banner3" class="main-banner__img" />
+                            <div class="main-banner__desc main-banner__desc_other" data-i18n="[html]banner.text3">
+                              Инвестиции <br />
+                              с доходностью <br />
+                              от 39% годовых для<br />
+                              крупных инвесторов
+                            </div>
+                          </div>
+                          <div class="swiper-lazy-preloader"></div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="main-banner">
+                            <img src="./img/banner10.jpg" loading="lazy" alt="img: banner10" class="main-banner__img" />
+                            <div class="main-banner__desc" data-i18n="[html]banner.text1">Как создать <br />стабильную <br />пенсию в $5 000?</div>
                           </div>
                         </div>
-                        <div class="swiper-lazy-preloader"></div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="main-banner">
-                          <img src="./img/banner10.jpg" loading="lazy" alt="img: banner10" class="main-banner__img" />
-                          <div class="main-banner__desc" data-i18n="[html]banner.text1">
-                            Как создать <br>стабильную <br>пенсию в $5 000?
+                        <div class="swiper-slide">
+                          <div class="main-banner">
+                            <img src="./img/banner6.jpg" loading="lazy" alt="img: banner6" class="main-banner__img" />
+                            <div class="main-banner__desc main-banner__desc_other" data-i18n="[html]banner.text2">
+                              Как создать капитал <br />
+                              в $64 000 своим детям, <br />
+                              проинвестировав $1180?
+                            </div>
                           </div>
+                          <div class="swiper-lazy-preloader"></div>
                         </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="main-banner">
-                          <img src="./img/banner6.jpg" loading="lazy" alt="img: banner6" class="main-banner__img" />
-                          <div class="main-banner__desc main-banner__desc_other" data-i18n="[html]banner.text2">
-                            Как создать капитал <br>
-                            в $64 000 своим детям,  <br>
-                            проинвестировав $1180?
-                          </div>
-                        </div>
-                        <div class="swiper-lazy-preloader"></div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="main-section__column main-section__column_feature">
-                <div class="feature-main">
-                  <div class="feature-main__column">
-                    <div class="feature-main__desc" data-i18n="[html]main.feature.desc1">
-                      средняя ожидаемая <br />
-                      доходность в течении <br />
-                      первых 10 лет
+                <div class="main-section__column main-section__column_feature">
+                  <div class="feature-main">
+                    <div class="feature-main__column">
+                      <div class="feature-main__desc" data-i18n="[html]main.feature.desc1">
+                        средняя ожидаемая <br />
+                        доходность в течении <br />
+                        первых 10 лет
+                      </div>
+                      <div class="feature-main__title" data-i18n="main.feature.title1">более 27% годовых</div>
                     </div>
-                    <div class="feature-main__title" data-i18n="main.feature.title1">более 27% годовых</div>
-                  </div>
-                  <div class="feature-main__column">
-                    <div class="feature-main__desc" data-i18n="[html]main.feature.desc2">
-                      ожидаемая <br />
-                      доходность инвестора <br />
-                      с 10-го года
+                    <div class="feature-main__column">
+                      <div class="feature-main__desc" data-i18n="[html]main.feature.desc2">
+                        ожидаемая <br />
+                        доходность инвестора <br />
+                        с 10-го года
+                      </div>
+                      <div class="feature-main__title" data-i18n="main.feature.title2">более 58% годовых</div>
                     </div>
-                    <div class="feature-main__title" data-i18n="main.feature.title2">более 58% годовых</div>
-                  </div>
-                  <div class="feature-main__column">
-                    <div class="feature-main__desc" data-i18n="[html]main.feature.desc3">
-                      по мере роста стоимость <br />
-                      оливкового дерева <br />
-                      увеличивается в среднем
+                    <div class="feature-main__column">
+                      <div class="feature-main__desc" data-i18n="[html]main.feature.desc3">
+                        по мере роста стоимость <br />
+                        оливкового дерева <br />
+                        увеличивается в среднем
+                      </div>
+                      <div class="feature-main__title" data-i18n="main.feature.title3">более 5-ти раз</div>
                     </div>
-                    <div class="feature-main__title" data-i18n="main.feature.title3">более 5-ти раз</div>
                   </div>
                 </div>
+              </section>
+            </div>
+              <section data-wow-duration="0.6s" class="wow fadeInUp section-mt feature-section">
+                <h2 class="feature-section__title" data-i18n="[html]feature.title">
+                  <span>BioDeposit</span> — революционный проект, соединяющий традиционный бизнес с современными технологиями
+                </h2>
+                <div class="feature-section__container">
+                  <div class="feature-section__card">
+                    <div class="feature-card">
+                      <div class="feature-card__block">
+                        <div class="feature-card__circle-img"><img src="./img/icons/income.svg" alt="img: feature-card" class="feature-card__img" /></div>
+                      </div>
+                      <div class="feature-card__block">
+                        <h5 class="feature-card__title" data-i18n="feature.card1.title">Стабильный доход</h5>
+                        <p class="feature-card__desc" data-i18n="[html]feature.card1.desc">
+                          инвестируя в оливковые деревья вы можете обеспечить себе и своим потомкам стабильный доход
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="feature-section__card">
+                    <div class="feature-card">
+                      <div class="feature-card__block">
+                        <div class="feature-card__circle-img"><img src="./img/icons/leaf.svg" alt="img: feature-card" class="feature-card__img" /></div>
+                      </div>
+                      <div class="feature-card__block">
+                        <h5 class="feature-card__title" data-i18n="feature.card2.title">Cтатус эко инвестора</h5>
+                        <p class="feature-card__desc" data-i18n="[html]feature.card2.desc">получить престижный статус <br />эко инвестора</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="feature-section__card">
+                    <div class="feature-card">
+                      <div class="feature-card__block">
+                        <div class="feature-card__circle-img"><img src="./img/icons/money-bag.svg" alt="img: feature-card" class="feature-card__img" /></div>
+                      </div>
+                      <div class="feature-card__block">
+                        <h5 class="feature-card__title" data-i18n="feature.card3.title">Родовой капитал</h5>
+                        <p class="feature-card__desc" data-i18n="[html]feature.card3.desc">создать капитал своим <br />детям и внукам</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="feature-section__card">
+                    <div class="feature-card">
+                      <div class="feature-card__block">
+                        <div class="feature-card__circle-img"><img src="./img/icons/shield.svg" alt="img: feature-card" class="feature-card__img" /></div>
+                      </div>
+                      <div class="feature-card__block">
+                        <h5 class="feature-card__title" data-i18n="feature.card4.title">Защита накоплений</h5>
+                        <p class="feature-card__desc" data-i18n="[html]feature.card4.desc">Защитить и преумножить <br />свои накопления</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section data-wow-duration="0.6s" class="section-mt explanation-section">
+                <h2 class="explanation-section__title" data-i18n="[html]explanation.title">Оливковое дерево - <span>высокодоходный актив</span></h2>
+                <div class="explanation-section__container">
+                  <div class="explanation">
+                    <h3 class="explanation__title" data-i18n="explanation.container.title">
+                      За счет чего формируется высокая доходность инвестиций в оливковый бизнес?
+                    </h3>
+                    <div>
+                      <ul class="explanation__list box__list">
+                        <li class="explanation__item" data-i18n="explanation.container.item1">
+                          Низкая стоимость плодородной земли по сравнению с Европой
+                        </li>
+                        <li class="explanation__item" data-i18n="explanation.container.item2">
+                          Низкая себестоимость выращивания, переработки и рабочей силы
+                        </li>
+                        <li class="explanation__item" data-i18n="explanation.container.item3">
+                          Поддержка государства, оказывающее поддержку сельскому хозяйству в виде инфраструктуры
+                        </li>
+                        <li class="explanation__item" data-i18n="explanation.container.item4">Льготное налогообложение для сельхозпроизводителей</li>
+                        <li class="explanation__item" data-i18n="explanation.container.item5">Применение современных технологий</li>
+                        <li class="explanation__item" data-i18n="explanation.container.item6">
+                          Регион Кахетия географически влажнее самых лучших регионов Испании, которая является мировым лидером в производстве оливок
+                        </li>
+                        <li class="explanation__item" data-i18n="explanation.container.item7">Благоприятный экономический климат в Грузии</li>
+                        <li class="explanation__item-btn wrap-buy-link"><a href="#tree-form-section" class="buy-link buy-link_white"  data-i18n="btns.buy">Купить деревья</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section data-wow-duration="0.6s" class="wow fadeInUp section-mt income-section">
+                <h3 class="income-section__title" data-i18n="income.title">Как формируется доход инвестора?</h3>
+                <div class="income-section__container">
+                  <div class="income-section__block">
+                    <div class="income-section__wrapper-img"><img src="./img/media/wagon-olives.jpg" alt="img: wagon-olives" class="income-section__img" /></div>
+                    <p class="income-section__desc" data-i18n="[html]income.desc1">
+                      На плантация посажены оливковые деревья сорта Олива Европейская (Gemlik, Ayvalik, т.п.). Данный сорт оливок может давать до 120-150 кг
+                      оливок на 10-й год и далее. Для расчета доходность мы брали урожайность 80 кг с дерева
+                    </p>
+                  </div>
+                  <div class="income-section__block">
+                    <div class="income-section__wrapper-img"><img src="./img/media/olive-oils.jpg" alt="img: olive-oils" class="income-section__img" /></div>
+                    <p class="income-section__desc" data-i18n="[html]income.desc2">
+                      Из 80 кг оливок можно произвести 16-20 л масла. Оливковое масло оптом продается по биржевой цене, в среднем ~$5 за литр (Текущая цена
+                      $7,2/литр).
+                    </p>
+                    <p class="income-section__desc" data-i18n="[html]income.desc3">
+                      Сервисная компания забирает себе 40% от итоговой суммы. Таким образом доход формируется следующим образом: 80кг -> 16л масла x $5 = $80 x
+                      60% = $48 с 1 дерева
+                    </p>
+                    <p class="income-section__desc income-section__desc_dedicated" data-i18n="[html]income.desc4">
+                      * Важный момент: урожайность в конкретный год может отличаться от расчетной урожайности
+                    </p>
+                    <div class="wrap-buy-link"><a href="#tree-form-section" class="buy-link"  data-i18n="btns.buy">Купить деревья</a></div>
+                  </div>
+                </div>
+              </section>
+            <section data-wow-duration="0.6s" class="wow fadeInUp section-mt how-it-works-section">
+              <h3 class="how-it-works-section__title" data-i18n="howItWorks.title">Как устроен оливковый бизнес</h3>
+              <div class="how-it-works-section__container">
+                <ul class="how-it-works-section__list">
+                  <li class="how-it-works-section__item">
+                    <div class="how-it-works-section__num">01</div>
+                    <div class="how-it-works-section__title_item" data-i18n="howItWorks.item1.title">Посадка</div>
+                    <div class="how-it-works-section__desc" data-i18n="[html]howItWorks.item1.desc">
+                      Засаживается плантация <br />в мягком умеренном <br />климате
+                    </div>
+                  </li>
+                  <li class="how-it-works-section__item">
+                    <div class="how-it-works-section__num">02</div>
+                    <div class="how-it-works-section__title_item" data-i18n="howItWorks.item2.title">Выращивание</div>
+                    <div class="how-it-works-section__desc" data-i18n="[html]howItWorks.item2.desc">
+                      Первые три года олива <br />растет, с 4-го года <br />начинает плодоносить
+                    </div>
+                  </li>
+                  <li class="how-it-works-section__item">
+                    <div class="how-it-works-section__num">03</div>
+                    <div class="how-it-works-section__title_item" data-i18n="howItWorks.item3.title">Уход</div>
+                    <div class="how-it-works-section__desc" data-i18n="[html]howItWorks.item3.desc">За деревьями ухаживает <br />сервисная компания</div>
+                  </li>
+                  <li class="how-it-works-section__item">
+                    <div class="how-it-works-section__num">04</div>
+                    <div class="how-it-works-section__title_item" data-i18n="howItWorks.item4.title">Получение дохода</div>
+                    <div class="how-it-works-section__desc" data-i18n="[html]howItWorks.item4.desc">
+                      С 4-го года инвесторы начинают получать доход после реализации урожая сервисной компанией
+                    </div>
+                  </li>
+                  <li class="how-it-works-section__item how-it-works-section__item_img">
+                    <div class="how-it-works-section__wrap-img">
+                      <img src="./img/media/hand-to-tree.jpg" alt="img: hand-to-tree" class="how-it-works-section__img" />
+                    </div>
+                  </li>
+                </ul>
               </div>
             </section>
           </div>
-          <section data-wow-duration="0.6s" class="wow fadeInUp section-mt feature-section">
-            <h2 class="feature-section__title" data-i18n="[html]feature.title">
-              <span>BioDeposit</span> — революционный проект, <br />соединяющий традиционный бизнес <br />с современными технологиями
-            </h2>
-            <div class="feature-section__container">
-              <div class="feature-section__card">
-                <div class="feature-card">
-                  <div class="feature-card__block">
-                    <div class="feature-card__circle-img"><img src="./img/icons/income.svg" alt="img: feature-card" class="feature-card__img" /></div>
-                  </div>
-                  <div class="feature-card__block">
-                    <h5 class="feature-card__title" data-i18n="feature.card1.title">Стабильный доход</h5>
-                    <p class="feature-card__desc" data-i18n="[html]feature.card1.desc">
-                      инвестируя в оливковые деревья вы <br />можете обеспечить себе и своим <br />потомкам стабильный доход
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="feature-section__card">
-                <div class="feature-card">
-                  <div class="feature-card__block">
-                    <div class="feature-card__circle-img"><img src="./img/icons/leaf.svg" alt="img: feature-card" class="feature-card__img" /></div>
-                  </div>
-                  <div class="feature-card__block">
-                    <h5 class="feature-card__title" data-i18n="feature.card2.title">Cтатус эко инвестора</h5>
-                    <p class="feature-card__desc" data-i18n="[html]feature.card2.desc">получить престижный статус <br />эко инвестора</p>
-                  </div>
-                </div>
-              </div>
-              <div class="feature-section__card">
-                <div class="feature-card">
-                  <div class="feature-card__block">
-                    <div class="feature-card__circle-img"><img src="./img/icons/money-bag.svg" alt="img: feature-card" class="feature-card__img" /></div>
-                  </div>
-                  <div class="feature-card__block">
-                    <h5 class="feature-card__title" data-i18n="feature.card3.title">Родовой капитал</h5>
-                    <p class="feature-card__desc" data-i18n="[html]feature.card3.desc">создать капитал своим <br />детям и внукам</p>
-                  </div>
-                </div>
-              </div>
-              <div class="feature-section__card">
-                <div class="feature-card">
-                  <div class="feature-card__block">
-                    <div class="feature-card__circle-img"><img src="./img/icons/shield.svg" alt="img: feature-card" class="feature-card__img" /></div>
-                  </div>
-                  <div class="feature-card__block">
-                    <h5 class="feature-card__title" data-i18n="feature.card4.title">Защита накоплений</h5>
-                    <p class="feature-card__desc" data-i18n="[html]feature.card4.desc">Защитить и преумножить <br />свои накопления</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section data-wow-duration="0.6s" class="wow fadeInUp section-mt explanation-section">
-            <h2 class="explanation-section__title" data-i18n="[html]explanation.title">Оливковое дерево - <span>высокодоходный актив</span></h2>
-            <div class="explanation-section__container">
-              <div class="explanation">
-                <h3 class="explanation__title" data-i18n="explanation.container.title">
-                  За счет чего формируется высокая доходность инвестиций в оливковый бизнес?
-                </h3>
-                <div style="overflow: hidden">
-                  <ul class="explanation__list">
-                    <li class="explanation__item" data-i18n="explanation.container.item1">Низкая стоимость плодородной земли по сравнению с Европой</li>
-                    <li class="explanation__item" data-i18n="explanation.container.item2">Низкая себестоимость выращивания, переработки и рабочей силы</li>
-                    <li class="explanation__item" data-i18n="explanation.container.item3">
-                      Поддержка государства, оказывающее поддержку сельскому хозяйству в виде инфраструктуры
-                    </li>
-                    <li class="explanation__item" data-i18n="explanation.container.item4">Льготное налогообложение для сельхозпроизводителей</li>
-                    <li class="explanation__item" data-i18n="explanation.container.item5">Применение современных технологий</li>
-                    <li class="explanation__item" data-i18n="explanation.container.item6">
-                      Регион Кахетия географически влажнее самых лучших регионов Испании, которая является мировым лидером в производстве оливок
-                    </li>
-                    <li class="explanation__item" data-i18n="explanation.container.item7">Благоприятный экономический климат в Грузии</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section data-wow-duration="0.6s" class="wow fadeInUp section-mt income-section">
-            <h3 class="income-section__title" data-i18n="income.title">Как формируется доход инвестора?</h3>
-            <div class="income-section__container">
-              <div class="income-section__block">
-                <div class="income-section__wrapper-img"><img src="./img/media/wagon-olives.jpg" alt="img: wagon-olives" class="income-section__img" /></div>
-                <p class="income-section__desc" data-i18n="[html]income.desc1">
-                  На плантация посажены оливковые деревья сорта Олива Европейская (Gemlik, Ayvalik, т.п.). Данный сорт оливок может давать до 120-150 кг оливок
-                  на 10-й год и далее. Для расчета доходность мы брали урожайность 80 кг с дерева
-                </p>
-              </div>
-              <div class="income-section__block">
-                <div class="income-section__wrapper-img"><img src="./img/media/olive-oils.jpg" alt="img: olive-oils" class="income-section__img" /></div>
-                <p class="income-section__desc" data-i18n="[html]income.desc2">
-                  Из 80 кг оливок можно произвести 16-20 л масла. Оливковое масло оптом продается по биржевой цене, в среднем ~$5 за литр (Текущая цена
-                  $7,2/литр).
-                </p>
-                <p class="income-section__desc" data-i18n="[html]income.desc3">
-                  Сервисная компания забирает себе 40% от итоговой суммы. Таким образом доход формируется следующим образом: 80кг -> 16л масла x $5 = $80 x 60%
-                  = $48 с 1 дерева
-                </p>
-                <p class="income-section__desc income-section__desc_dedicated" data-i18n="[html]income.desc4">
-                  * Важный момент: урожайность в конкретный год может отличаться от расчетной урожайности
-                </p>
-              </div>
-            </div>
-          </section>
-          <section data-wow-duration="0.6s" class="wow fadeInUp section-mt how-it-works-section">
-            <h3 class="how-it-works-section__title" data-i18n="howItWorks.title">Как устроен оливковый бизнес</h3>
-            <div class="how-it-works-section__container">
-              <ul class="how-it-works-section__list">
-                <li class="how-it-works-section__item">
-                  <div class="how-it-works-section__num">01</div>
-                  <div class="how-it-works-section__title_item" data-i18n="howItWorks.item1.title">Посадка</div>
-                  <div class="how-it-works-section__desc" data-i18n="[html]howItWorks.item1.desc">
-                    Засаживается плантация <br />в мягком умеренном <br />климате
-                  </div>
-                </li>
-                <li class="how-it-works-section__item">
-                  <div class="how-it-works-section__num">02</div>
-                  <div class="how-it-works-section__title_item" data-i18n="howItWorks.item2.title">Выращивание</div>
-                  <div class="how-it-works-section__desc" data-i18n="[html]howItWorks.item2.desc">
-                    Первые три года олива <br />растет, с 4-го года <br />начинает плодоносить
-                  </div>
-                </li>
-                <li class="how-it-works-section__item">
-                  <div class="how-it-works-section__num">03</div>
-                  <div class="how-it-works-section__title_item" data-i18n="howItWorks.item3.title">Уход</div>
-                  <div class="how-it-works-section__desc" data-i18n="[html]howItWorks.item3.desc">За деревьями ухаживает <br />сервисная компания</div>
-                </li>
-                <li class="how-it-works-section__item">
-                  <div class="how-it-works-section__num">04</div>
-                  <div class="how-it-works-section__title_item" data-i18n="howItWorks.item4.title">Получение дохода</div>
-                  <div class="how-it-works-section__desc" data-i18n="[html]howItWorks.item4.desc">
-                    С 4-го года инвесторы начинают получать доход после реализации урожая сервисной компанией
-                  </div>
-                </li>
-                <li class="how-it-works-section__item how-it-works-section__item_img">
-                  <div class="how-it-works-section__wrap-img">
-                    <img src="./img/media/hand-to-tree.jpg" alt="img: hand-to-tree" class="how-it-works-section__img" />
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </section>
           <section data-wow-duration="0.6s" class="wow fadeInUp section-mt expected-section" id="expected-section">
             <h4 class="expected-section__title" data-i18n="[html]expected.title">Ожидаемый доход <br />инвестора c 1 дерева</h4>
             <!-- <div class="expected-section__wrap-img"><img src="./img/expected-graph.png" alt="img: expected-graph" class="expected-section__img" /></div> -->
@@ -534,7 +533,7 @@
                         <div class="invest-bar__indicator"></div>
                       </div>
                     </div>
-                    <div class="invest-bar__ticks"><span>+4 </span> <span class="invest-bar__ticks-year"  data-i18n="expected.year2">года</span></div>
+                    <div class="invest-bar__ticks"><span>+4 </span> <span class="invest-bar__ticks-year" data-i18n="expected.year2">года</span></div>
                   </div>
                   <div class="invest-bar__column">
                     <div class="invest-bar__indicators">
@@ -547,7 +546,7 @@
                         <div class="invest-bar__indicator"></div>
                       </div>
                     </div>
-                    <div class="invest-bar__ticks"><span>+5 </span> <span class="invest-bar__ticks-year"  data-i18n="expected.year">лет</span></div>
+                    <div class="invest-bar__ticks"><span>+5 </span> <span class="invest-bar__ticks-year" data-i18n="expected.year">лет</span></div>
                   </div>
                   <div class="invest-bar__column">
                     <div class="invest-bar__indicators">
@@ -560,7 +559,7 @@
                         <div class="invest-bar__indicator"></div>
                       </div>
                     </div>
-                    <div class="invest-bar__ticks"><span>+6 </span> <span class="invest-bar__ticks-year"  data-i18n="expected.year">лет</span></div>
+                    <div class="invest-bar__ticks"><span>+6 </span> <span class="invest-bar__ticks-year" data-i18n="expected.year">лет</span></div>
                   </div>
                   <div class="invest-bar__column">
                     <div class="invest-bar__indicators">
@@ -573,7 +572,7 @@
                         <div class="invest-bar__indicator"></div>
                       </div>
                     </div>
-                    <div class="invest-bar__ticks"><span>+7 </span> <span class="invest-bar__ticks-year"  data-i18n="expected.year">лет</span></div>
+                    <div class="invest-bar__ticks"><span>+7 </span> <span class="invest-bar__ticks-year" data-i18n="expected.year">лет</span></div>
                   </div>
                   <div class="invest-bar__column">
                     <div class="invest-bar__indicators">
@@ -586,7 +585,7 @@
                         <div class="invest-bar__indicator"></div>
                       </div>
                     </div>
-                    <div class="invest-bar__ticks"><span>+8 </span> <span class="invest-bar__ticks-year"  data-i18n="expected.year">лет</span></div>
+                    <div class="invest-bar__ticks"><span>+8 </span> <span class="invest-bar__ticks-year" data-i18n="expected.year">лет</span></div>
                   </div>
                   <div class="invest-bar__column">
                     <div class="invest-bar__indicators">
@@ -599,7 +598,7 @@
                         <div class="invest-bar__indicator"></div>
                       </div>
                     </div>
-                    <div class="invest-bar__ticks"><span>+9 </span> <span class="invest-bar__ticks-year"  data-i18n="expected.year">лет</span></div>
+                    <div class="invest-bar__ticks"><span>+9 </span> <span class="invest-bar__ticks-year" data-i18n="expected.year">лет</span></div>
                   </div>
                   <div class="invest-bar__column">
                     <div class="invest-bar__indicators">
@@ -612,7 +611,7 @@
                         <div class="invest-bar__indicator"></div>
                       </div>
                     </div>
-                    <div class="invest-bar__ticks"><span>+10 </span> <span class="invest-bar__ticks-year"  data-i18n="expected.yearLast">лет и далее</span></div>
+                    <div class="invest-bar__ticks"><span>+10 </span> <span class="invest-bar__ticks-year" data-i18n="expected.yearLast">лет и далее</span></div>
                   </div>
                 </div>
               </div>
@@ -623,6 +622,9 @@
                 <div class="expected-section__desc expected-section__desc_green" data-i18n="expected.desc1">при текущей цене $9 за литр оливкого масла</div>
                 <div class="expected-section__desc expected-section__desc_white" data-i18n="expected.desc2">при средней цене $5 за литр оливкого масла</div>
               </div>
+            </div>
+            <div class="expected-section__btn">
+              <div class="wrap-buy-link"><a href="#tree-form-section" class="buy-link"  data-i18n="btns.buy">Купить деревья</a></div>
             </div>
           </section>
           <section data-wow-duration="0.6s" class="wow fadeInUp section-mt calculate-section" id="calculate-section">
@@ -689,11 +691,12 @@
                 <div class="included-block__desc" data-i18n="whatIncluded.block4.desc">Ежегодный аудит сбора урожая</div>
               </div>
             </div>
+            <div class="wrap-buy-link"><a href="#tree-form-section" class="buy-link"  data-i18n="btns.buy">Купить деревья</a></div>
           </section>
           <section data-wow-duration="0.6s" class="wow fadeInUp section-mt team-section">
             <h4 class="team-section__title default-title" data-i18n="team.title">Опытная команда проекта</h4>
             <p class="team-section__desc" data-i18n="[html]team.desc">
-              Мы выращиваем оливковые деревья уже более 8 лет <br />В нашей команде много специалистов различных сфер, таких как агрономы, специалисты по
+              Мы выращиваем оливковые деревья уже <span style="white-space: nowrap;">более 8 лет </span><br />В нашей команде много специалистов различных сфер, таких как агрономы, специалисты по
               орошению, операторы сельхозоборудования <br />и многие другие. Так же мы закупаем новые тракторы John Deere, что позволяет оптимизировать процессы
               на полях.
             </p>
@@ -773,7 +776,7 @@
           </section>
           <section data-wow-duration="0.6s" class="wow fadeInUp section-mt tree-form-section" id="tree-form-section">
             <h4 class="tree-form-section__title" data-i18n="[html]treeForm.title">
-              Покупая оливковые деревья – <br /><span>вы инвестируете в свое <br />будущее и в будущее планеты!</span>
+              Покупая оливковые деревья – <span>вы инвестируете в свое будущее и в будущее планеты!</span>
             </h4>
             <div class="tree-form-section__container">
               <div class="tree-form-section__block">
@@ -790,7 +793,7 @@
                     name="user_email_or_tg"
                     placeholder="Email или Telegram"
                     data-i18n="[placeholder]form.email" />
-                  <button type="submit" class="form-tree__btn default-btn" data-i18n="form.btn">Отправить</button>
+                  <button type="submit" class="form-tree__btn default-btn" data-i18n="form.btn">Купить деревья</button>
                 </form>
               </div>
               <div class="tree-form-section__block tree-form-section__block_telegram">
@@ -818,7 +821,7 @@
                 <input type="text" name="user_email_or_tg" class="form-partner__input" placeholder="Email или Telegram" data-i18n="[placeholder]form.email" />
               </div>
               <div class="form-partner__block">
-                <button type="submit" class="form-partner__btn default-btn" data-i18n="form.btn">Отправить</button>
+                <button type="submit" class="form-partner__btn default-btn" data-i18n="form.btnPartner">Отправить заявку</button>
               </div>
             </form>
           </section>
@@ -1365,6 +1368,7 @@
           ><a href="#faq" class="footer__link" data-i18n="nav.faq">FAQ</a
           ><a href="#tree-form-section" class="footer__link" data-i18n="nav.contactUs">Контакты</a>
         </div>
+        <div class="wrap-buy-link"><a href="#tree-form-section" class="buy-link buy-link_white buy-link_footer"  data-i18n="btns.buy">Купить деревья</a></div>
         <div class="footer__social social">
           <div class="social__box">
             <a href="#" class="social__link"><img src="./img/icons/telegram.svg" alt="icon: telegram" class="social__icon" /></a>
@@ -1584,7 +1588,7 @@
                     </div>
                   </div>
                 </div>
-                <button class="calculator__btn income-calculator__btn" data-i18n="modal.btn">Купить деревья</button>
+                <button class="calculator__btn income-calculator__btn" data-i18n="modal.btn" data-scroll="#tree-form-section">Купить деревья</button>
               </div>
             </div>
           </div>
@@ -1797,7 +1801,7 @@
                     </div>
                   </div>
                 </div>
-                <button class="calculator__btn income-calculator__btn" data-i18n="modal.btn">Купить деревья</button>
+                <button class="calculator__btn income-calculator__btn" data-i18n="modal.btn"  data-scroll="#tree-form-section">Купить деревья</button>
               </div>
             </div>
           </div>
@@ -1805,8 +1809,6 @@
       </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="./libs/wow/wow.min.js"></script>
 
     <script>
@@ -1814,19 +1816,6 @@
         offset: 0,
         mobile: false,
       }).init();
-
-      if (window.innerWidth >= 960) {
-        let tween = gsap.to('.explanation__list', { y: '-65%' }),
-          st = ScrollTrigger.create({
-            trigger: '.explanation-section',
-            start: '300 center',
-            end: '280% top',
-            animation: tween,
-            // markers: true,
-            scrub: true,
-            pin: true,
-          });
-      }
 
       new Swiper('#banner-slider', {
         slidesPerView: 1,
